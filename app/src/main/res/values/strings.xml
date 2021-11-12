@@ -2,9 +2,16 @@
 
     <string name="app_name">Nicotime-Out!</string>
     <string name="logo_name">NICOTIME-OUT!</string>
+
+    <!--    titles-->
     <string name="intro1_title">WELCOME!</string>
-    <string name="intro1_subtitle">You are about to start the most fruitful journey of your life</string>
     <string name="intro2_title">Quit Smoking with the Nicotime-Out! App</string>
     <string name="intro3_title">Cross the Smoke-Free Finish Line</string>
+
+    <!--descriptions-->
+    <string name="intro1_descriptions">You are about to start the <b>most fruitful</b> journey of your life</string>
+
+    <!--buttons-->
+    <string name="get_started">I WANT TO BE FREE!</string>
 
 </resources>
