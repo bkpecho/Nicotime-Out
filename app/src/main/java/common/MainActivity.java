@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -14,18 +18,34 @@ import com.nicotimeout.app.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import user.UserProgress;
+
 public class MainActivity extends AppCompatActivity {
 
     private OnboardingAdapter onboardingAdapter;
     private LinearLayout layoutOnboardingIndicators;
+    private Button buttonOnboardingAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        layoutOnboardingIndicators = findViewById(R.id.layoutOnboardingIndicators);
+        SharedPreferences preferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        String FirstTime = preferences.getString("FirstTimeInstall","");
 
+        if(FirstTime.equals("Yes")){
+            Intent intent = new Intent(MainActivity.this, UserProgress.class);
+            startActivity(intent);
+        }else{
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("FirstTimeInstall", "Yes");
+            editor.apply();
+        }
+
+
+        layoutOnboardingIndicators = findViewById(R.id.layoutOnboardingIndicators);
+        buttonOnboardingAction = findViewById(R.id.buttonOnBoardingAction);
 
         setupOnboardingItems();
         ViewPager2 onboardingViewPager = findViewById(R.id.onBoardingViewPager);
@@ -39,6 +59,18 @@ public class MainActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 setCurrentOnboardingIndicator(position);
+            }
+        });
+
+        buttonOnboardingAction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onboardingViewPager.getCurrentItem() + 1 < onboardingAdapter.getItemCount()) {
+                    onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
+                } else {
+                    startActivity(new Intent(getApplicationContext(), UserProgress.class));
+                    finish();
+                }
             }
         });
 
@@ -101,6 +133,11 @@ public class MainActivity extends AppCompatActivity {
                         ContextCompat.getDrawable(getApplicationContext(), R.drawable.onboarding_indicator_inactive)
                 );
             }
+        }
+        if(index == onboardingAdapter.getItemCount()-1){
+            buttonOnboardingAction.setText("Start");
+        }else{
+            buttonOnboardingAction.setText("Next");
         }
     }
 
