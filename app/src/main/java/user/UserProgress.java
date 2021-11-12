@@ -1,4 +1,4 @@
-package User;
+package user;
 
 import androidx.appcompat.app.AppCompatActivity;
 

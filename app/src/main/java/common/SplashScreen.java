@@ -1,4 +1,4 @@
-package Common;
+package common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 import com.nicotimeout.app.R;
 
-import User.UserProgress;
+import user.UserProgress;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -42,7 +42,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent intent = new Intent(getApplicationContext(), UserProgress.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
 
