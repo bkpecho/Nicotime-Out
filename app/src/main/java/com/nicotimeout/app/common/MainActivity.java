@@ -1,4 +1,4 @@
-package common;
+package com.nicotimeout.app.common;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -18,7 +18,7 @@ import com.nicotimeout.app.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import user.UserProgress;
+import com.nicotimeout.app.user.UserProgress;
 
 public class MainActivity extends AppCompatActivity {
 

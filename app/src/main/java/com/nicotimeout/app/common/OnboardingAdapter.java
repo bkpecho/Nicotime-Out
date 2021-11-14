@@ -1,4 +1,4 @@
-package common;
+package com.nicotimeout.app.common;
 
 import android.view.LayoutInflater;
 import android.view.View;

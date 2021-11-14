@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/firstFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_trophy"
+        android:title="@string/bot_menu_title1" />
+    <item
+        android:id="@+id/secondFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_cigarette"
+        android:title="@string/bot_menu_title2" />
+    <item
+        android:id="@+id/thirdFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_statistics"
+        android:title="@string/bot_menu_title3" />
+    <item
+        android:id="@+id/fourthFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_location"
+        android:title="@string/bot_menu_title4" />
+</menu>

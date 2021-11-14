@@ -15,4 +15,10 @@
     <string name="get_started">I WANT TO BE FREE!</string>
     <string name="next_btn">Next</string>
 
+    <!--bot_menu_title-->
+    <string name="bot_menu_title1">Rewards</string>
+    <string name="bot_menu_title2">Learn</string>
+    <string name="bot_menu_title3">Progress</string>
+    <string name="bot_menu_title4">Rehab+</string>
+
 </resources>

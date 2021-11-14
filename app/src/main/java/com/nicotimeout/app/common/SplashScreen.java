@@ -1,4 +1,4 @@
-package common;
+package com.nicotimeout.app.common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,11 +12,9 @@ import android.widget.ImageView;
 
 import com.nicotimeout.app.R;
 
-import user.UserProgress;
-
 public class SplashScreen extends AppCompatActivity {
 
-    private static int SPLASH_TIMER = 5000;
+    private static int SPLASH_TIMER = 3000;
 
     //variable
     ImageView backgroundImage;

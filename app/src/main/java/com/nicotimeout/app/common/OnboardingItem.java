@@ -1,4 +1,4 @@
-package common;
+package com.nicotimeout.app.common;
 
 public class OnboardingItem {
 
