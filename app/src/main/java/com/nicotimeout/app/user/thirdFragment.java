@@ -2,6 +2,7 @@ package com.nicotimeout.app.user;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -60,7 +61,7 @@ public class thirdFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Progress");
         return inflater.inflate(R.layout.fragment_third, container, false);
     }
 }
