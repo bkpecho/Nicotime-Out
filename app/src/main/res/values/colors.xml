@@ -8,8 +8,14 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dark_gray">#A9A9A9</color>
 
     <color name="red_XD">#993441</color>
+    <color name="red_XD_80">#CC993441</color>
+    <color name="red_XD_25">#40993441</color>
+
+
+
     <color name="pink_XD">#FFB8B1</color>
     <color name="red_light_XD">#CC9AA1</color>
     <color name="red_dark_XD">#4D1A21</color>

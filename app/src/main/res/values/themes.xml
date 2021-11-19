@@ -14,6 +14,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/red_XD</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
     <style name="MyToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Light">
         <item name="fontFamily">@font/poppins_semibold</item>
     </style>

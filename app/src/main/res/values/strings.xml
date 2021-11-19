@@ -21,4 +21,14 @@
     <string name="bot_menu_title3">Progress</string>
     <string name="bot_menu_title4">Rehab+</string>
 
+    <!--questions activity-->
+    <string name="questions_header">Congratulations on your decision to quit smoking!</string>
+    <string name="questions_when">When did you quit?</string>
+    <string name="questions_select">SELECT DATE</string>
+    <string name="questions_cig_smok_day">Cigarettes Smoked per Day</string>
+    <string name="questions_cig_price_piece">Cigarette Price per Piece</string>
+    <string name="questions_years_smoking">Est. Number of Smoking Years</string>
+    <string name="questions_sticks"><i>Ex. 20 sticks per day</i></string>
+
+
 </resources>
