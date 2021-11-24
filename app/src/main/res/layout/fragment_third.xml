@@ -1,18 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".user.thirdFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Third Layout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="18dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/frag_third_day_number"
+                    android:textColor="@color/red_XD"
+                    android:textSize="18sp" />
+
+                <com.github.lzyzsd.circleprogress.ArcProgress
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="18dp"
+                    app:arc_angle="270"
+                    app:arc_bottom_text="Progress"
+                    app:arc_bottom_text_size="14sp"
+                    app:arc_finished_color="@color/red_XD"
+                    app:arc_progress="70"
+                    app:arc_stroke_width="15sp"
+                    app:arc_text_color="@color/red_XD"
+                    app:arc_text_size="36sp"
+                    app:arc_unfinished_color="@color/red_XD_25" />
+            </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="18dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/frag_third_day_number"
+                    android:textColor="@color/red_XD"
+                    android:textSize="18sp" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="18dp"
+                    app:donut_angle="270"
+                    app:donut_bottom_text="Progress"
+                    app:donut_bottom_text_size="14sp"
+                    app:donut_finished_color="@color/red_XD"
+                    app:donut_progress="70"
+                    app:donut_stroke_width="15sp"
+                    app:donut_text_color="@color/red_XD"
+                    app:donut_text_size="36sp"
+                    app:donut_unfinished_color="@color/red_XD_25" />
+            </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+

@@ -76,7 +76,9 @@
 
 
     <EditText
+        android:autofillHints="@string/questions_sticks"
         android:id="@+id/edit_questions_cig_smok_day"
+        android:maxLength="4"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_marginStart="32dp"
@@ -115,6 +117,7 @@
 
 
     <EditText
+        android:autofillHints="@string/questions_price"
         android:id="@+id/edit_questions_cig_price_piece"
         android:layout_width="match_parent"
         android:layout_height="58dp"
@@ -128,7 +131,7 @@
         android:inputType="number"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        android:text=""
+        android:hint="@string/questions_price"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.221"
@@ -152,6 +155,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_questions_cig_price_piece" />
 
     <EditText
+        android:autofillHints="@string/questions_years"
         android:id="@+id/edit_questions_years_smoking"
         android:layout_width="match_parent"
         android:layout_height="58dp"
@@ -165,10 +169,25 @@
         android:inputType="number"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
-        android:text=""
+        android:hint="@string/questions_years"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.221"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questions_years_smoking" />
+
+    <Button
+        android:id="@+id/question_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/question_select_date_roundradius"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/questions_done"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_questions_years_smoking" />
 </androidx.constraintlayout.widget.ConstraintLayout>

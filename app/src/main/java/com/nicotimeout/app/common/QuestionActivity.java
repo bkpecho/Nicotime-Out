@@ -1,19 +1,25 @@
 package com.nicotimeout.app.common;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.app.AlertDialog;
+
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
+
+
 import com.nicotimeout.app.R;
+import com.nicotimeout.app.user.UserProgress;
+
 import java.util.Calendar;
 
 public class QuestionActivity extends AppCompatActivity {
 
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +28,28 @@ public class QuestionActivity extends AppCompatActivity {
         initDatePicker();
         dateButton = findViewById(R.id.datePickerButton);
         dateButton.setText(getTodayDate());
+        SharedPreferences preferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        String FirstTime = preferences.getString("FirstTimeInstallQuestions","");
+
+        if(FirstTime.equals("Yes")){
+            Intent intent = new Intent(QuestionActivity.this, UserProgress.class);
+            startActivity(intent);
+        }else{
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("FirstTimeInstallQuestions", "Yes");
+            editor.apply();
+
+        }
+
+
+        Button btn = findViewById(R.id.question_button);
+        btn.setOnClickListener(v -> startActivity(new Intent(QuestionActivity.this, UserProgress.class)));
+
     }
-
-
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
+    }
 
     private String getTodayDate() {
         Calendar cal = Calendar.getInstance();
@@ -49,8 +74,6 @@ public class QuestionActivity extends AppCompatActivity {
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
-
-        int style = AlertDialog.THEME_HOLO_LIGHT;
 
         datePickerDialog = new DatePickerDialog(this, R.style.MyDatePickerDialogTheme, dateSetListener, year, month, day);
 
