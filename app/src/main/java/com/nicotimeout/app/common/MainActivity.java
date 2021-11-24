@@ -80,12 +80,12 @@ public class MainActivity extends AppCompatActivity {
         slideOne.setImage(R.drawable.intro_img_1);
 
         OnboardingItem slideTwo = new OnboardingItem();
-
+        slideTwo.setTitle("LEAP TO SUCCESS!");
         slideTwo.setDescription("Quit Smoking with the Nicotime-Out! App");
         slideTwo.setImage(R.drawable.intro_img_2);
 
         OnboardingItem slideThree = new OnboardingItem();
-
+        slideThree.setTitle("WIN AT LIFE!");
         slideThree.setDescription("Cross the Smoke-Free Finish Line");
         slideThree.setImage(R.drawable.intro_img_3);
 
