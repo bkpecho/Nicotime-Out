@@ -21,4 +21,10 @@
         android:enabled="true"
         android:icon="@drawable/ic_location"
         android:title="@string/bot_menu_title4" />
+    <item
+        android:id="@+id/fifthFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_list"
+        android:title="@string/bot_menu_title5" />
+
 </menu>

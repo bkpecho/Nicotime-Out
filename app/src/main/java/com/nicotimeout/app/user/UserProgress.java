@@ -25,8 +25,9 @@ public class UserProgress extends AppCompatActivity {
         bottomNav.setOnItemSelectedListener(navListener);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
-                    new firstFragment()).commit();
+           /* getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
+                    new thirdFragment()).commit();*/
+                bottomNav.setSelectedItemId(R.id.thirdFragment);
 
 
         }
@@ -54,6 +55,9 @@ public class UserProgress extends AppCompatActivity {
                         break;
                     case R.id.fourthFragment:
                         selectedFragment = new fourthFragment();
+                        break;
+                    case R.id.fifthFragment:
+                        selectedFragment = new fifthFragment();
                         break;
                 }
 

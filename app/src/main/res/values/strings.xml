@@ -35,6 +35,20 @@
 
     <!--fragment 3-->
     <string name="frag_third_day_number">Day 1</string>
+    <string name="SmokeFree">Smoke Free</string>
+    <string name="total_SmokeFree">00:00:00</string>
+    <string name="MoneySaved">Money Saved</string>
+    <string name="total_MoneySaved">₱00.00</string>
+    <string name="total_LifeRegained">00:06:00</string>
+    <string name="LifeRegained">Life Regained</string>
+    <string name="total_CigarettesAvoided">18</string>
+    <string name="CigarettesAvoided">Cigarettes Avoided</string>
+    <string name="Flag">Flag</string>
+    <string name="PesoCurrency">Peso Currency</string>
+    <string name="Clock">Clock</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bot_menu_title5">Timeline</string>
 
 
 </resources>

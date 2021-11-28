@@ -7,6 +7,7 @@
     tools:context=".user.UserProgress">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,6 +22,7 @@
                 android:id="@+id/myToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackgroundBorderless"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="@style/MyToolbarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -28,20 +30,19 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:title="Nicotime-Out!"
                 app:titleTextAppearance="@style/Toolbar.TitleText"
-                android:background="?selectableItemBackgroundBorderless"
                 app:titleTextColor="@color/white" />
 
-            <ImageButton
+            <!--<ImageButton
                 android:id="@+id/heart_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
+                android:background="?android:selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_heart"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/myToolbar"
-                android:background="?android:selectableItemBackgroundBorderless"
                 app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/white" />
+                app:tint="@color/white" />-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -55,24 +56,23 @@
         android:background="@color/white"
         app:itemIconTint="@color/bottom_nav_icon_color_selector"
         app:itemTextColor="@color/bottom_nav_icon_color_selector"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_menu"
-
         />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="673dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
         app:navGraph="@navigation/my_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

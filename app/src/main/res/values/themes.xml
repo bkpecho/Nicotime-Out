@@ -2,9 +2,11 @@
 
     <style name="Theme.NicotimeOut" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/red_XD</item>
-        <item name="colorPrimaryVariant">@color/red_dark_XD</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/fc_green</item>
+        <item name="colorPrimaryVariant">@color/fc_dark_theme</item>
+        <item name="colorOnPrimary">@color/fc_cream</item>
+
+        <item name="android:textColorHint">@color/fc_light</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -15,12 +17,12 @@
     </style>
 
     <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
-        <item name="android:colorAccent">@color/red_XD</item>
+        <item name="android:colorAccent">@color/fc_green</item>
         <item name="android:fontFamily">@font/poppins_semibold</item>
     </style>
 
     <style name="MyToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Light">
-        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="fontFamily">@font/medium</item>
     </style>
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
@@ -41,13 +43,13 @@
 
     <!-- inactive tab icon style -->
     <style name="TextAppearance.BottomNavigationView.Inactive">
-        <item name="android:textSize">11sp</item>
-        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/regular</item>
     </style>
 
     <!-- active tab icon style -->
     <style name="TextAppearance.BottomNavigationView.Active">
-        <item name="android:textSize">11sp</item>
-        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/medium</item>
     </style>
 </resources>
