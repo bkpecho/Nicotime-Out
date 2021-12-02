@@ -172,10 +172,10 @@
             android:ems="10"
             android:fontFamily="@font/regular"
             android:hint="@string/questions_years"
-            android:textColor="@color/fc_green"
             android:inputType="number"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
+            android:textColor="@color/fc_green"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.221"
@@ -196,5 +196,6 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_questions_years_smoking" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

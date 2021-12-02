@@ -49,6 +49,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="bot_menu_title5">Timeline</string>
+    <string name="third_CigarettesSmoked">Cigarettes Smoked</string>
+    <string name="third_MoneyWasted">Money Wasted</string>
+    <string name="third_LifeLost">Life Lost</string>
 
 
 </resources>
