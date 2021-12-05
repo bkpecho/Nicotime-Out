@@ -12,7 +12,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import com.nicotimeout.app.R;
-import com.nicotimeout.app.user.UserProgress;
+import com.nicotimeout.app.userStart.StartActivity;
+import com.nicotimeout.app.userStart.StartActivity_first;
+import com.nicotimeout.app.userStart.StartActivity_first_popup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         String FirstTime = preferences.getString("FirstTimeInstall","");
 
         if(FirstTime.equals("Yes")){
-            Intent intent = new Intent(MainActivity.this, QuestionActivity.class);
+            Intent intent = new Intent(MainActivity.this, StartActivity.class);
             startActivity(intent);
         }else{
             SharedPreferences.Editor editor = preferences.edit();
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             if (onboardingViewPager.getCurrentItem() + 1 < onboardingAdapter.getItemCount()) {
                 onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
             } else {
-                startActivity(new Intent(getApplicationContext(), QuestionActivity.class));
+                startActivity(new Intent(getApplicationContext(), StartActivity.class));
                 finish();
             }
         });

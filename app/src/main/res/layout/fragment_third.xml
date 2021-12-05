@@ -51,7 +51,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_marginHorizontal="8dp"
 
-                    android:fontFamily="@font/poppins_bold"
+                    android:fontFamily="@font/bold"
                     android:shadowColor="@color/fc_light"
                     android:shadowDx="2"
                     android:shadowDy="3"

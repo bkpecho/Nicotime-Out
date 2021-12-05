@@ -17,8 +17,8 @@ import java.util.Calendar;
 
 public class QuestionActivity extends AppCompatActivity {
 
-    private DatePickerDialog datePickerDialog;
-    private Button dateButton;
+/*    private DatePickerDialog datePickerDialog;
+    private Button dateButton;*/
     private Context context;
 
     @Override
@@ -26,9 +26,9 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.context = context;
         setContentView(R.layout.activity_question);
-        initDatePicker();
+/*        initDatePicker();
         dateButton = findViewById(R.id.datePickerButton);
-        dateButton.setText(getTodayDate());
+        dateButton.setText(getTodayDate());*/
         SharedPreferences preferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         String FirstTime = preferences.getString("FirstTimeInstallQuestions", "");
 
@@ -46,7 +46,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
-    @Override
+  /*  @Override
     public void onBackPressed() {
         moveTaskToBack(false);
     }
@@ -118,5 +118,5 @@ public class QuestionActivity extends AppCompatActivity {
 
         datePickerDialog.show();
 
-    }
+    }*/
 }

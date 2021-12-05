@@ -18,7 +18,7 @@
 
     <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
         <item name="android:colorAccent">@color/fc_green</item>
-        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:fontFamily">@font/medium</item>
     </style>
 
     <style name="MyToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Light">

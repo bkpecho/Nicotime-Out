@@ -18,7 +18,7 @@
         android:layout_margin="15dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/app_name"
-        tools:srcCompat="@drawable/intro_img_1" />
+        tools:srcCompat="@drawable/ic_img1_welcome" />
 
     <TextView
         android:id="@+id/textTitle"

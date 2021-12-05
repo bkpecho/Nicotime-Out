@@ -9,13 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NicotimeOut">
+        <activity
+            android:name=".userStart.StartActivity_first_popup"
+            android:parentActivityName=".userStart.StartActivity_first" />
+        <activity android:name=".userStart.StartActivity_first" />
+        <activity android:name=".userStart.StartActivity" />
         <activity android:name=".common.MainActivity" />
         <activity android:name=".user.UserProgress" />
         <activity android:name=".common.QuestionActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".common.SplashScreen">
             <intent-filter>
