@@ -10,6 +10,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nicotimeout.app.R;
+import com.nicotimeout.app.user.fifthFragment.fifthFragment;
+import com.nicotimeout.app.user.firstFragment.firstFragment;
 
 public class UserProgress extends AppCompatActivity {
 
@@ -25,8 +27,6 @@ public class UserProgress extends AppCompatActivity {
         bottomNav.setOnItemSelectedListener(navListener);
 
         if (savedInstanceState == null) {
-           /* getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
-                    new thirdFragment()).commit();*/
                 bottomNav.setSelectedItemId(R.id.thirdFragment);
 
 

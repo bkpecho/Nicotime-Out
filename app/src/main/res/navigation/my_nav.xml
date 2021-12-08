@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.nicotimeout.app.user.firstFragment"
+        android:name="com.nicotimeout.app.user.firstFragment.firstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" />
     <fragment

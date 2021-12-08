@@ -15,7 +15,7 @@ public class fourthFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Rehab Locations");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Quit Smoking Timeline");
 
 
         return inflater.inflate(R.layout.fragment_fourth, container, false);

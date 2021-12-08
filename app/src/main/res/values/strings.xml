@@ -19,7 +19,9 @@
     <string name="bot_menu_title1">Rewards</string>
     <string name="bot_menu_title2">Learn</string>
     <string name="bot_menu_title3">Progress</string>
-    <string name="bot_menu_title4">Rehab+</string>
+    <string name="bot_menu_title4">Timeline</string>
+    <string name="bot_menu_title5">Rehab+</string>
+
 
     <!--questions activity-->
     <string name="questions_header">Congratulations on your decision to quit smoking!</string>
@@ -48,7 +50,6 @@
     <string name="Clock">Clock</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="bot_menu_title5">Timeline</string>
     <string name="third_CigarettesSmoked">Cigarettes Smoked</string>
     <string name="third_MoneyWasted">Money Wasted</string>
     <string name="third_LifeLost">Life Lost</string>
@@ -65,5 +66,19 @@
         <item>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</item>
         <item>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</item>
         <item>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</item>
+    </string-array>
+
+    <string-array name="achievement_title">
+        <item>Road to Success</item>
+        <item>Wildfire</item>
+        <item>Champion</item>
+        <item>Overachiever</item>
+    </string-array>
+
+    <string-array name="achievement_description">
+        <item>Start your journey</item>
+        <item>Maintain a 5-day streak</item>
+        <item>Watch all multimedia presentations</item>
+        <item>Sample description</item>
     </string-array>
 </resources>

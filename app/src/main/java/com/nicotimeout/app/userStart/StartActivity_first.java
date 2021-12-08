@@ -14,6 +14,8 @@ public class StartActivity_first extends AppCompatActivity {
     String[] s1;
     String[] s2;
     int[] images = {R.drawable.start_learning, R.drawable.start_knowledge, R.drawable.start_book, R.drawable.start_launch};
+    /*
+    int[] videos = {R.raw.cig_vid_1, R.raw.cig_vid_2, R.raw.cig_vid_3, R.raw.cig_vid_4};*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
