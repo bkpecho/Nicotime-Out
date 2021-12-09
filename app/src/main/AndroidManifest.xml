@@ -12,15 +12,12 @@
         <activity
             android:name=".user.fifthFragment.fifthFragment_popup"
             android:parentActivityName=".user.fifthFragment.fifthFragment" />
-
         <activity
             android:name=".userStart.StartActivity_first_popup"
             android:parentActivityName=".userStart.StartActivity_first" />
-
         <activity
             android:name=".userStart.StartActivity_first"
             android:parentActivityName=".userStart.StartActivity" />
-
         <activity android:name=".userStart.StartActivity" />
         <activity android:name=".common.MainActivity" />
         <activity android:name=".user.UserProgress" />

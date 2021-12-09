@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_third" />
     <fragment
         android:id="@+id/fourthFragment"
-        android:name="com.nicotimeout.app.user.fourthFragment"
+        android:name="com.nicotimeout.app.user.fourthFragment.fourthFragment"
         android:label="fragment_fourth"
         tools:layout="@layout/fragment_fourth" />
 </navigation>

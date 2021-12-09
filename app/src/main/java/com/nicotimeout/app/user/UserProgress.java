@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.user.fifthFragment.fifthFragment;
 import com.nicotimeout.app.user.firstFragment.firstFragment;
+import com.nicotimeout.app.user.fourthFragment.fourthFragment;
 
 public class UserProgress extends AppCompatActivity {
 

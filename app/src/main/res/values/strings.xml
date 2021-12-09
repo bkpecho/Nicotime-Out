@@ -24,7 +24,7 @@
 
 
     <!--questions activity-->
-    <string name="questions_header">Congratulations on your decision to quit smoking!</string>
+    <string name="questions_header">Starting with the Basics</string>
     <string name="questions_when">When did you quit?</string>
     <string name="questions_select">SELECT DATE</string>
     <string name="questions_cig_smok_day">Cigarettes Smoked per Day</string>
@@ -33,7 +33,7 @@
     <string name="questions_sticks"><i>Ex. 20 sticks per day</i></string>
     <string name="questions_price"><i>Ex. ₱5.00 per piece</i></string>
     <string name="questions_years"><i>Ex. 8 years (estimated)</i></string>
-    <string name="questions_done">DONE</string>
+    <string name="questions_done">START MY JOURNEY</string>
 
     <!--fragment 3-->
     <string name="frag_third_day_number">Day 1</string>
@@ -55,17 +55,17 @@
     <string name="third_LifeLost">Life Lost</string>
 
     <string-array name="video_title">
-        <item>Video 1</item>
-        <item>Video 2</item>
-        <item>Video 3</item>
-        <item>Video 4</item>
+        <item>Cigarette</item>
+        <item>Cigarette Smoking</item>
+        <item>Health Effects</item>
+        <item>Addiction</item>
     </string-array>
 
     <string-array name="video_description">
-        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</item>
-        <item>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</item>
-        <item>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</item>
-        <item>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</item>
+        <item>What is Cigarette?</item>
+        <item>What is Cigarette Smoking?</item>
+        <item>Effects of Cigarette Smoking in our Body</item>
+        <item>What is Cigarette Addiction?</item>
     </string-array>
 
     <string-array name="achievement_title">
@@ -81,4 +81,13 @@
         <item>Watch all multimedia presentations</item>
         <item>Sample description</item>
     </string-array>
+
+    <string name="ac_1">Achievement 1</string>
+    <string name="ac_2">Achievement 2</string>
+    <string name="ac_3">Achievement 3</string>
+    <string name="ac_4">Achievement 4</string>
+    <string name="ac_5">Achievement 5</string>
+    <string name="ac_6">Achievement 6</string>
+    <string name="ac_7">Achievement 7</string>
+    <string name="ac_8">Achievement 8</string>
 </resources>

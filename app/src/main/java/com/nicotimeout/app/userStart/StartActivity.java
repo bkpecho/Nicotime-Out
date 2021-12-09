@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.nicotimeout.app.R;
+import com.nicotimeout.app.common.QuestionActivity;
 import com.nicotimeout.app.user.UserProgress;
 
 public class StartActivity extends AppCompatActivity implements View.OnClickListener {
@@ -36,7 +37,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(i);
                 break;
             case R.id.activity_start_cardview3:
-                i = new Intent(this, UserProgress.class);
+                i = new Intent(this, QuestionActivity.class);
                 startActivity(i);
                 break;
         }

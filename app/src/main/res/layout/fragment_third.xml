@@ -5,76 +5,71 @@
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    tools:context=".user.thirdFragment">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:context=".user.thirdFragment">
+        android:background="@color/fc_cream"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="180dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:layout_marginBottom="2dp"
-            app:cardBackgroundColor="@color/fc_cream"
-            app:cardElevation="8dp"
-            app:cardPreventCornerOverlap="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <FrameLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/fc_cream">
+                android:layout_marginBottom="2dp"
+                app:cardElevation="8dp">
 
-                <LinearLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/fc_green">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/ic_try2" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_try1"
-                        android:scaleType="fitXY" />
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/medium"
+                        android:shadowColor="@color/fc_light"
+                        android:shadowDx="2"
+                        android:shadowDy="3"
+                        android:shadowRadius="2"
+                        android:text="You are 18 days smoke free!"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
 
-                </LinearLayout>
+                </FrameLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:textAlignment="center"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginHorizontal="8dp"
-
-                    android:fontFamily="@font/bold"
-                    android:shadowColor="@color/fc_light"
-                    android:shadowDx="2"
-                    android:shadowDy="3"
-                    android:shadowRadius="2"
-                    android:text="You are 18 days smoke free!"
-                    android:textColor="@color/fc_green"
-                    android:textSize="18sp" />
-
-            </FrameLayout>
-
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
         <GridLayout
             android:id="@+id/fragment_third_grid"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:layout_below="@id/cardView"
-            android:layout_marginHorizontal="2dp"
+            android:layout_height="200dp"
             android:background="@color/fc_cream"
             android:columnCount="2"
-            android:rowCount="2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:padding="4dp"
+            android:rowCount="2">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
@@ -84,10 +79,7 @@
                 android:layout_column="0"
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="4dp"
-                android:layout_marginBottom="4dp"
+                android:layout_margin="4dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="2dp">
@@ -120,7 +112,6 @@
                         android:fontFamily="@font/regular"
                         android:text="@string/SmokeFree"
                         android:textAlignment="center"
-                        android:textColor="@color/fc_green"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -134,10 +125,7 @@
                 android:layout_column="1"
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="4dp"
+                android:layout_margin="4dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="2dp">
@@ -170,7 +158,6 @@
                         android:fontFamily="@font/regular"
                         android:text="@string/MoneySaved"
                         android:textAlignment="center"
-                        android:textColor="@color/fc_green"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -184,10 +171,7 @@
                 android:layout_column="0"
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="4dp"
-                android:layout_marginBottom="8dp"
+                android:layout_margin="4dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="2dp">
@@ -220,7 +204,6 @@
                         android:fontFamily="@font/regular"
                         android:text="@string/LifeRegained"
                         android:textAlignment="center"
-                        android:textColor="@color/fc_green"
                         android:textSize="14sp" />
 
                 </LinearLayout>
@@ -234,10 +217,7 @@
                 android:layout_column="1"
                 android:layout_columnWeight="1"
                 android:layout_gravity="fill"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_margin="4dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="8dp"
                 app:cardElevation="2dp">
@@ -270,247 +250,161 @@
                         android:fontFamily="@font/regular"
                         android:text="@string/CigarettesAvoided"
                         android:textAlignment="center"
-                        android:textColor="@color/fc_green"
                         android:textSize="14sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </GridLayout>
 
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/fragment_third_grid"
-            android:background="@color/fc_cream"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="2dp">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="fill"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="8dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="2dp">
+                android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/medium"
+                    android:text="During the period that you Smoked:"
+                    android:textSize="14sp" />
 
-                    <TextView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="24dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="24dp"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginBottom="16dp"
-                        android:fontFamily="@font/medium"
-                        android:text="During the period that you Smoked:"
-                        android:textColor="@color/fc_green"
-                        android:textSize="18sp" />
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_cigarette_third" />
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="24dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                        <ImageView
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/ic_cigarette_third" />
+                            android:layout_marginStart="32dp"
+                            android:fontFamily="@font/medium"
+                            android:gravity="center"
+                            android:text="15,337"
+                            android:textAlignment="center"
+                            android:textColor="@color/fc_green"
+                            android:textSize="18sp" />
 
-                        <LinearLayout
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="32dp"
-                                android:fontFamily="@font/medium"
-                                android:gravity="center"
-                                android:text="15,337"
-                                android:textAlignment="center"
-                                android:textColor="@color/fc_green"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="32dp"
-                                android:fontFamily="@font/regular"
-                                android:gravity="center"
-                                android:text="@string/third_CigarettesSmoked"
-                                android:textAlignment="center"
-                                android:textColor="@color/fc_green"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginVertical="16dp"
-                        android:layout_marginLeft="24dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/ic_wasted_money" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="32dp"
-                                android:fontFamily="@font/medium"
-                                android:gravity="center"
-                                android:text="₱76,685"
-                                android:textAlignment="center"
-                                android:textColor="@color/fc_green"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="32dp"
-                                android:fontFamily="@font/regular"
-                                android:gravity="center"
-                                android:text="@string/third_MoneyWasted"
-                                android:textAlignment="center"
-                                android:textColor="@color/fc_green"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginBottom="24dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/ic_time" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="32dp"
-                                android:fontFamily="@font/medium"
-                                android:gravity="center"
-                                android:text="15M 18d 06h"
-                                android:textAlignment="center"
-                                android:textColor="@color/fc_green"
-                                android:textSize="18sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="32dp"
-                                android:fontFamily="@font/regular"
-                                android:gravity="center"
-                                android:text="@string/third_LifeLost"
-                                android:textAlignment="center"
-                                android:textColor="@color/fc_green"
-                                android:textSize="14sp" />
-                        </LinearLayout>
+                            android:layout_marginStart="32dp"
+                            android:fontFamily="@font/regular"
+                            android:gravity="center"
+                            android:text="@string/third_CigarettesSmoked"
+                            android:textAlignment="center"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:text="Button" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="16dp"
+                    android:layout_marginStart="24dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:text="Button" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_wasted_money" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:text="Button" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:text="Button" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:fontFamily="@font/medium"
+                            android:gravity="center"
+                            android:text="₱76,685"
+                            android:textAlignment="center"
+                            android:textColor="@color/fc_green"
+                            android:textSize="18sp" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:text="Button" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:fontFamily="@font/regular"
+                            android:gravity="center"
+                            android:text="@string/third_MoneyWasted"
+                            android:textAlignment="center"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:text="Button" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:text="Button" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_time" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:text="Button" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:text="Button" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:fontFamily="@font/medium"
+                            android:gravity="center"
+                            android:text="15M 18d 06h"
+                            android:textAlignment="center"
+                            android:textColor="@color/fc_green"
+                            android:textSize="18sp" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="8dp"
-                android:text="Button" />
-
-        </LinearLayout>
-    </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:fontFamily="@font/regular"
+                            android:gravity="center"
+                            android:text="@string/third_LifeLost"
+                            android:textAlignment="center"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 </ScrollView>
