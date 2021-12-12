@@ -3,7 +3,7 @@
     <style name="Theme.NicotimeOut" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/fc_green</item>
-        <item name="colorPrimaryVariant">@color/fc_dark_theme</item>
+        <item name="colorPrimaryVariant">@color/main_red</item>
         <item name="colorOnPrimary">@color/fc_cream</item>
 
         <item name="android:textColorHint">@color/fc_light</item>

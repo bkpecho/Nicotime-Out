@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fc_cream"
+    android:background="@color/white"
     android:orientation="vertical"
     android:weightSum="3"
     tools:context=".user.firstFragment.firstFragment">
@@ -14,13 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/shape_fragment_header" />
+        android:background="@drawable/gradient_main_first" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:background="@color/fc_cream"
+        android:background="@color/white"
         android:padding="4dp">
 
         <GridLayout
@@ -50,13 +50,20 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="2"
-                        android:src="@drawable/ac_gold" />
+                        android:src="@drawable/ac_blastoff"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/ac_1" />
+                        android:text="@string/ac_1"
+                        android:fontFamily="@font/bold"
+                        android:textSize="18sp"
+                        android:shadowColor="@color/dead_blue"
+                        android:textColor="@color/main_blue"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -80,13 +87,20 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_weight="2"
-                        android:src="@drawable/ac_goal" />
+                        android:src="@drawable/ac_richman"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/ac_2" />
+                        android:text="@string/ac_2"
+                        android:fontFamily="@font/bold"
+                        android:textSize="18sp"
+                        android:shadowColor="@color/dead_blue"
+                        android:textColor="@color/main_blue"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -110,8 +124,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/ac_crown" />
+                        android:layout_weight="2"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -140,8 +153,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/ac_badge" />
+                        android:layout_weight="2" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -171,8 +183,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/ac_diamond" />
+                        android:layout_weight="2"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -201,8 +212,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/ac_flag" />
+                        android:layout_weight="2" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -232,8 +242,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/ac_celebration" />
+                        android:layout_weight="2" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -262,8 +271,7 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_weight="2"
-                        android:src="@drawable/ac_champagne" />
+                        android:layout_weight="2" />
 
                     <TextView
                         android:layout_width="wrap_content"

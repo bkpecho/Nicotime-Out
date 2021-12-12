@@ -82,8 +82,8 @@
         <item>Sample description</item>
     </string-array>
 
-    <string name="ac_1">Achievement 1</string>
-    <string name="ac_2">Achievement 2</string>
+    <string name="ac_1">Blast Off!</string>
+    <string name="ac_2">Rich Man</string>
     <string name="ac_3">Achievement 3</string>
     <string name="ac_4">Achievement 4</string>
     <string name="ac_5">Achievement 5</string>

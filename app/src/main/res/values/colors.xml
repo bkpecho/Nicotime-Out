@@ -9,24 +9,38 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="dark_gray">#A9A9A9</color>
-<!--
-
-   <color name="red_XD">#993441</color>
-    <color name="red_XD_80">#CC993441</color>
-    <color name="red_XD_25">#40993441</color>
-
-    <color name="pink_XD">#FFB8B1</color>
-    <color name="red_light_XD">#CC9AA1</color>
-    <color name="red_dark_XD">#4D1A21</color>
--->
 
     <!--final na to-->
-    <color name="fc_green">#4d7776</color>
+ <!--   <color name="fc_green">#4d7776</color>
     <color name="fc_dark_gradient">#273c3b</color>
     <color name="fc_dark_theme">#0f1818</color>
     <color name="fc_light">#b2c2c4</color>
     <color name="fc_cream">#f4efef</color>
     <color name="fc_blue">#2f2f40</color>
+    <color name="fc_pink">#fe6484</color>-->
+
+    <color name="fc_green">#30110d</color>
+    <color name="fc_dark_gradient">#273c3b</color>
+    <color name="fc_dark_theme">#0f1818</color>
+    <color name="fc_light">#efb5a3</color>
+    <color name="fc_cream">#722620</color>
+    <color name="fc_blue">#2f2f40</color>
     <color name="fc_pink">#fe6484</color>
 
+    <!--main colors-->
+    <color name="main_outline">#464a51</color>
+
+    <color name="dead_blue">#a3daff</color>
+    <color name="light_blue">#1ec0ff</color>
+    <color name="main_blue">#299cfc</color>
+
+    <color name="dead_yellow">#ede574</color>
+    <color name="light_yellow">#f9d423</color>
+    <color name="main_yellow">#f9b53d</color>
+
+    <color name="dead_red">#ff8b7b</color>
+    <color name="light_red">#ff6464</color>
+    <color name="main_red">#db3056</color>
+
+    <color name="transparent">#80000000</color>
 </resources>
