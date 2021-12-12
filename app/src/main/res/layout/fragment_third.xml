@@ -25,8 +25,7 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/gradient_main_third"
-                android:orientation="vertical">
+                android:background="@drawable/gradient_main_third">
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -39,19 +38,20 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
+                    android:gravity="bottom|center"
+                    android:layout_marginVertical="32dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/bold"
-                        android:shadowColor="@color/main_red"
+                        android:shadowColor="@color/dead_red"
                         android:shadowDx="1"
                         android:shadowDy="1"
                         android:shadowRadius="1"
                         android:text="Non-smoker since"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="18sp" />
 
                     <LinearLayout
@@ -77,7 +77,7 @@
                                 android:shadowDy="1"
                                 android:shadowRadius="1"
                                 android:text="03"
-                                android:textColor="@color/white"
+                                android:textColor="@color/main_red"
                                 android:textSize="24sp" />
 
                             <TextView
@@ -104,12 +104,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/main_red"
+                                android:shadowColor="@color/dead_red"
                                 android:shadowDx="1"
                                 android:shadowDy="1"
                                 android:shadowRadius="1"
                                 android:text="08"
-                                android:textColor="@color/white"
+                                android:textColor="@color/main_red"
                                 android:textSize="24sp" />
 
                             <TextView
@@ -136,12 +136,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/main_red"
+                                android:shadowColor="@color/dead_red"
                                 android:shadowDx="1"
                                 android:shadowDy="1"
                                 android:shadowRadius="1"
                                 android:text="15"
-                                android:textColor="@color/white"
+                                android:textColor="@color/main_red"
                                 android:textSize="24sp" />
 
                             <TextView
@@ -168,12 +168,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/main_red"
+                                android:shadowColor="@color/dead_red"
                                 android:shadowDx="1"
                                 android:shadowDy="1"
                                 android:shadowRadius="1"
                                 android:text="15"
-                                android:textColor="@color/white"
+                                android:textColor="@color/main_red"
                                 android:textSize="24sp" />
 
                             <TextView
