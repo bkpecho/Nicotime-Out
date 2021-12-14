@@ -13,7 +13,7 @@ public class StartActivity_first extends AppCompatActivity {
     RecyclerView recyclerView;
     String[] s1;
     String[] s2;
-    int[] images = {R.drawable.start_learning, R.drawable.start_knowledge, R.drawable.start_book, R.drawable.start_launch};
+    int[] images = {R.drawable.start_cigarette, R.drawable.start_smoking, R.drawable.start_health, R.drawable.ac_overcoming};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

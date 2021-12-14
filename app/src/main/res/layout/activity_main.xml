@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fc_cream"
+    android:background="@color/main_bg"
     tools:context=".common.MainActivity">
 
     <Button
@@ -12,11 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/question_select_date_roundradius"
-        android:fontFamily="@font/regular"
+        android:fontFamily="@font/bold"
         android:textColor="@color/white"
-        android:textSize="15sp"
+        android:textSize="18sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -4,149 +4,183 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fc_cream"
+    android:background="@color/white"
     android:gravity="center_vertical"
     android:orientation="vertical"
-    android:weightSum="3"
     tools:context=".userStart.StartActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="2"
-        android:backgroundTint="@color/fc_green"
-        app:cardElevation="8dp">
+        android:backgroundTint="@color/dead_blue"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp">
 
-        <ImageView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_try2" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nicotime-Out! (Dashboard)"
-            android:layout_gravity="bottom"
-            android:textColor="@color/white"
-            android:fontFamily="@font/medium"
-            android:textSize="18sp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginVertical="12dp"/>
+            android:background="@drawable/shape_bg_white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/fragment_fourth_imageview"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/idea" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:fontFamily="@font/bold"
+                    android:text="My Dashboard"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </FrameLayout>
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="8dp"
-        android:layout_weight="1"
-        android:background="@color/fc_cream"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/shape_bg_deadblue"
         android:orientation="vertical"
-        android:weightSum="3">
+        android:paddingHorizontal="12dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/activity_start_cardview1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/dead_blue"
             android:foreground="?android:attr/selectableItemBackgroundBorderless"
-            app:cardCornerRadius="18dp">
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:weightSum="2">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_blue"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:src="@drawable/start_book" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:background="@color/white"
+                        android:padding="12dp"
+                        android:src="@drawable/ac_badeffects" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/medium"
-                    android:paddingHorizontal="16dp"
-                    android:text="Cigarette"
-                    android:textColor="@color/fc_green"
-                    android:textSize="18sp" />
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/bold"
+                        android:gravity="center_horizontal"
+                        android:text="Bad Effects of Cigarette Smoking"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/activity_start_cardview2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/main_blue"
             android:foreground="?android:attr/selectableItemBackgroundBorderless"
-            app:cardCornerRadius="18dp">
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:weightSum="2">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_blue"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:src="@drawable/start_learning" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:background="@color/white"
+                        android:padding="12dp"
+                        android:src="@drawable/ac_guide" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/medium"
-                    android:paddingHorizontal="16dp"
-                    android:text="Addiction"
-                    android:textColor="@color/fc_green"
-                    android:textSize="18sp" />
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/bold"
+                        android:gravity="center_horizontal"
+                        android:text="Quit Smoking Guide"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/activity_start_cardview3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_margin="4dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/main_blue"
             android:foreground="?android:attr/selectableItemBackgroundBorderless"
-            app:cardCornerRadius="18dp">
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:weightSum="2">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_blue"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:src="@drawable/start_launch" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:background="@color/white"
+                        android:padding="12dp"
+                        android:src="@drawable/ac_progresstracker" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/medium"
-                    android:paddingHorizontal="16dp"
-                    android:text="My Journey"
-                    android:textColor="@color/fc_green"
-                    android:textSize="18sp" />
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="3"
+                        android:fontFamily="@font/bold"
+                        android:gravity="center_horizontal"
+                        android:shadowColor="@color/dead_blue"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:text="My Journey"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 </LinearLayout>

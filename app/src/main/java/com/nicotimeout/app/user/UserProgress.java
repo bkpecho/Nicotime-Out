@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
 import androidx.appcompat.widget.Toolbar;
 
@@ -13,6 +17,7 @@ import com.nicotimeout.app.R;
 import com.nicotimeout.app.user.fifthFragment.fifthFragment;
 import com.nicotimeout.app.user.firstFragment.firstFragment;
 import com.nicotimeout.app.user.fourthFragment.fourthFragment;
+import com.nicotimeout.app.userStart.StartActivity;
 
 public class UserProgress extends AppCompatActivity {
 
@@ -30,13 +35,12 @@ public class UserProgress extends AppCompatActivity {
         if (savedInstanceState == null) {
                 bottomNav.setSelectedItemId(R.id.thirdFragment);
 
-
         }
     }
-
     @Override
     public void onBackPressed() {
-        moveTaskToBack(true);
+        Intent i = new Intent(this, StartActivity.class);
+        startActivity(i);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -47,9 +51,6 @@ public class UserProgress extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.firstFragment:
                         selectedFragment = new firstFragment();
-                        break;
-                    case R.id.secondFragment:
-                        selectedFragment = new secondFragment();
                         break;
                     case R.id.thirdFragment:
                         selectedFragment = new thirdFragment();

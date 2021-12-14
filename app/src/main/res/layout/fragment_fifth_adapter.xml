@@ -4,11 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_fifth_adapter_mainLayout"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="1dp"
+        android:layout_marginBottom="1dp"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="0dp"
         android:foreground="?android:attr/selectableItemBackgroundBorderless"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -16,15 +21,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="16dp"
-            android:weightSum="2">
+            android:layout_margin="8dp">
 
             <ImageView
                 android:id="@+id/fragment_fifth_imageView"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
 
@@ -33,10 +37,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginHorizontal="8dp"
+                android:layout_marginHorizontal="16dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/regular"
+                android:fontFamily="@font/medium"
+                android:shadowColor="@color/dead_red"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="1"
                 android:text="TextView"
+                android:textColor="@color/main_red"
                 android:textSize="18sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

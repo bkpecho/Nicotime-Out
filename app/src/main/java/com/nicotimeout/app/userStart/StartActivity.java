@@ -5,7 +5,10 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
+import android.widget.Toast;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.common.QuestionActivity;
@@ -23,6 +26,11 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         cv1.setOnClickListener(this);
         cv2.setOnClickListener(this);
         cv3.setOnClickListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 
     public void onClick(View v) {

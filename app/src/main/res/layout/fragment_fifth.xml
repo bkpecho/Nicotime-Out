@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fc_cream"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".user.fifthFragment.fifthFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:background="@drawable/gradient_main_third">
+
+        <ImageView
+            android:id="@+id/fragment_fourth_imageview"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ac_map"/>
+
+        <TextView
+            android:id="@+id/fragment_fourth_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:text="Smoking Rehabilitation Centers"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fifthFragment_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</FrameLayout>
+        android:layout_height="0dp"
+        android:layout_weight="3" />
+</LinearLayout>

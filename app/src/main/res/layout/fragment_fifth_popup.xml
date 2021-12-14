@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fc_cream"
+    android:background="@color/white"
+    android:padding="32dp"
     tools:context=".user.fifthFragment.fifthFragment_popup">
 
     <LinearLayout
@@ -12,7 +13,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="100dp"
-        android:padding="16dp"
         android:weightSum="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,16 +31,26 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/medium"
+            android:textColor="@color/main_red"
+            android:shadowColor="@color/dead_red"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
             android:gravity="center"
             android:text="TextView"
-            android:textSize="18sp" />
+            android:textSize="24sp" />
         <TextView
             android:id="@+id/fragment_fifth_textView2_popup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textColor="@color/main_blue"
+            android:shadowColor="@color/dead_blue"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
             android:fontFamily="@font/regular"
             android:text="TextView"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

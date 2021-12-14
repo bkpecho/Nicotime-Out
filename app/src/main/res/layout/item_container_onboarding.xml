@@ -7,7 +7,7 @@
     android:layout_marginEnd="30dp"
     android:layout_marginBottom="50dp"
     android:gravity="center"
-    android:background="@color/fc_cream"
+    android:background="@color/main_bg"
     android:orientation="vertical"
     android:padding="20dp">
 
@@ -25,7 +25,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="@color/fc_green"
+        android:textColor="@color/main_red"
+        android:shadowColor="@color/dead_red"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
         android:fontFamily="@font/bold"
         android:textSize="24sp" />
 
@@ -34,7 +38,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="@color/fc_green"
+        android:textColor="@color/main_blue"
+        android:shadowColor="@color/dead_blue"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
         android:fontFamily="@font/medium"
         android:textSize="18sp" />
 

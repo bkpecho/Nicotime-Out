@@ -8,13 +8,12 @@
     android:background="@color/white"
     android:fillViewport="true"
     android:orientation="vertical"
-    android:weightSum="3"
     tools:context=".user.thirdFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="2">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -38,21 +37,21 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="bottom|center"
-                    android:layout_marginVertical="32dp"
+                    android:gravity="center_horizontal|center_vertical"
                     android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ac_nonsmokersince" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/bold"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
                         android:text="Non-smoker since"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="14sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -84,13 +83,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="days"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -116,13 +111,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="hours"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -148,13 +139,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="mins"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -180,13 +167,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="sec"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="14sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -199,8 +182,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="vertical">
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:paddingVertical="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -213,60 +197,6 @@
                 android:columnCount="3"
                 android:rowCount="2">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_rowWeight="1"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="8dp"
-                        android:weightSum="3">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:contentDescription="@string/PesoCurrency"
-                            android:src="@drawable/third_fragment_moneysaved" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/bold"
-                            android:gravity="center"
-                            android:shadowColor="@color/dead_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
-                            android:text="@string/total_MoneySaved"
-                            android:textColor="@color/main_red"
-                            android:textSize="14sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/medium"
-                            android:shadowColor="@color/main_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
-                            android:text="@string/MoneySaved"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
@@ -311,11 +241,58 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/medium"
-                            android:shadowColor="@color/main_red"
+                            android:text="@string/CigarettesAvoided"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:weightSum="3">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:contentDescription="@string/PesoCurrency"
+                            android:src="@drawable/third_fragment_moneysaved" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/bold"
+                            android:gravity="center"
+                            android:shadowColor="@color/dead_red"
                             android:shadowDx="1"
                             android:shadowDy="1"
                             android:shadowRadius="1"
-                            android:text="@string/CigarettesAvoided"
+                            android:text="@string/total_MoneySaved"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:text="@string/MoneySaved"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="14sp" />
@@ -366,10 +343,6 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/medium"
-                            android:shadowColor="@color/main_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
                             android:text="@string/LifeRegained"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -428,10 +401,6 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/medium"
-                            android:shadowColor="@color/main_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
                             android:text="@string/third_CigarettesSmoked"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -483,10 +452,6 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/medium"
-                            android:shadowColor="@color/main_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
                             android:text="@string/third_MoneyWasted"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -538,10 +503,6 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/medium"
-                            android:shadowColor="@color/main_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
                             android:text="@string/third_LifeLost"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -552,4 +513,5 @@
             </GridLayout>
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
