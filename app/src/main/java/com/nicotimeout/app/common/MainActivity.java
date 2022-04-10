@@ -7,10 +7,14 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.userStart.StartActivity;
 import com.nicotimeout.app.userStart.StartActivity_first;
@@ -32,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         SharedPreferences preferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
-        String FirstTime = preferences.getString("FirstTimeInstall","");
+        String FirstTime = preferences.getString("FirstTimeInstall", "");
 
-        if(FirstTime.equals("Yes")){
+        if (FirstTime.equals("Yes")) {
             Intent intent = new Intent(MainActivity.this, StartActivity.class);
             startActivity(intent);
-        }else{
+        } else {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString("FirstTimeInstall", "Yes");
             editor.apply();
@@ -70,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     private void setupOnboardingItems() {
@@ -131,9 +134,9 @@ public class MainActivity extends AppCompatActivity {
                 );
             }
         }
-        if(index == onboardingAdapter.getItemCount()-1){
+        if (index == onboardingAdapter.getItemCount() - 1) {
             buttonOnboardingAction.setText("Start");
-        }else{
+        } else {
             buttonOnboardingAction.setText("Next");
         }
     }
