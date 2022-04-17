@@ -2,16 +2,16 @@ package com.nicotimeout.app.database;
 
 public class UserModel {
     public int user_id;
-    public int quit_date;
+    public String quit_date;
     public int cig_per_day;
     public int cig_price;
     public int cig_years;
 
     //generators
 
-    public UserModel(int user_id, int cig_per_day, int cig_price, int cig_years) {
+    public UserModel(int user_id, String quit_date, int cig_per_day, int cig_price, int cig_years) {
         this.user_id = user_id;
-        //this.quit_date = quit_date;
+        this.quit_date = quit_date;
         this.cig_per_day = cig_per_day;
         this.cig_price = cig_price;
         this.cig_years = cig_years;
@@ -33,9 +33,6 @@ public class UserModel {
                 '}';
     }
 
-
-    //getters and setters
-
     public int getUser_id() {
         return user_id;
     }
@@ -44,11 +41,11 @@ public class UserModel {
         this.user_id = user_id;
     }
 
-    public int getQuit_date() {
+    public String getQuit_date() {
         return quit_date;
     }
 
-    public void setQuit_date(int quit_date) {
+    public void setQuit_date(String quit_date) {
         this.quit_date = quit_date;
     }
 

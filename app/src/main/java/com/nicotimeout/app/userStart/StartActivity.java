@@ -8,17 +8,22 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.common.QuestionActivity;
 import com.nicotimeout.app.user.UserProgress;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+
 public class StartActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
         CardView cv1 = findViewById(R.id.activity_start_cardview1);
         CardView cv2 = findViewById(R.id.activity_start_cardview2);
         CardView cv3 = findViewById(R.id.activity_start_cardview3);
@@ -26,6 +31,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         cv1.setOnClickListener(this);
         cv2.setOnClickListener(this);
         cv3.setOnClickListener(this);
+
     }
 
     @Override
