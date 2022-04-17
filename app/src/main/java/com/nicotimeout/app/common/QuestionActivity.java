@@ -1,13 +1,20 @@
 package com.nicotimeout.app.common;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nicotimeout.app.R;
@@ -15,11 +22,20 @@ import com.nicotimeout.app.database.DatabaseHelper;
 import com.nicotimeout.app.database.UserModel;
 import com.nicotimeout.app.user.UserProgress;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+
 public class QuestionActivity extends AppCompatActivity {
 
     //references to button and other controls
     Button question_button;
-    EditText edit_questions_cig_smok_day, edit_questions_cig_price_piece, edit_questions_years_smoking;
+
+    EditText edit_questions_cig_smok_day,
+            edit_questions_cig_price_piece,
+            edit_questions_years_smoking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +43,7 @@ public class QuestionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_question);
 
         question_button = findViewById(R.id.question_button);
+
         edit_questions_cig_smok_day = findViewById(R.id.edit_questions_cig_smok_day);
         edit_questions_cig_price_piece = findViewById(R.id.edit_questions_cig_price_piece);
         edit_questions_years_smoking = findViewById(R.id.edit_questions_years_smoking);
@@ -34,6 +51,12 @@ public class QuestionActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         String FirstTime = preferences.getString("FirstTimeInstallQuestions", "");
 
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+1:00"));
+        Date currentLocalTime = calendar.getTime();
+        DateFormat date = new SimpleDateFormat("dd/M/yyyy hh:mm:ss");
+        date.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
+
+        String localTime = date.format(currentLocalTime);
 
         if (FirstTime.equals("Yes")) {
             Intent intent = new Intent(QuestionActivity.this, UserProgress.class);
@@ -49,28 +72,60 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                UserModel userModel;
-                try {
-                    userModel = new UserModel(-1,
-                            Integer.parseInt(edit_questions_cig_smok_day.getText().toString()),
-                            Integer.parseInt(edit_questions_cig_price_piece.getText().toString()),
-                            Integer.parseInt(edit_questions_years_smoking.getText().toString()));
+                String editTxt1 = edit_questions_cig_smok_day.getText().toString();
+                String editTxt2 = edit_questions_cig_price_piece.getText().toString();
+                String editTxt3 = edit_questions_years_smoking.getText().toString();
 
-                    Toast.makeText(QuestionActivity.this, userModel.toString(), Toast.LENGTH_SHORT).show();
+                if (editTxt1.isEmpty() || editTxt2.isEmpty() || editTxt3.isEmpty()) {
 
-                    Intent intent = new Intent(QuestionActivity.this, UserProgress.class);
-                    QuestionActivity.this.startActivity(intent);
+                    AlertDialog alertDialog = new AlertDialog.Builder(QuestionActivity.this).create();
+                    alertDialog.setTitle("Alert");
+                    alertDialog.setMessage("Some fields are empty");
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            });
+                    alertDialog.show();
 
-                } catch (Exception e) {
-                    Toast.makeText(QuestionActivity.this, "error", Toast.LENGTH_SHORT).show();
-                    userModel = new UserModel(-1,0,0,0);
+                } else {
+                    UserModel userModel = null;
+                    try {
+                        userModel = new UserModel(-1,
+                                localTime,
+                                Integer.parseInt(editTxt1),
+                                Integer.parseInt(editTxt2),
+                                Integer.parseInt(editTxt3));
+
+                        Toast.makeText(QuestionActivity.this, userModel.toString(), Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(QuestionActivity.this, UserProgress.class);
+                        QuestionActivity.this.startActivity(intent);
+
+
+                    } catch (Exception e) {
+
+                    }
+                    DatabaseHelper databaseHelper = new DatabaseHelper(QuestionActivity.this);
+                    databaseHelper.addOne(userModel);
+
                 }
-                DatabaseHelper databaseHelper = new DatabaseHelper(QuestionActivity.this);
-                boolean success = databaseHelper.addOne(userModel);
-                Toast.makeText(QuestionActivity.this, "Success", Toast.LENGTH_SHORT).show();
-
             }
         });
+//        Calendar calendar = Calendar.getInstance();
+//        String CurrentDate = DateFormat.getDateInstance().format(calendar.getTime());
+//
+//        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+1:00"));
+//        Date currentLocalTime = calendar.getTime();
+//        DateFormat date = new SimpleDateFormat("yyMMddHHmmss");
+//        date.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
+//
+//        String localTime = date.format(currentLocalTime);
+//
+//
+//        TextView textviewDate = (TextView) view.findViewById(R.id.dateTest);
+//        textviewDate.setText(localTime);
 
     }
 }
