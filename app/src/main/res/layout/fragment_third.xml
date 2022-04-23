@@ -76,7 +76,7 @@
                                 android:shadowDx="1"
                                 android:shadowDy="1"
                                 android:shadowRadius="1"
-                                android:text="03"
+                                android:text="0"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
 
@@ -105,7 +105,7 @@
                                 android:shadowDx="1"
                                 android:shadowDy="1"
                                 android:shadowRadius="1"
-                                android:text="08"
+                                android:text="0"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
 
@@ -134,7 +134,7 @@
                                 android:shadowDx="1"
                                 android:shadowDy="1"
                                 android:shadowRadius="1"
-                                android:text="15"
+                                android:text="0"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
 
@@ -163,7 +163,7 @@
                                 android:shadowDx="1"
                                 android:shadowDy="1"
                                 android:shadowRadius="1"
-                                android:text="15"
+                                android:text="00"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
 
@@ -227,6 +227,7 @@
                             android:src="@drawable/third_fragment_cigarettesavoided" />
 
                         <TextView
+                            android:id="@+id/cigarettesAvoided"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
@@ -278,6 +279,7 @@
                             android:src="@drawable/third_fragment_moneysaved" />
 
                         <TextView
+                            android:id="@+id/moneySaved"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
@@ -329,6 +331,7 @@
                             android:src="@drawable/third_fragment_liferegained" />
 
                         <TextView
+                            android:id="@+id/lifeRegained"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
@@ -397,7 +400,7 @@
                             android:shadowDx="1"
                             android:shadowDy="1"
                             android:shadowRadius="1"
-                            android:text="15,337"
+                            android:text="0"
                             android:textColor="@color/main_red"
                             android:textSize="14sp" />
 
@@ -449,7 +452,7 @@
                             android:shadowDx="1"
                             android:shadowDy="1"
                             android:shadowRadius="1"
-                            android:text="₱76,685"
+                            android:text="₱0"
                             android:textColor="@color/main_red"
                             android:textSize="14sp" />
 
@@ -519,10 +522,9 @@
                 </androidx.cardview.widget.CardView>
             </GridLayout>
             <Button
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/btnClickMe"
-                android:text="click me"
-                android:layout_width="200dp"
+                android:layout_gravity="center"
+                android:id="@+id/btnClick"
+                android:layout_width="250dp"
                 android:layout_height="100dp"/>
         </LinearLayout>
     </ScrollView>

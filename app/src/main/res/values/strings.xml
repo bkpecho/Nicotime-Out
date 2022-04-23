@@ -41,9 +41,9 @@
     <string name="total_SmokeFree">00:00:00</string>
     <string name="MoneySaved">Money Saved</string>
     <string name="total_MoneySaved">₱00.00</string>
-    <string name="total_LifeRegained">00:06:00</string>
+    <string name="total_LifeRegained">00:00:00</string>
     <string name="LifeRegained">Life Regained</string>
-    <string name="total_CigarettesAvoided">18</string>
+    <string name="total_CigarettesAvoided">0</string>
     <string name="CigarettesAvoided">Cigarettes Avoided</string>
     <string name="Flag">Flag</string>
     <string name="PesoCurrency">Peso Currency</string>
@@ -53,6 +53,8 @@
     <string name="third_CigarettesSmoked">Cigarettes Smoked</string>
     <string name="third_MoneyWasted">Money Wasted</string>
     <string name="third_LifeLost">Life Lost</string>
+    <string name="PesoSign">₱</string>
+    <string name="moneyWasted">%1$s%2$d</string>
 
     <string-array name="video_title">
         <item>Cigarette</item>

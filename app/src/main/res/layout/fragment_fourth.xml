@@ -83,13 +83,19 @@
                         android:textSize="14sp" />
 
                     <ProgressBar
-                        android:id="@+id/progressBar_1"
+                        android:id="@+id/progress_20mins"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:progress="90"
+                        android:progress="0"
+                        android:max="100"
                         android:progressDrawable="@drawable/custom_progress_bg" />
+
+                    <Button
+                        android:id="@+id/btnClick"
+                        android:layout_width="250dp"
+                        android:layout_height="100dp"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -130,14 +136,14 @@
                         android:textSize="14sp" />
 
                     <ProgressBar
-                        android:id="@+id/progressBar_2"
+                        android:id="@+id/progress_8hrs"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:progress="10"
+                        android:progress="0"
+                        android:max="100"
                         android:progressDrawable="@drawable/custom_progress_bg" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -177,12 +183,13 @@
                         android:textSize="14sp" />
 
                     <ProgressBar
-                        android:id="@+id/progressBar_3"
+                        android:id="@+id/progress_24hrs"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:progress="5"
+                        android:progress="0"
+                        android:max="100"
                         android:progressDrawable="@drawable/custom_progress_bg" />
 
                 </LinearLayout>
@@ -224,12 +231,13 @@
                         android:textSize="14sp" />
 
                     <ProgressBar
-                        android:id="@+id/progressBar_4"
+                        android:id="@+id/progress_48hrs"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:progress="3"
+                        android:progress="0"
+                        android:max="100"
                         android:progressDrawable="@drawable/custom_progress_bg" />
 
                 </LinearLayout>
@@ -284,12 +292,61 @@
                         android:textSize="14sp" />
 
                     <ProgressBar
-                        android:id="@+id/progressBar_5"
+                        android:id="@+id/progress_72hrs"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:progress="1"
+                        android:progress="0"
+                        android:max="100"
+                        android:progressDrawable="@drawable/custom_progress_bg" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:shadowColor="@color/dead_red"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:text="One week after your last cigarette"
+                        android:textColor="@color/main_red"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/regular"
+                        android:shadowColor="@color/dead_blue"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:text="You will notice a reduction in the number of daily nicotine cravings experienced."
+                        android:textColor="@color/main_blue"
+                        android:textSize="14sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_1week"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:progress="0"
+                        android:max="100"
                         android:progressDrawable="@drawable/custom_progress_bg" />
 
                 </LinearLayout>
