@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.nicotimeout.app.user.thirdFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,7 +53,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
 
         } else {
-
             return true;
         }
 
@@ -64,44 +65,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public Cursor getDataDate() {
+        String queryString = "SELECT quit_date FROM " + USER_TABLE;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString, null);
+        return cursor;
+    }
 
 
-    /*  public ArrayList<UserModel> getEveryone() {
-          // on below line we are creating a new array list.
-          ArrayList<UserModel> returnList = new ArrayList<>();
-
-          // on below line we are creating a
-          // database for reading our database.
-          SQLiteDatabase db = this.getReadableDatabase();
-
-          //query for getting all data
-          String queryString = "SELECT * FROM " + USER_TABLE;
-          // on below line we are creating a cursor with query to read data from database.
-          Cursor cursor = db.rawQuery(queryString, null);
-
-
-
-          // moving our cursor to first position.
-          if (cursor.moveToFirst()) {
-              do {
-                  // on below line we are adding the data from cursor to our array list.
-                  //(int user_id, String quit_date, int cig_per_day, int cig_price, int cig_years)
-                  int user_id = cursor.getInt(0);
-                  String quit_date = cursor.getString(1);
-                  int cig_per_day = cursor.getInt(2);
-                  int cig_price = cursor.getInt(3);
-                  int cig_years = cursor.getInt(4);
-
-              } while (cursor.moveToNext());
-          } else {
-
-          }
-          // at last closing our cursor
-          // and returning our array list.
-          cursor.close();
-  //        db.close();
-          return returnList;
-      }*/
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         String deleteTableStatement = ("DROP TABLE IF EXISTS " + USER_TABLE);
@@ -109,39 +80,3 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 }
-
-//    public List<UserModel> getEveryone() {
-//        List<UserModel> returnList = new ArrayList<>();
-//
-//        //get data from the database
-//
-//        String queryString = " SELECT * FROM " + USER_TABLE;
-//
-//        SQLiteDatabase db = this.getReadableDatabase();
-//
-//        Cursor cursor = db.rawQuery(queryString, null);
-//
-//        if (cursor.moveToFirst()) {
-//            do {
-//                int USERID = cursor.getInt(0);
-//                String QUIT_DATE = cursor.getString(1);
-//                int CIG_PER_DAY = cursor.getInt(2);
-//                int CIG_PRICE = cursor.getInt(3);
-//                int CIG_YEARS = cursor.getInt(4);
-//
-//                UserModel newUserModel = new UserModel(
-//                        USERID,QUIT_DATE, CIG_PER_DAY, CIG_PRICE, CIG_YEARS);
-//                returnList.add(newUserModel);
-//            } while (cursor.moveToFirst());
-//
-//        } else {
-//            //failure doesn't do anything
-//        }
-//
-//        //closing what need to be closed haha
-//        cursor.close();
-//        db.close();
-//        return returnList;
-//
-//    }
-//}

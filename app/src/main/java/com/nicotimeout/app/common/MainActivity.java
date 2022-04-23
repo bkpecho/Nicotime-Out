@@ -26,6 +26,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private OnboardingAdapter onboardingAdapter;
     private LinearLayout layoutOnboardingIndicators;
     private Button buttonOnboardingAction;
