@@ -1,7 +1,11 @@
 package com.nicotimeout.app.user;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,29 +36,43 @@ import java.util.TimeZone;
 
 
 public class thirdFragment extends Fragment {
-
     TextView fragment_third_days,
             fragment_third_hours,
             fragment_third_mins,
             fragment_third_secs,
             cigarettesAvoided,
             moneySaved,
-            lifeRegained,
+            lifeRegained_days,
+            lifeRegained_hours,
+            lifeRegained_minutes,
             cigarettesSmoked,
             moneyWasted,
-            lifeLost;
+            lifeLost_days,
+            lifeLost_hours,
+            lifeLost_minutes;
 
 
     long data_cigarettesAvoided;
+    double data_cigarettesAvoided_double;
     double progress_cigarettesAvoided;
 
     double data_moneySaved;
     double progress_moneySaved;
 
-    long data_lifeRegained;
+    long progress_lifeRegained_computation;
+    double progress_lifeRegained_computation_minutes;
+    long progress_lifeRegained_days;
+    long progress_lifeRegained_hours;
+    long progress_lifeRegained_minutes;
+
     long data_cigarettesSmoked;
     long data_moneyWasted;
-    long data_lifeLost;
+
+    long progress_lifeLost_computation;
+    long progress_lifeLost_computation_minutes;
+    long progress_lifeLost_days;
+    long progress_lifeLost_hours;
+    long progress_lifeLost_minutes;
 
     long secondsInMilli;
     long minutesInMilli;
@@ -83,18 +102,31 @@ public class thirdFragment extends Fragment {
     Cursor cursor;
 
     DatabaseHelper databaseHelper;
+    Dialog dialog;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         View view = inflater.inflate(R.layout.fragment_third, container, false);
 
-        cigarettesSmoked = view.findViewById(R.id.cigarettesSmoked);
-        moneyWasted = view.findViewById(R.id.moneyWasted);
-        lifeLost = view.findViewById(R.id.lifeLost);
+        dialog = new Dialog(getActivity());
+
         cigarettesAvoided = view.findViewById(R.id.cigarettesAvoided);
         moneySaved = view.findViewById(R.id.moneySaved);
-        lifeRegained = view.findViewById(R.id.lifeRegained);
+
+        /*lifeRegained*/
+        lifeRegained_days = view.findViewById(R.id.lifeRegained_days);
+        lifeRegained_hours = view.findViewById(R.id.lifeRegained_hours);
+        lifeRegained_minutes = view.findViewById(R.id.lifeRegained_minutes);
+
+        cigarettesSmoked = view.findViewById(R.id.cigarettesSmoked);
+        moneyWasted = view.findViewById(R.id.moneyWasted);
+
+        /*lifeLost*/
+        lifeLost_days = view.findViewById(R.id.lifeLost_days);
+        lifeLost_hours = view.findViewById(R.id.lifeLost_hours);
+        lifeLost_minutes = view.findViewById(R.id.lifeLost_minutes);
+
 
         fragment_third_days = view.findViewById(R.id.fragment_third_days);
         fragment_third_hours = view.findViewById(R.id.fragment_third_hours);
@@ -112,7 +144,7 @@ public class thirdFragment extends Fragment {
             public void run() {
                 try {
                     while (!Thread.currentThread().isInterrupted()) {
-                        Thread.sleep(1000);
+                        Thread.sleep(100);
                         if (getActivity() == null)
                             return;
                         getActivity().runOnUiThread(() -> {
@@ -125,6 +157,7 @@ public class thirdFragment extends Fragment {
 
                                 if (databaseHelper == null) {
                                     databaseHelper = new DatabaseHelper(getActivity());
+
                                 }
                                 // DatabaseHelper databaseHelper = new DatabaseHelper(thirdFragment.this);
                                 cursor = databaseHelper.getData();
@@ -165,13 +198,14 @@ public class thirdFragment extends Fragment {
                                             /*cigarettesAvoided*/
                                             progress_cigarettesAvoided = Double.parseDouble(cig_per_day) / 24;
                                             data_cigarettesAvoided = (long) (rawElapsedHours * progress_cigarettesAvoided);
+                                            data_cigarettesAvoided_double = rawElapsedHours * progress_cigarettesAvoided;
                                             //roundedProgress_data_cigarettesAvoided = Math.round(data_cigarettesAvoided);
                                             if (isAdded()) {
                                                 String ca_number = String.valueOf(data_cigarettesAvoided);
                                                 double ca_amount = Double.parseDouble(ca_number);
                                                 DecimalFormat ca_formatter = new DecimalFormat("#,###");
                                                 String ca_formatted = ca_formatter.format(ca_amount);
-                                                cigarettesAvoided.setText(ca_formatted);
+                                                cigarettesAvoided.setText(String.valueOf(data_cigarettesAvoided));
                                             }
 
                                             /*moneySaved*/
@@ -185,16 +219,38 @@ public class thirdFragment extends Fragment {
                                                 moneySaved.setText(ms_formatted);
                                             }
 
-                                            /*moneyWasted*/
-                                            data_moneyWasted = data_cigarettesSmoked * Long.parseLong(cig_price);
+                                            /*lifeRegained*/
+                                            progress_lifeRegained_computation = data_cigarettesAvoided * 11;
+                                            progress_lifeRegained_computation_minutes = data_cigarettesAvoided_double * 11;
+
+                                            progress_lifeRegained_days = progress_lifeRegained_computation / 24 / 60;
+                                            progress_lifeRegained_hours = progress_lifeRegained_computation / 60 % 24;
+                                            progress_lifeRegained_minutes = Math.round(progress_lifeRegained_computation_minutes % 60);
                                             if (isAdded()) {
-                                                String mw_number = String.valueOf(data_moneyWasted);
-                                                double mw_amount = Double.parseDouble(mw_number);
-                                                DecimalFormat mw_formatter = new DecimalFormat("₱#,###");
-                                                String mw_formatted = mw_formatter.format(mw_amount);
-                                                moneyWasted.setText(mw_formatted);
+                                                lifeRegained_days.setText(getString(R.string.lifeRegained_days,
+                                                        String.valueOf(progress_lifeRegained_days)));
+                                                lifeRegained_hours.setText(getString(R.string.lifeRegained_hours,
+                                                        String.valueOf(progress_lifeRegained_hours)));
+                                                lifeRegained_minutes.setText(getString(R.string.lifeRegained_minutes,
+                                                        String.valueOf(progress_lifeRegained_minutes)));
                                             }
 
+                                            /*lifeLost*/
+                                            progress_lifeLost_computation = data_cigarettesSmoked * 11;
+                                            progress_lifeLost_computation_minutes = data_cigarettesSmoked * 11;
+
+                                            progress_lifeLost_days = progress_lifeLost_computation / 24 / 60;
+                                            progress_lifeLost_hours = progress_lifeLost_computation / 60 % 24;
+                                            progress_lifeLost_minutes = Math.round(progress_lifeLost_computation_minutes % 60);
+
+                                            if (isAdded()) {
+                                                lifeLost_days.setText(getString(R.string.lifeLost_days,
+                                                        String.valueOf(progress_lifeLost_days)));
+                                                lifeLost_hours.setText(getString(R.string.lifeLost_hours,
+                                                        String.valueOf(progress_lifeLost_hours)));
+                                                lifeLost_minutes.setText(getString(R.string.lifeLost_minutes,
+                                                        String.valueOf(progress_lifeLost_minutes)));
+                                            }
                                             /*cigarettesSmoked*/
                                             data_cigarettesSmoked = Long.parseLong(cig_per_day) * 365 * Long.parseLong(cig_years);
                                             if (isAdded()) {
@@ -205,14 +261,32 @@ public class thirdFragment extends Fragment {
                                                 cigarettesSmoked.setText(String.valueOf(cs_formatted));
                                             }
 
+                                            /*moneyWasted*/
+                                            data_moneyWasted = data_cigarettesSmoked * Long.parseLong(cig_price);
+                                            if (isAdded()) {
+                                                String mw_number = String.valueOf(data_moneyWasted);
+                                                double mw_amount = Double.parseDouble(mw_number);
+                                                DecimalFormat mw_formatter = new DecimalFormat("₱#,###");
+                                                String mw_formatted = mw_formatter.format(mw_amount);
+                                                moneyWasted.setText(mw_formatted);
+                                            }
+
 
                                             fragment_third_days.setText(String.valueOf(elapsedDays));
                                             fragment_third_hours.setText(String.valueOf(elapsedHours));
                                             fragment_third_mins.setText(String.valueOf(elapsedMinutes));
                                             fragment_third_secs.setText(String.valueOf(elapsedSeconds));
 
-                                            Button btnClick = view.findViewById(R.id.btnClick);
-                                            btnClick.setText(String.valueOf(rawElapsedHours));
+                                           /* Button btnClick = view.findViewById(R.id.btnClick);
+
+                                            btnClick.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    openWinDialog();
+
+                                                }
+                                            });*/
+
 
                                         } catch (Exception e) {
                                             Log.e("YOUR_APP_LOG_TAG", "I got an error", e);
@@ -225,6 +299,10 @@ public class thirdFragment extends Fragment {
                         });
                     }
                 } catch (InterruptedException e) {
+                    Log.e("YOUR_APP_LOG_TAG", "I got an error", e);
+                } finally {
+                    if (cursor!=null){
+                        cursor.close();}
                 }
             }
         };
@@ -238,6 +316,8 @@ public class thirdFragment extends Fragment {
         return view;
 
     }
+
+
 /*    @Override
     public void onDestroy() {
         super.onDestroy();
@@ -245,7 +325,13 @@ public class thirdFragment extends Fragment {
             cursor.close();
         }
     }*/
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (databaseHelper != null) {
+            databaseHelper.close();
+        }
+    }
 
     @Override
     public void onResume() {

@@ -33,10 +33,11 @@ public class UserProgress extends AppCompatActivity {
         bottomNav.setOnItemSelectedListener(navListener);
 
         if (savedInstanceState == null) {
-                bottomNav.setSelectedItemId(R.id.thirdFragment);
+            bottomNav.setSelectedItemId(R.id.thirdFragment);
 
         }
     }
+
     @Override
     public void onBackPressed() {
         Intent i = new Intent(this, StartActivity.class);
@@ -62,10 +63,10 @@ public class UserProgress extends AppCompatActivity {
                         selectedFragment = new fifthFragment();
                         break;
                 }
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
-                        selectedFragment).commit();
-
+                if (selectedFragment != null) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
+                            selectedFragment).commit();
+                }
                 return true;
             };
 

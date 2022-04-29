@@ -29,7 +29,7 @@
             android:text="Smoking Rehabilitation Centers"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

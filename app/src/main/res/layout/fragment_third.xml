@@ -239,7 +239,7 @@
                             android:shadowRadius="1"
                             android:text="@string/total_CigarettesAvoided"
                             android:textColor="@color/main_red"
-                            android:textSize="14sp" />
+                            android:textSize="11sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -291,7 +291,7 @@
                             android:shadowRadius="1"
                             android:text="@string/total_MoneySaved"
                             android:textColor="@color/main_red"
-                            android:textSize="14sp" />
+                            android:textSize="11sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -330,20 +330,59 @@
                             android:contentDescription="@string/Clock"
                             android:src="@drawable/third_fragment_liferegained" />
 
-                        <TextView
-                            android:id="@+id/lifeRegained"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:fontFamily="@font/bold"
                             android:gravity="center"
-                            android:shadowColor="@color/dead_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
-                            android:text="@string/total_LifeRegained"
-                            android:textColor="@color/main_red"
-                            android:textSize="14sp" />
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <TextView
+                                android:id="@+id/lifeRegained_days"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/bold"
+                                android:gravity="center"
+                                android:shadowColor="@color/dead_red"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:shadowRadius="1"
+                                android:text="0D"
+                                android:textColor="@color/main_red"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/lifeRegained_hours"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/bold"
+                                android:gravity="center"
+                                android:shadowColor="@color/dead_red"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:shadowRadius="1"
+                                android:text="0H"
+                                android:textColor="@color/main_red"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/lifeRegained_minutes"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/bold"
+                                android:gravity="center"
+                                android:shadowColor="@color/dead_red"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:shadowRadius="1"
+                                android:text="0M"
+                                android:textColor="@color/main_red"
+                                android:textSize="11sp" />
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -402,7 +441,7 @@
                             android:shadowRadius="1"
                             android:text="0"
                             android:textColor="@color/main_red"
-                            android:textSize="14sp" />
+                            android:textSize="11sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -454,7 +493,7 @@
                             android:shadowRadius="1"
                             android:text="₱0"
                             android:textColor="@color/main_red"
-                            android:textSize="14sp" />
+                            android:textSize="11sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -493,20 +532,59 @@
                             android:contentDescription="@string/CigarettesAvoided"
                             android:src="@drawable/third_fragment_lifelost" />
 
-                        <TextView
-                            android:id="@+id/lifeLost"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:fontFamily="@font/bold"
                             android:gravity="center"
-                            android:shadowColor="@color/dead_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
-                            android:text="15M 18d 06h"
-                            android:textColor="@color/main_red"
-                            android:textSize="14sp" />
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <TextView
+                                android:id="@+id/lifeLost_days"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/bold"
+                                android:gravity="center"
+                                android:shadowColor="@color/dead_red"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:shadowRadius="1"
+                                android:text="0D"
+                                android:textColor="@color/main_red"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/lifeLost_hours"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/bold"
+                                android:gravity="center"
+                                android:shadowColor="@color/dead_red"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:shadowRadius="1"
+                                android:text="0H"
+                                android:textColor="@color/main_red"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/lifeLost_minutes"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/bold"
+                                android:gravity="center"
+                                android:shadowColor="@color/dead_red"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:shadowRadius="1"
+                                android:text="0M"
+                                android:textColor="@color/main_red"
+                                android:textSize="11sp" />
+                        </LinearLayout>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -521,11 +599,12 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </GridLayout>
+
             <Button
-                android:layout_gravity="center"
                 android:id="@+id/btnClick"
                 android:layout_width="250dp"
-                android:layout_height="100dp"/>
+                android:layout_height="100dp"
+                android:layout_gravity="center" />
         </LinearLayout>
     </ScrollView>
 
