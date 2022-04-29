@@ -4,7 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,10 +31,22 @@ public class QuestionActivity extends AppCompatActivity {
             edit_questions_cig_price_piece,
             edit_questions_years_smoking;
 
+    DatabaseHelper databaseHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        if (databaseHelper == null) {
+            databaseHelper = new DatabaseHelper(QuestionActivity.this);
+        }
+        Cursor cursor= databaseHelper.getData();
+        if (cursor.getCount() == 0) {
+        } else {
+                Intent intent = new Intent(QuestionActivity.this, UserProgress.class);
+                startActivity(intent);
+        }
 
         question_button = findViewById(R.id.question_button);
 
@@ -42,25 +54,8 @@ public class QuestionActivity extends AppCompatActivity {
         edit_questions_cig_price_piece = findViewById(R.id.edit_questions_cig_price_piece);
         edit_questions_years_smoking = findViewById(R.id.edit_questions_years_smoking);
 
-        SharedPreferences preferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
-        String FirstTime = preferences.getString("FirstTimeInstallQuestions", "");
 
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-        Date currentLocalTime = calendar.getTime();
-        DateFormat date = new SimpleDateFormat("dd/M/yyyy hh:mm:ss", Locale.getDefault());
-        date.setTimeZone(TimeZone.getTimeZone("GMT+8"));
 
-        String localTime = date.format(currentLocalTime);
-
-        if (FirstTime.equals("Yes")) {
-            Intent intent = new Intent(QuestionActivity.this, UserProgress.class);
-            startActivity(intent);
-        } else {
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("FirstTimeInstallQuestions", "Yes");
-            editor.apply();
-
-        }
         //    question_button.setOnClickListener(v -> startActivity(new Intent(QuestionActivity.this, UserProgress.class)));
         question_button.setOnClickListener(view -> {
 
@@ -80,6 +75,13 @@ public class QuestionActivity extends AppCompatActivity {
             } else {
                 UserModel userModel = null;
                 try {
+                    Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+                    Date currentLocalTime = calendar.getTime();
+                    DateFormat date = new SimpleDateFormat("dd/M/yyyy hh:mm:ss", Locale.getDefault());
+                    date.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+
+                    String localTime = date.format(currentLocalTime);
+
                     userModel = new UserModel(-1,
                             localTime,
                             Integer.parseInt(editTxt1),
@@ -100,5 +102,6 @@ public class QuestionActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }

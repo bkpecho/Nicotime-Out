@@ -48,13 +48,21 @@
     <string name="Flag">Flag</string>
     <string name="PesoCurrency">Peso Currency</string>
     <string name="Clock">Clock</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="third_CigarettesSmoked">Cigarettes Smoked</string>
     <string name="third_MoneyWasted">Money Wasted</string>
     <string name="third_LifeLost">Life Lost</string>
     <string name="PesoSign">₱</string>
     <string name="moneyWasted">%1$s%2$d</string>
+
+    <string name="lifeRegained_days">%1$sd</string>
+    <string name="lifeRegained_hours">%1$sh</string>
+    <string name="lifeRegained_minutes">%1$sm</string>
+
+    <string name="lifeLost_days">%1$sd</string>
+    <string name="lifeLost_hours">%1$sh</string>
+    <string name="lifeLost_minutes">%1$sm</string>
+
 
     <string-array name="video_title">
         <item>Cigarette</item>
@@ -101,4 +109,35 @@
     <string name="ac_6_desc">Achievement 6</string>
     <string name="ac_7_desc">Achievement 7</string>
     <string name="ac_8_desc">Achievement 8</string>
+
+    <!--timeline-->
+    <string name="quitsmokingtimelineimage">QuitSmokingTimelineImage</string>
+    <string name="quit_smoking_timeline">Quit Smoking Timeline</string>
+    <string name="timeline_20minutes">20 minutes after your last cigarette</string>
+    <string name="timeline_8hours">8 hours after your last cigarette</string>
+    <string name="timeline_24hours">24 hours after your last cigarette</string>
+    <string name="timeline_48hours">48 hours after your last cigarette</string>
+    <string name="timeline_72hours">72 hours after your last cigarette</string>
+    <string name="timeline_1week">One week after your last cigarette</string>
+    <string name="timeline_2weeks">Two weeks after your last cigarette</string>
+    <string name="timeline_3weeks">Three weeks after your last cigarette</string>
+    <string name="timeline_1month">One month after your last cigarette</string>
+    <string name="timeline_3months">Three months after your last cigarette</string>
+    <string name="timeline_6months">Six months after your last cigarette</string>
+    <string name="timeline_1year">One year after your last cigarette</string>
+    <string name="timeline_desc_20minutes">Your blood pressure and pulse will start to return to more normal levels.</string>
+    <string name="timeline_desc_8hours">Your carbon monoxide levels will return to a more normal level, increasing the body’s oxygen levels.</string>
+    <string name="timeline_desc_24hours">The risk of heart attack begins to decrease. Nicotine levels in your bloodstream have also decreased to negligible amounts at this time.</string>
+    <string name="timeline_desc_48hours">You may notice heightened sense of smell and more vivid tastes as your damaged nerves heal.</string>
+    <string name="timeline_desc_72hours_1">The nicotine levels in a person’s body are depleted, this initial depletion can cause nicotine withdrawal.</string>
+    <string name="timeline_desc_72hours_2">Around 3 days after quitting, most people will experience moodiness and irritability, severe headaches, and cravings as the body readjusts.</string>
+    <string name="timeline_desc_1week">You will notice a reduction in the number of daily nicotine cravings experienced.</string>
+    <string name="timeline_desc_2weeks">You may start to notice you’re not only breathing easier. You’re also walking easier. This is thanks to improved circulation and oxygenation.</string>
+    <string name="timeline_desc_3weeks">Your circulation starts to improve. You may notice that physical activity becomes a lot easier. You’ll be free of the addiction and any psychological effects of withdrawal should have ended.</string>
+    <string name="timeline_desc_1year_1">After one year of quitting smoking, your lungs will have experienced dramatic health improvements in terms of capacity and functioning. You’ll notice how much easier you breathe when you’re exerting yourself and how much less coughing you have compared to when you smoked.</string>
+    <string name="timeline_desc_1year_2">In addition to these health benefits, you’ll have saved a dramatic amount of money. Smoking cigarettes is expensive. If you smoked a pack of cigarettes per day, you’ll have saved thousands of pesos at the one-year mark.</string>
+    <string name="timeline_desc_6months">You are now better in handling stressful events without feeling like you need to smoke. You may also notice you’re coughing up much less mucus and phlegm.</string>
+    <string name="timeline_desc_3months">Within one to three months of quitting, your blood circulation will improve considerably. Women may also begin to experience improvements in fertility.</string>
+    <string name="timeline_desc_1month">You can experience a sense of heightened overall energy, decreased smoking-related symptoms, and fibers in the lungs that help keep the lungs healthy are growing back.</string>
+
 </resources>
