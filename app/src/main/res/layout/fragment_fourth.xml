@@ -67,7 +67,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_20mins"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -110,7 +119,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_8hrs"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -157,7 +175,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_24hrs"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -204,7 +231,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_48hrs"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -251,7 +287,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_72hrs"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -308,7 +353,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_1week"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -355,7 +409,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_2weeks"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -402,7 +465,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_3weeks"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -446,7 +518,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_1month"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -493,7 +574,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_3months"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -540,7 +630,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_6months"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -588,7 +687,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></LinearLayout>
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/icon_1year"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/fourth_fragment_x" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"

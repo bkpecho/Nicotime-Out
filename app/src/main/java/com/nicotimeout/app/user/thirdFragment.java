@@ -1,11 +1,7 @@
 package com.nicotimeout.app.user;
 
 import android.app.Dialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,13 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nicotimeout.app.R;
-import com.nicotimeout.app.common.QuestionActivity;
 import com.nicotimeout.app.database.DatabaseHelper;
 
 import java.text.DateFormat;
