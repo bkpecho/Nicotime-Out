@@ -12,16 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:background="@color/white"
+        android:background="@drawable/gradient_main_first"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical">
-        <!--        android:background="@drawable/gradient_main_first"-->
-        <!--<ImageView
-            android:id="@+id/fragment_fourth_imageview"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:contentDescription="@string/quitsmokingtimelineimage"
-            android:src="@drawable/ac_quitsmokingtimeline" />--> //imageView
 
         <com.github.lzyzsd.circleprogress.ArcProgress
             android:id="@+id/progress_arc"
@@ -31,25 +24,21 @@
             custom:arc_bottom_text_size="12sp"
             custom:arc_finished_color="@color/main_blue"
             custom:arc_max="100"
-            custom:arc_progress="0"
+            custom:arc_progress="25"
             custom:arc_stroke_width="14dp"
             custom:arc_suffix_text_padding="8dp"
             custom:arc_text_color="@color/main_red"
             custom:arc_text_size="36sp"
-            custom:arc_unfinished_color="@color/dead_blue" />
+            custom:arc_unfinished_color="@color/main_red" />
 
         <TextView
             android:id="@+id/fragment_fourth_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/medium"
-            android:shadowColor="@color/dead_red"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="1"
+            android:fontFamily="@font/bold"
             android:text="@string/quit_smoking_timeline"
             android:textAlignment="center"
-            android:textColor="@color/main_red"
+            android:textColor="@color/main_blue"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -70,37 +59,39 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
 
-                    <TextView
-                        android:id="@+id/txt1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_20minutes"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
 
-                    <TextView
-                        android:id="@+id/txt2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_20minutes"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="@string/timeline_20minutes"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/timeline_desc_20minutes"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -111,35 +102,43 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_8hours"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_8hours"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+
+                            android:text="@string/timeline_8hours"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+
+                            android:text="@string/timeline_desc_8hours"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -150,35 +149,43 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_24hours"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_24hours"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+
+                            android:text="@string/timeline_24hours"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+
+                            android:text="@string/timeline_desc_24hours"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -189,35 +196,43 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_48hours"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_48hours"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+
+                            android:text="@string/timeline_48hours"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+
+                            android:text="@string/timeline_desc_48hours"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -228,48 +243,53 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_72hours"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_72hours_1"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/italic"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_72hours_2"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
 
+                            android:text="@string/timeline_72hours"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+
+                            android:text="@string/timeline_desc_72hours_1"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/italic"
+
+                            android:text="@string/timeline_desc_72hours_2"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -280,35 +300,43 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_1week"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_1week"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+
+                            android:text="@string/timeline_1week"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+
+                            android:text="@string/timeline_desc_1week"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -319,35 +347,43 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_2weeks"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_2weeks"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+
+                            android:text="@string/timeline_2weeks"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+
+                            android:text="@string/timeline_desc_2weeks"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -358,35 +394,40 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_3weeks"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_3weeks"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="@string/timeline_3weeks"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/timeline_desc_3weeks"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -394,118 +435,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_1month"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_1month"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
 
+                            android:text="@string/timeline_1month"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_3months"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_3months"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_6months"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_6months"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
-
+                            android:text="@string/timeline_desc_1month"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -517,47 +485,144 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp">
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/medium"
-                        android:shadowColor="@color/dead_red"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_1year"
-                        android:textColor="@color/main_red"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_1year_1"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:fontFamily="@font/regular"
-                        android:shadowColor="@color/dead_blue"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:shadowRadius="1"
-                        android:text="@string/timeline_desc_1year_2"
-                        android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+
+                            android:text="@string/timeline_3months"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+
+                            android:text="@string/timeline_desc_3months"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+
+                            android:text="@string/timeline_6months"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+
+                            android:text="@string/timeline_desc_6months"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:weightSum="5">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="@string/timeline_1year"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/timeline_desc_1year_1"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/timeline_desc_1year_2"
+                            android:textColor="@color/main_blue"
+                            android:textSize="14sp" />
+                    </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>

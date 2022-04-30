@@ -41,6 +41,7 @@
     <string name="total_SmokeFree">00:00:00</string>
     <string name="MoneySaved">Money Saved</string>
     <string name="total_MoneySaved">₱00.00</string>
+    <string name="total_MoneyLost">₱00.00</string>
     <string name="total_LifeRegained">00:00:00</string>
     <string name="LifeRegained">Life Regained</string>
     <string name="total_CigarettesAvoided">0</string>
@@ -95,7 +96,7 @@
     <string name="ac_1">Blast Off!</string>
     <string name="ac_2">Rich Man</string>
     <string name="ac_3">Knowledge is Power</string>
-    <string name="ac_4">Perfect Month</string>
+    <string name="ac_4">30 Days of Success!</string>
     <string name="ac_5">Focused</string>
     <string name="ac_6">Stand Tall</string>
     <string name="ac_7">Achievement 7</string>
