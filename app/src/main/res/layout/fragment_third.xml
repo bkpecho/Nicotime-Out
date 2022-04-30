@@ -24,7 +24,7 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/gradient_main_third">
+                android:background="@drawable/gradient_main_first">
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -50,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/bold"
                         android:text="Non-smoker since"
-                        android:textColor="@color/black"
+                        android:textColor="@color/main_blue"
                         android:textSize="14sp" />
 
                     <LinearLayout
@@ -72,10 +72,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/main_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="0"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
@@ -85,7 +81,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
                                 android:text="days"
-                                android:textColor="@color/black"
+                                android:textColor="@color/main_blue"
                                 android:textSize="14sp" />
                         </LinearLayout>
 
@@ -101,10 +97,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="0"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
@@ -114,7 +106,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
                                 android:text="hours"
-                                android:textColor="@color/black"
+                                android:textColor="@color/main_blue"
                                 android:textSize="14sp" />
                         </LinearLayout>
 
@@ -130,10 +122,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="0"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
@@ -143,7 +131,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
                                 android:text="mins"
-                                android:textColor="@color/black"
+                                android:textColor="@color/main_blue"
                                 android:textSize="14sp" />
                         </LinearLayout>
 
@@ -159,10 +147,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="00"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
@@ -172,7 +156,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/bold"
                                 android:text="secs"
-                                android:textColor="@color/black"
+                                android:textColor="@color/main_blue"
                                 android:textSize="14sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -220,6 +204,7 @@
                         android:weightSum="3">
 
                         <ImageView
+                            android:padding="1dp"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
@@ -233,10 +218,6 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/bold"
                             android:gravity="center"
-                            android:shadowColor="@color/dead_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
                             android:text="@string/total_CigarettesAvoided"
                             android:textColor="@color/main_red"
                             android:textSize="11sp" />
@@ -248,7 +229,7 @@
                             android:fontFamily="@font/medium"
                             android:text="@string/CigarettesAvoided"
                             android:textAlignment="center"
-                            android:textColor="@color/black"
+                            android:textColor="@color/main_blue"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -272,6 +253,7 @@
                         android:weightSum="3">
 
                         <ImageView
+                            android:padding="2dp"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
@@ -285,10 +267,6 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/bold"
                             android:gravity="center"
-                            android:shadowColor="@color/dead_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
                             android:text="@string/total_MoneySaved"
                             android:textColor="@color/main_red"
                             android:textSize="11sp" />
@@ -300,7 +278,7 @@
                             android:fontFamily="@font/medium"
                             android:text="@string/MoneySaved"
                             android:textAlignment="center"
-                            android:textColor="@color/black"
+                            android:textColor="@color/main_blue"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -324,6 +302,7 @@
                         android:weightSum="3">
 
                         <ImageView
+                            android:padding="1dp"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
@@ -345,10 +324,6 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/bold"
                                 android:gravity="center"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="0D"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
@@ -360,10 +335,6 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/bold"
                                 android:gravity="center"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="0H"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
@@ -375,10 +346,6 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/bold"
                                 android:gravity="center"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="0M"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
@@ -391,7 +358,7 @@
                             android:fontFamily="@font/medium"
                             android:text="@string/LifeRegained"
                             android:textAlignment="center"
-                            android:textColor="@color/black"
+                            android:textColor="@color/main_blue"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -422,6 +389,7 @@
                         android:weightSum="3">
 
                         <ImageView
+                            android:padding="3dp"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
@@ -435,10 +403,6 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/bold"
                             android:gravity="center"
-                            android:shadowColor="@color/dead_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
                             android:text="0"
                             android:textColor="@color/main_red"
                             android:textSize="11sp" />
@@ -450,7 +414,7 @@
                             android:fontFamily="@font/medium"
                             android:text="@string/third_CigarettesSmoked"
                             android:textAlignment="center"
-                            android:textColor="@color/black"
+                            android:textColor="@color/main_blue"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -487,11 +451,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/bold"
                             android:gravity="center"
-                            android:shadowColor="@color/dead_red"
-                            android:shadowDx="1"
-                            android:shadowDy="1"
-                            android:shadowRadius="1"
-                            android:text="₱0"
+                            android:text="@string/total_MoneyLost"
                             android:textColor="@color/main_red"
                             android:textSize="11sp" />
 
@@ -502,7 +462,7 @@
                             android:fontFamily="@font/medium"
                             android:text="@string/third_MoneyWasted"
                             android:textAlignment="center"
-                            android:textColor="@color/black"
+                            android:textColor="@color/main_blue"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -526,6 +486,7 @@
                         android:weightSum="3">
 
                         <ImageView
+                            android:padding="2dp"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
@@ -547,10 +508,6 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/bold"
                                 android:gravity="center"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="0D"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
@@ -562,10 +519,6 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/bold"
                                 android:gravity="center"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="0H"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
@@ -577,10 +530,6 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/bold"
                                 android:gravity="center"
-                                android:shadowColor="@color/dead_red"
-                                android:shadowDx="1"
-                                android:shadowDy="1"
-                                android:shadowRadius="1"
                                 android:text="0M"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
@@ -593,18 +542,12 @@
                             android:fontFamily="@font/medium"
                             android:text="@string/third_LifeLost"
                             android:textAlignment="center"
-                            android:textColor="@color/black"
+                            android:textColor="@color/main_blue"
                             android:textSize="14sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </GridLayout>
-
-            <Button
-                android:id="@+id/btnClick"
-                android:layout_width="250dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center" />
         </LinearLayout>
     </ScrollView>
 

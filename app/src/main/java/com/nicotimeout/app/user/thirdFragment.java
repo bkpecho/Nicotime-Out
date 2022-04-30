@@ -225,7 +225,7 @@ public class thirdFragment extends Fragment {
 
                                             progress_lifeRegained_days = progress_lifeRegained_computation / 24 / 60;
                                             progress_lifeRegained_hours = progress_lifeRegained_computation / 60 % 24;
-                                            progress_lifeRegained_minutes = Math.round(progress_lifeRegained_computation_minutes % 60);
+                                            progress_lifeRegained_minutes = progress_lifeRegained_computation % 60;
                                             if (isAdded()) {
                                                 lifeRegained_days.setText(getString(R.string.lifeRegained_days,
                                                         String.valueOf(progress_lifeRegained_days)));
@@ -277,17 +277,6 @@ public class thirdFragment extends Fragment {
                                             fragment_third_mins.setText(String.valueOf(elapsedMinutes));
                                             fragment_third_secs.setText(String.valueOf(elapsedSeconds));
 
-                                           /* Button btnClick = view.findViewById(R.id.btnClick);
-
-                                            btnClick.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    openWinDialog();
-
-                                                }
-                                            });*/
-
-
                                         } catch (Exception e) {
                                             Log.e("YOUR_APP_LOG_TAG", "I got an error", e);
                                         }
@@ -311,20 +300,12 @@ public class thirdFragment extends Fragment {
 
         Window window = getActivity().getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(0xFFdb3056);
+        window.setStatusBarColor(0xFF299cfc);
 
         return view;
 
     }
 
-
-/*    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (cursor != null) {
-            cursor.close();
-        }
-    }*/
     @Override
     public void onDestroy() {
         super.onDestroy();

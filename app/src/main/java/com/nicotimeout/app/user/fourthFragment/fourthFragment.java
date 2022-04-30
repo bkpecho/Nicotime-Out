@@ -2,19 +2,15 @@ package com.nicotimeout.app.user.fourthFragment;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -29,22 +25,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nicotimeout.app.R;
-import com.nicotimeout.app.common.MainActivity;
 import com.nicotimeout.app.database.DatabaseHelper;
-import com.nicotimeout.app.database.UserModel;
-import com.nicotimeout.app.userStart.StartActivity;
-
-import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.TimeZone;
-import java.util.stream.Collectors;
 
 
 public class fourthFragment extends Fragment {
@@ -155,6 +143,17 @@ public class fourthFragment extends Fragment {
     public static final String MY_PREFS_NAME = "MyPrefsFile";
     Dialog dialog_20mins;
     Dialog dialog_8hrs;
+    Dialog dialog_24hrs;
+    Dialog dialog_48hrs;
+    Dialog dialog_72hrs;
+    Dialog dialog_1week;
+    Dialog dialog_2weeks;
+    Dialog dialog_3weeks;
+    Dialog dialog_1month;
+    Dialog dialog_3months;
+    Dialog dialog_6months;
+    Dialog dialog_1year;
+    Dialog dialog_1year_2nd;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -162,6 +161,17 @@ public class fourthFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fourth, container, false);
         dialog_20mins = new Dialog(getActivity());
         dialog_8hrs = new Dialog(getActivity());
+        dialog_24hrs = new Dialog(getActivity());
+        dialog_48hrs = new Dialog(getActivity());
+        dialog_72hrs = new Dialog(getActivity());
+        dialog_1week = new Dialog(getActivity());
+        dialog_2weeks = new Dialog(getActivity());
+        dialog_3weeks = new Dialog(getActivity());
+        dialog_1month = new Dialog(getActivity());
+        dialog_3months = new Dialog(getActivity());
+        dialog_6months = new Dialog(getActivity());
+        dialog_1year = new Dialog(getActivity());
+        dialog_1year_2nd = new Dialog(getActivity());
 
         secondsInMilli = 1000;
         minutesInMilli = secondsInMilli * 60;
@@ -265,7 +275,7 @@ public class fourthFragment extends Fragment {
 
                                             future_20mins = 15;
                                             future_8hrs = 30;
-                                            future_24hrs = minutesInMilli * 2 / secondsInMilli;
+                                            future_24hrs = daysInMilli / secondsInMilli;
                                             future_48hrs = daysInMilli * 2 / secondsInMilli;
                                             future_72hrs = daysInMilli * 3;
                                             future_1week = daysInMilli * 7;
@@ -280,19 +290,29 @@ public class fourthFragment extends Fragment {
                                             cfuture_20mins = (int) (rawElapsedSeconds * 100 / future_20mins);
                                             cfuture_8hrs = (int) (rawElapsedSeconds * 100 / future_8hrs);
                                             cfuture_24hrs = (int) (rawElapsedSeconds * 100 / future_24hrs);
-                                            /*     cfuture_48hrs = (int) (rawElapsedHours * 100 / future_48hrs);
+                                            cfuture_48hrs = (int) (rawElapsedHours * 100 / future_48hrs);
                                             cfuture_72hrs = (int) (rawElapsedHours * 100 / future_72hrs);
                                             cfuture_1week = (int) (rawElapsedHours * 100 / future_1week);
                                             cfuture_2weeks = (int) (rawElapsedHours * 100 / future_2weeks);
                                             cfuture_3weeks = (int) (rawElapsedHours * 100 / future_3weeks);
                                             cfuture_1month = (int) (rawElapsedHours * 100 / future_1month);
                                             cfuture_3months = (int) (rawElapsedHours * 100 / future_3months);
-                                            cfuture_6months = (int) (rawElapsedHours * 100 / future_6months);*/
+                                            cfuture_6months = (int) (rawElapsedHours * 100 / future_6months);
 
                                             SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE);
                                             SharedPreferences.Editor editor = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE).edit();
                                             String status_20mins = prefs.getString("status_20mins", "0");
                                             String status_8hrs = prefs.getString("status_8hrs", "0");
+                                            String status_24hrs = prefs.getString("status_24hrs", "0");
+                                            String status_48hrs = prefs.getString("status_48hrs", "0");
+                                            String status_72hrs = prefs.getString("status_72hrs", "0");
+                                            String status_1week = prefs.getString("status_1week", "0");
+                                            String status_2weeks = prefs.getString("status_2weeks", "0");
+                                            String status_3weeks = prefs.getString("status_3weeks", "0");
+                                            String status_1month = prefs.getString("status_1month", "0");
+                                            String status_3months = prefs.getString("status_3months", "0");
+                                            String status_6months = prefs.getString("status_6months", "0");
+                                            String status_1year = prefs.getString("status_1year", "0");
 
                                             //20 minutes
                                             if (rawElapsedSeconds < future_20mins) {
@@ -300,6 +320,8 @@ public class fourthFragment extends Fragment {
                                                 progress_arc.setBottomText("20 mins");
                                             }
                                             if (rawElapsedSeconds >= future_20mins && status_20mins.equals("0")) {
+                                                // CardView cv_20mins = view.findViewById(R.id.cv_20mins);
+                                                // cv_20mins.setVisibility(View.GONE);
                                                 dialog_20mins();
                                                 editor.putString("status_20mins", "1");
                                                 editor.apply();
@@ -321,14 +343,114 @@ public class fourthFragment extends Fragment {
                                                 progress_arc.setProgress(cfuture_24hrs);
                                                 progress_arc.setBottomText("24 hrs");
                                             }
+                                            if (rawElapsedSeconds >= future_24hrs && status_24hrs.equals("0")) {
 
-                                            TextView txt1 = view.findViewById(R.id.txt1);
-                                            TextView txt2 = view.findViewById(R.id.txt2);
-                                            txt1.setText(String.valueOf(rawElapsedSeconds));
-                                            txt2.setText(status_20mins);
+                                                editor.putString("status_24hrs", "1");
+                                                editor.apply();
+                                            }
+
+                                            //48 hours
+                                            if (rawElapsedSeconds < future_48hrs && rawElapsedSeconds > future_24hrs) {
+                                                progress_arc.setProgress(cfuture_48hrs);
+                                                progress_arc.setBottomText("48 hrs");
+                                            }
+                                            if (rawElapsedSeconds >= future_48hrs && status_48hrs.equals("0")) {
+
+                                                editor.putString("status_48hrs", "1");
+                                                editor.apply();
+                                            }
+
+                                            //72 hours
+                                            if (rawElapsedSeconds < future_72hrs && rawElapsedSeconds > future_48hrs) {
+                                                progress_arc.setProgress(cfuture_72hrs);
+                                                progress_arc.setBottomText("72 hrs");
+                                            }
+                                            if (rawElapsedSeconds >= future_72hrs && status_72hrs.equals("0")) {
+
+                                                editor.putString("status_72hrs", "1");
+                                                editor.apply();
+                                            }
+
+                                            //1 week
+                                            if (rawElapsedSeconds < future_1week && rawElapsedSeconds > future_72hrs) {
+                                                progress_arc.setProgress(cfuture_1week);
+                                                progress_arc.setBottomText("1 week");
+                                            }
+                                            if (rawElapsedSeconds >= future_1week && status_1week.equals("0")) {
+
+                                                editor.putString("status_1week", "1");
+                                                editor.apply();
+                                            }
+
+                                            //2 weeks
+                                            if (rawElapsedSeconds < future_2weeks && rawElapsedSeconds > future_1week) {
+                                                progress_arc.setProgress(cfuture_2weeks);
+                                                progress_arc.setBottomText("2 weeks");
+                                            }
+                                            if (rawElapsedSeconds >= future_2weeks && status_2weeks.equals("0")) {
+
+                                                editor.putString("status_2weeks", "1");
+                                                editor.apply();
+                                            }
+
+                                            //3 weeks
+                                            if (rawElapsedSeconds < future_3weeks && rawElapsedSeconds > future_2weeks) {
+                                                progress_arc.setProgress(cfuture_3weeks);
+                                                progress_arc.setBottomText("3 weeks");
+                                            }
+                                            if (rawElapsedSeconds >= future_3weeks && status_3weeks.equals("0")) {
+
+                                                editor.putString("status_3weeks", "1");
+                                                editor.apply();
+                                            }
+
+                                            //1 month
+                                            if (rawElapsedSeconds < future_1month && rawElapsedSeconds > future_3weeks) {
+                                                progress_arc.setProgress(cfuture_1month);
+                                                progress_arc.setBottomText("1 month");
+                                            }
+                                            if (rawElapsedSeconds >= future_1month && status_1month.equals("0")) {
+
+                                                editor.putString("status_1month", "1");
+                                                editor.apply();
+                                            }
+
+                                            //3 months
+                                            if (rawElapsedSeconds < future_3months && rawElapsedSeconds > future_1month) {
+                                                progress_arc.setProgress(cfuture_3months);
+                                                progress_arc.setBottomText("3 months");
+                                            }
+                                            if (rawElapsedSeconds >= future_3months && status_3months.equals("0")) {
+
+                                                editor.putString("status_3months", "1");
+                                                editor.apply();
+                                            }
+
+
+                                            //6 months
+                                            if (rawElapsedSeconds < future_6months && rawElapsedSeconds > future_3months) {
+                                                progress_arc.setProgress(cfuture_6months);
+                                                progress_arc.setBottomText("6 months");
+                                            }
+                                            if (rawElapsedSeconds >= future_6months && status_6months.equals("0")) {
+
+                                                editor.putString("status_6months", "1");
+                                                editor.apply();
+                                            }
+
+                                            //1 year
+                                            if (rawElapsedSeconds < future_1year && rawElapsedSeconds > future_6months) {
+                                                progress_arc.setProgress(cfuture_1year);
+                                                progress_arc.setBottomText("1 year");
+                                            }
+                                            if (rawElapsedSeconds >= future_1year && status_1year.equals("0")) {
+
+                                                editor.putString("status_1year", "1");
+                                                editor.apply();
+                                            }
+
 
                                         } catch (Exception e) {
-                                            Toast.makeText(getActivity(), "Logical Error", Toast.LENGTH_SHORT).show();
                                             Log.e("YOUR_APP_LOG_TAG", "I got an error", e);
                                         }
                                     }
@@ -339,6 +461,7 @@ public class fourthFragment extends Fragment {
                         });
                     }
                 } catch (InterruptedException e) {
+                    Log.e("YOUR_APP_LOG_TAG", "I got an error", e);
                 }
             }
         };
@@ -357,24 +480,48 @@ public class fourthFragment extends Fragment {
     //dialog
 
     private void dialog_20mins() {
-        dialog_20mins.setContentView(R.layout.ac_layout_20mins);
+        dialog_20mins.setContentView(R.layout.dialog_20mins);
         dialog_20mins.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        //dialog_20mins.setCanceledOnTouchOutside(false);
-        //dialog_20mins.setCancelable(false);
+        dialog_20mins.setCancelable(false);
+        dialog_20mins.setCanceledOnTouchOutside(false);
 
+        Button button = dialog_20mins.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog_20mins.dismiss();
+            }
+        });
         dialog_20mins.show();
-
     }
 
     private void dialog_8hrs() {
+        dialog_8hrs.setContentView(R.layout.dialog_8hrs);
+        dialog_8hrs.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog_8hrs.setCancelable(false);
+        dialog_8hrs.setCanceledOnTouchOutside(false);
+
+        Button button = dialog_8hrs.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog_8hrs.dismiss();
+            }
+        });
+        dialog_8hrs.show();
+    }
+
+ /*   private void dialog_8hrs() {
         dialog_8hrs.setContentView(R.layout.ac_layout_8hrs);
         dialog_8hrs.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView botbot = dialog_8hrs.findViewById(R.id.textView);
+        botbot.setText("JOJOOO");
         //dialog_8hrs.setCanceledOnTouchOutside(false);
         //dialog_8hrs.setCancelable(false);
 
         dialog_8hrs.show();
 
-    }
+    }*/
 
     @Override
     public void onDestroy() {
