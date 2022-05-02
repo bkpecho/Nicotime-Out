@@ -7,18 +7,13 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.userStart.StartActivity;
-import com.nicotimeout.app.userStart.StartActivity_first;
-import com.nicotimeout.app.userStart.StartActivity_first_popup;
 
 import java.util.ArrayList;
 import java.util.List;

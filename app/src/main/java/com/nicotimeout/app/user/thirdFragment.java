@@ -16,7 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -108,9 +111,12 @@ public class thirdFragment extends Fragment {
     Dialog ac_recoverychampion;
     Dialog ac_sturdyasashield;
     Dialog ac_standtall;
+    Dialog reset_dialog;
 
     public static final String PREF_LOGIN_COUNTER = "loginCounter";
     public static final String PREF_ACHIEVEMENTS_COUNTER = "achievementsCounter";
+
+    ImageButton imageButton;
 
     //achievement variables
 
@@ -121,6 +127,14 @@ public class thirdFragment extends Fragment {
                              Bundle savedInstanceState) {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         View view = inflater.inflate(R.layout.fragment_third, container, false);
+
+        imageButton = view.findViewById(R.id.threedots);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reset_dialog();
+            }
+        });
 
         cigarettesAvoided = view.findViewById(R.id.cigarettesAvoided);
         moneySaved = view.findViewById(R.id.moneySaved);
@@ -168,11 +182,9 @@ public class thirdFragment extends Fragment {
 
                                 if (databaseHelper == null) {
                                     databaseHelper = new DatabaseHelper(getActivity());
-
                                 }
                                 cursor = databaseHelper.getData();
                                 if (cursor.getCount() == 0) {
-                                    Toast.makeText(getActivity(), "Database is Empty", Toast.LENGTH_SHORT).show();
                                 } else {
                                     while (cursor.moveToNext()) {
 
@@ -363,6 +375,8 @@ public class thirdFragment extends Fragment {
         ac_recoverychampion = new Dialog(getActivity());
         ac_sturdyasashield = new Dialog(getActivity());
         ac_standtall = new Dialog(getActivity());
+        reset_dialog = new Dialog(getActivity());
+
 
         //sharedpreferences counter
         SharedPreferences prefs_counter = getActivity().getSharedPreferences(PREF_LOGIN_COUNTER, 0);
@@ -373,11 +387,12 @@ public class thirdFragment extends Fragment {
         SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
 
         long pref_blastoff = prefs_achievements.getLong("pref_blastoff", 0);
-        if (counter == 1 && pref_blastoff == 0) {
+        if (pref_blastoff == 0) {
             ac_blastoff();
             achievements_editor.putLong("pref_blastoff", 1);
             achievements_editor.apply();
         }
+
 
         long pref_focused = prefs_achievements.getLong("pref_focused", 0);
         if (counter >= 3 && pref_focused == 0) {
@@ -399,6 +414,30 @@ public class thirdFragment extends Fragment {
 
         return view;
 
+    }
+
+    private void reset_dialog() {
+        reset_dialog.setContentView(R.layout.reset_dialog);
+        reset_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        reset_dialog.setCancelable(false);
+        reset_dialog.setCanceledOnTouchOutside(false);
+
+
+        Button button_no = reset_dialog.findViewById(R.id.button_no);
+        button_no.setOnClickListener(view -> reset_dialog.dismiss());
+
+        Button button_yes = reset_dialog.findViewById(R.id.button_yes);
+        button_yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                databaseHelper = new DatabaseHelper(getActivity());
+                databaseHelper.deleteAll();
+                reset_dialog.dismiss();
+                getActivity().getSupportFragmentManager().beginTransaction().remove(thirdFragment.this).commit();
+                getActivity().onBackPressed();
+            }
+        });
+        reset_dialog.show();
     }
 
     private void ac_blastoff() {

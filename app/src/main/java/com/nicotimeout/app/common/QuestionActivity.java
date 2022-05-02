@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.database.DatabaseHelper;
@@ -41,11 +41,11 @@ public class QuestionActivity extends AppCompatActivity {
         if (databaseHelper == null) {
             databaseHelper = new DatabaseHelper(QuestionActivity.this);
         }
-        Cursor cursor= databaseHelper.getData();
+        Cursor cursor = databaseHelper.getData();
         if (cursor.getCount() == 0) {
         } else {
-                Intent intent = new Intent(QuestionActivity.this, UserProgress.class);
-                startActivity(intent);
+            Intent intent = new Intent(QuestionActivity.this, UserProgress.class);
+            startActivity(intent);
         }
 
         question_button = findViewById(R.id.question_button);
@@ -55,8 +55,6 @@ public class QuestionActivity extends AppCompatActivity {
         edit_questions_years_smoking = findViewById(R.id.edit_questions_years_smoking);
 
 
-
-        //    question_button.setOnClickListener(v -> startActivity(new Intent(QuestionActivity.this, UserProgress.class)));
         question_button.setOnClickListener(view -> {
 
             String editTxt1 = edit_questions_cig_smok_day.getText().toString();
@@ -88,14 +86,12 @@ public class QuestionActivity extends AppCompatActivity {
                             Integer.parseInt(editTxt2),
                             Integer.parseInt(editTxt3));
 
-                 //   Toast.makeText(QuestionActivity.this, userModel.toString(), Toast.LENGTH_SHORT).show();
-
                     Intent intent = new Intent(QuestionActivity.this, UserProgress.class);
                     QuestionActivity.this.startActivity(intent);
 
 
                 } catch (Exception e) {
-                    Toast.makeText(QuestionActivity.this, "Insert Failed", Toast.LENGTH_SHORT).show();
+                    Log.e("NICOTIME_OUT_LOGS", "Insert Failed", e);
                 }
                 DatabaseHelper databaseHelper = new DatabaseHelper(QuestionActivity.this);
                 databaseHelper.addOne(userModel);

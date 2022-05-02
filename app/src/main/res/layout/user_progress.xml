@@ -22,7 +22,7 @@
                 android:id="@+id/myToolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="?android:selectableItemBackgroundBorderless"
+                android:background="@color/main_blue"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="@style/MyToolbarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
