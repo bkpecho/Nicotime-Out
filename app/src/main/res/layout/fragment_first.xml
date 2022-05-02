@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:background="@drawable/gradient_main_first"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical">
@@ -21,6 +21,14 @@
             android:layout_height="100dp"
             android:src="@drawable/ac_unlocked" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:text="Your Achievements"
+            android:textColor="@color/main_blue"
+            android:textSize="14sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,11 +36,22 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_badgesUnlocked"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginVertical="8dp"
                 android:fontFamily="@font/bold"
-                android:text="6/6"
+                android:text="0"
+                android:textColor="@color/main_red"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/bold"
+                android:text="/12"
                 android:textColor="@color/main_red"
                 android:textSize="24sp" />
 
@@ -45,15 +64,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bold"
-                    android:text="Achievements"
+                    android:fontFamily="@font/medium"
+                    android:text="Badges"
                     android:textColor="@color/main_blue"
                     android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/bold"
+                    android:fontFamily="@font/medium"
                     android:text="Unlocked"
                     android:textColor="@color/main_blue"
                     android:textSize="14sp" />
@@ -65,18 +84,20 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:scrollbarThumbVertical="@android:color/transparent">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="8dp">
 
 
+            //blastoff = first my journey login
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/ac_blastoff"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="8dp"
@@ -98,8 +119,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ac_blastoff" />
 
@@ -108,15 +129,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/medium"
-                            android:text="@string/ac_1"
+                            android:text="@string/ac_blastoff"
                             android:textColor="@color/main_red"
                             android:textSize="14sp" />
 
@@ -124,17 +146,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular"
+                            android:text="@string/ac_blastoff_desc"
                             android:textColor="@color/main_blue"
-                            android:text="Your journey starts here, Champ!" />
+                            android:textSize="11sp" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            //thumbsup = 500 pesos
+
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_thumbsup"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:visibility="gone"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
@@ -152,25 +179,88 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ac_thumbsup" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="@string/ac_thumbsup"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/ac_thumbsup_desc"
+                            android:textColor="@color/main_blue"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            //richman = 1000 pesos
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_richman"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ac_richman" />
 
                     </LinearLayout>
 
                     <LinearLayout
+
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/medium"
-                            android:text="@string/ac_2"
+                            android:text="@string/ac_richman"
                             android:textColor="@color/main_red"
                             android:textSize="14sp" />
 
@@ -178,18 +268,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular"
+                            android:text="@string/ac_richman_desc"
                             android:textColor="@color/main_blue"
-                            android:text="Save a total of ₱500.00" />
+                            android:textSize="11sp" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            //knowledge is power = first video watched
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_knowledgeispower"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:visibility="gone"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
@@ -207,8 +301,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ac_knowledgeispower" />
 
@@ -217,15 +311,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/medium"
-                            android:text="@string/ac_3"
+                            android:text="@string/ac_knowledgeispower"
                             android:textColor="@color/main_red"
                             android:textSize="14sp" />
 
@@ -233,17 +328,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular"
+                            android:text="@string/ac_knowledgeispower_desc"
                             android:textColor="@color/main_blue"
-                            android:text="Watch all our eduactional and awareness videos" />
+                            android:textSize="11sp" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            //inquisitive = watch all vids
+
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_inquisitivemind"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:visibility="gone"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
@@ -261,25 +361,26 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/ac_perfectmonth" />
+                            android:src="@drawable/ac_inquisitivemind" />
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/medium"
-                            android:text="@string/ac_4"
+                            android:text="@string/ac_inquisitivemind"
                             android:textColor="@color/main_red"
                             android:textSize="14sp" />
 
@@ -287,18 +388,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular"
+                            android:text="@string/ac_inquisitivemind_desc"
                             android:textColor="@color/main_blue"
-                            android:text="Login for a total of 30 days" />
+                            android:textSize="11sp" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            //focused = login total of 3 times
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_focused"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:visibility="gone"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
@@ -316,25 +421,27 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ac_focused" />
 
                     </LinearLayout>
 
                     <LinearLayout
+
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/medium"
-                            android:text="@string/ac_5"
+                            android:text="@string/ac_focused"
                             android:textColor="@color/main_red"
                             android:textSize="14sp" />
 
@@ -342,17 +449,83 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular"
+                            android:text="@string/ac_focused_desc"
                             android:textColor="@color/main_blue"
-                            android:text="Focused, desc" />
+                            android:textSize="11sp" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            //30 days of success = login total of 30 days
+
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_30daysofsuccess"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ac_30daysofsuccess" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="@string/ac_30days"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/ac_30days_desc"
+                            android:textColor="@color/main_blue"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            //100 total cigarettes
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_sturdyasashield"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:visibility="gone"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="2dp">
 
@@ -371,8 +544,71 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ac_sturdyasashield" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="@string/ac_100cigarettesavoided"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/ac_100cigarettesavoided_desc"
+                            android:textColor="@color/main_blue"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            //1000 total cigarettes
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_standtall"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ac_standtall" />
 
@@ -381,15 +617,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/medium"
-                            android:text="@string/ac_6"
+                            android:text="@string/ac_standtall"
                             android:textColor="@color/main_red"
                             android:textSize="14sp" />
 
@@ -397,8 +634,257 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/regular"
+                            android:text="@string/ac_standtall_desc"
                             android:textColor="@color/main_blue"
-                            android:text="100 total cigarettes avoided" />
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            //1 day life regained
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_recoverymedal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ac_liferegained_1day" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="@string/ac_liferegained_1day"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/ac_liferegained_1day_desc"
+                            android:textColor="@color/main_blue"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            //1 week life regained
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_recoverychampion"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ac_liferegained_1week" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="@string/ac_liferegained_1week"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/ac_liferegained_1week_desc"
+                            android:textColor="@color/main_blue"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            //explore rehab center tab
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_explorer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ac_rehab" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="@string/ac_explorer"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="@string/ac_explorer_desc"
+                            android:textColor="@color/main_blue"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            //locked
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_locked"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_horizontal"
+                            android:padding="8dp"
+                            android:src="@drawable/ac_locked" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="More Badges to Unlock!"
+                            android:textColor="@color/main_red"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/regular"
+                            android:text="Continue Your Journey to Unlock More Badges!"
+                            android:textColor="@color/main_blue"
+                            android:textSize="11sp" />
                     </LinearLayout>
                 </LinearLayout>
 
