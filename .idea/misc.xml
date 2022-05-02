@@ -4,10 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/btn_circle.xml" value="0.324" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/ic_cigarette_question_inactive.xml" value="0.2065" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/ic_cigarette_third.xml" value="0.2065" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/ic_flag.xml" value="0.2065" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/ic_help.xml" value="0.221" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/onboarding_indicator_active.xml" value="0.2705" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/question_select_date_roundradius_red.xml" value="0.2205" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/shape_circle.xml" value="0.324" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/splash_gradient.xml" value="0.2335" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/third_fragment_threedots.xml" value="0.2205" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/ac_30daysofsuccess.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/ac_blastoff.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/ac_explorer.xml" value="0.36666666666666664" />
@@ -47,7 +52,9 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_fourth.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_third.xml" value="0.31179775280898875" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/item_container_onboarding.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/login_dialog.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/my_row.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/reset_dialog.xml" value="0.5" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/splash_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/user_progress.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/win_layout_dialog.xml" value="0.36666666666666664" />

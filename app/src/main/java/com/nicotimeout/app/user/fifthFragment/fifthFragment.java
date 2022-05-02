@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -83,6 +82,7 @@ public class fifthFragment extends Fragment {
         button.setOnClickListener(view -> ac_explorer.dismiss());
         ac_explorer.show();
     }
+
 
     @Override
     public void onResume() {

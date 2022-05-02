@@ -24,7 +24,7 @@
             custom:arc_bottom_text_size="12sp"
             custom:arc_finished_color="@color/main_blue"
             custom:arc_max="100"
-            custom:arc_progress="25"
+            custom:arc_progress="0"
             custom:arc_stroke_width="14dp"
             custom:arc_suffix_text_padding="8dp"
             custom:arc_text_color="@color/main_red"

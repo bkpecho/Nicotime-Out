@@ -101,6 +101,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return getQuitDate();
     }
 
+    public void deleteAll()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+       // db.delete(USER_TABLE,null,null);
+        db.execSQL("delete from "+ USER_TABLE);
+       // db.execSQL("TRUNCATE table" + USER_TABLE);
+        db.close();
+    }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
