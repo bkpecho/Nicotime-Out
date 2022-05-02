@@ -39,7 +39,8 @@
             android:text="@string/quit_smoking_timeline"
             android:textAlignment="center"
             android:textColor="@color/main_blue"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
+
     </LinearLayout>
 
     <ScrollView

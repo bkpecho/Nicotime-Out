@@ -88,7 +88,7 @@ public class QuestionActivity extends AppCompatActivity {
                             Integer.parseInt(editTxt2),
                             Integer.parseInt(editTxt3));
 
-                    Toast.makeText(QuestionActivity.this, userModel.toString(), Toast.LENGTH_SHORT).show();
+                 //   Toast.makeText(QuestionActivity.this, userModel.toString(), Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(QuestionActivity.this, UserProgress.class);
                     QuestionActivity.this.startActivity(intent);

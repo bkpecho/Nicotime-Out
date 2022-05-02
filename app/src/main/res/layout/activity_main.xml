@@ -16,7 +16,7 @@
         android:background="@drawable/question_select_date_roundradius"
         android:fontFamily="@font/bold"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -13,13 +13,13 @@
         android:layout_weight="2"
         android:orientation="vertical"
         android:gravity="center_vertical|center_horizontal"
-        android:background="@drawable/gradient_main_third">
+        android:background="@drawable/gradient_main_first">
 
         <ImageView
             android:id="@+id/fragment_fourth_imageview"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ac_map"/>
+            android:src="@drawable/fifth_fragment_icon"/>
 
         <TextView
             android:id="@+id/fragment_fourth_textview"
@@ -28,7 +28,7 @@
             android:fontFamily="@font/bold"
             android:text="Smoking Rehabilitation Centers"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/main_blue"
             android:textSize="14sp" />
     </LinearLayout>
 

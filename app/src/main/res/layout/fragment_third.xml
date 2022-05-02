@@ -71,7 +71,7 @@
                                 android:id="@+id/fragment_third_days"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:text="0"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
@@ -79,7 +79,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:text="days"
                                 android:textColor="@color/main_blue"
                                 android:textSize="14sp" />
@@ -96,7 +96,7 @@
                                 android:id="@+id/fragment_third_hours"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:text="0"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
@@ -104,7 +104,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:text="hours"
                                 android:textColor="@color/main_blue"
                                 android:textSize="14sp" />
@@ -121,7 +121,7 @@
                                 android:id="@+id/fragment_third_mins"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:text="0"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
@@ -129,7 +129,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:text="mins"
                                 android:textColor="@color/main_blue"
                                 android:textSize="14sp" />
@@ -146,7 +146,7 @@
                                 android:id="@+id/fragment_third_secs"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:text="00"
                                 android:textColor="@color/main_red"
                                 android:textSize="24sp" />
@@ -154,7 +154,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:text="secs"
                                 android:textColor="@color/main_blue"
                                 android:textSize="14sp" />
@@ -204,11 +204,11 @@
                         android:weightSum="3">
 
                         <ImageView
-                            android:padding="1dp"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:contentDescription="@string/CigarettesAvoided"
+                            android:padding="1dp"
                             android:src="@drawable/third_fragment_cigarettesavoided" />
 
                         <TextView
@@ -216,7 +216,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:fontFamily="@font/bold"
+                            android:fontFamily="@font/medium"
                             android:gravity="center"
                             android:text="@string/total_CigarettesAvoided"
                             android:textColor="@color/main_red"
@@ -253,11 +253,11 @@
                         android:weightSum="3">
 
                         <ImageView
-                            android:padding="2dp"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:contentDescription="@string/PesoCurrency"
+                            android:padding="2dp"
                             android:src="@drawable/third_fragment_moneysaved" />
 
                         <TextView
@@ -265,7 +265,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:fontFamily="@font/bold"
+                            android:fontFamily="@font/medium"
                             android:gravity="center"
                             android:text="@string/total_MoneySaved"
                             android:textColor="@color/main_red"
@@ -302,11 +302,11 @@
                         android:weightSum="3">
 
                         <ImageView
-                            android:padding="1dp"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:contentDescription="@string/Clock"
+                            android:padding="1dp"
                             android:src="@drawable/third_fragment_liferegained" />
 
                         <LinearLayout
@@ -322,7 +322,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:gravity="center"
                                 android:text="0D"
                                 android:textColor="@color/main_red"
@@ -333,7 +333,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:gravity="center"
                                 android:text="0H"
                                 android:textColor="@color/main_red"
@@ -344,7 +344,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:gravity="center"
                                 android:text="0M"
                                 android:textColor="@color/main_red"
@@ -389,11 +389,11 @@
                         android:weightSum="3">
 
                         <ImageView
-                            android:padding="3dp"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:contentDescription="@string/PesoCurrency"
+                            android:padding="3dp"
                             android:src="@drawable/third_fragment_cigarettessmoked" />
 
                         <TextView
@@ -401,7 +401,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:fontFamily="@font/bold"
+                            android:fontFamily="@font/medium"
                             android:gravity="center"
                             android:text="0"
                             android:textColor="@color/main_red"
@@ -449,7 +449,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:fontFamily="@font/bold"
+                            android:fontFamily="@font/medium"
                             android:gravity="center"
                             android:text="@string/total_MoneyLost"
                             android:textColor="@color/main_red"
@@ -486,11 +486,11 @@
                         android:weightSum="3">
 
                         <ImageView
-                            android:padding="2dp"
                             android:layout_width="wrap_content"
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:contentDescription="@string/CigarettesAvoided"
+                            android:padding="2dp"
                             android:src="@drawable/third_fragment_lifelost" />
 
                         <LinearLayout
@@ -506,7 +506,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:gravity="center"
                                 android:text="0D"
                                 android:textColor="@color/main_red"
@@ -517,7 +517,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:gravity="center"
                                 android:text="0H"
                                 android:textColor="@color/main_red"
@@ -528,7 +528,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:fontFamily="@font/bold"
+                                android:fontFamily="@font/medium"
                                 android:gravity="center"
                                 android:text="0M"
                                 android:textColor="@color/main_red"

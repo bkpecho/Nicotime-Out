@@ -9,10 +9,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,8 +19,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nicotimeout.app.R;
@@ -107,7 +103,7 @@ public class fourthFragment extends Fragment {
     long different;
     long rawDifferent;
 
-    public static final String MY_PREFS_NAME = "MyPrefsFile";
+    public static final String FOURTH_PREFS_NAME = "MyPrefsFile";
     Dialog dialog_20mins;
     Dialog dialog_8hrs;
     Dialog dialog_24hrs;
@@ -160,8 +156,8 @@ public class fourthFragment extends Fragment {
         hoursInMilli = minutesInMilli * 60;
         daysInMilli = hoursInMilli * 24;
 
-        SharedPreferences prefs = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = getActivity().getSharedPreferences(MY_PREFS_NAME, Context.MODE_PRIVATE).edit();
+        SharedPreferences prefs = getActivity().getSharedPreferences(FOURTH_PREFS_NAME, 0);
+        SharedPreferences.Editor editor = getActivity().getSharedPreferences(FOURTH_PREFS_NAME, 0).edit();
 
         Thread thread = new Thread() {
 
@@ -189,7 +185,6 @@ public class fourthFragment extends Fragment {
                                 cursor = databaseHelper.getData();
                                 if (cursor.getCount() == 0) {
                                     Toast.makeText(getActivity(), "Database is Empty", Toast.LENGTH_SHORT).show();
-                                    return;
                                 } else {
                                     while (cursor.moveToNext()) {
                                         try {
@@ -217,31 +212,31 @@ public class fourthFragment extends Fragment {
                                             rawElapsedHours = rawDifferent / hoursInMilli;
                                             rawElapsedDays = rawDifferent / daysInMilli;
 
-                                            future_20mins = 15;
-                                            future_8hrs = 30;
+                                            future_20mins = minutesInMilli * 20 / secondsInMilli;
+                                            future_8hrs = hoursInMilli * 8 / secondsInMilli;
                                             future_24hrs = daysInMilli / secondsInMilli;
                                             future_48hrs = daysInMilli * 2 / secondsInMilli;
-                                            future_72hrs = daysInMilli * 3;
-                                            future_1week = daysInMilli * 7;
-                                            future_2weeks = daysInMilli * 14;
-                                            future_3weeks = daysInMilli * 21;
-                                            future_1month = daysInMilli * 30;
-                                            future_3months = daysInMilli * 90;
-                                            future_6months = daysInMilli * 180;
-                                            future_1year = daysInMilli * 365;
+                                            future_72hrs = daysInMilli * 3 / secondsInMilli;
+                                            future_1week = daysInMilli * 7 / secondsInMilli;
+                                            future_2weeks = daysInMilli * 14 / secondsInMilli;
+                                            future_3weeks = daysInMilli * 21 / secondsInMilli;
+                                            future_1month = daysInMilli * 30 / secondsInMilli;
+                                            future_3months = daysInMilli * 90 / secondsInMilli;
+                                            future_6months = daysInMilli * 180 / secondsInMilli;
+                                            future_1year = daysInMilli * 365 / secondsInMilli;
 
 
                                             cfuture_20mins = (int) (rawElapsedSeconds * 100 / future_20mins);
                                             cfuture_8hrs = (int) (rawElapsedSeconds * 100 / future_8hrs);
                                             cfuture_24hrs = (int) (rawElapsedSeconds * 100 / future_24hrs);
-                                            cfuture_48hrs = (int) (rawElapsedHours * 100 / future_48hrs);
-                                            cfuture_72hrs = (int) (rawElapsedHours * 100 / future_72hrs);
-                                            cfuture_1week = (int) (rawElapsedHours * 100 / future_1week);
-                                            cfuture_2weeks = (int) (rawElapsedHours * 100 / future_2weeks);
-                                            cfuture_3weeks = (int) (rawElapsedHours * 100 / future_3weeks);
-                                            cfuture_1month = (int) (rawElapsedHours * 100 / future_1month);
-                                            cfuture_3months = (int) (rawElapsedHours * 100 / future_3months);
-                                            cfuture_6months = (int) (rawElapsedHours * 100 / future_6months);
+                                            cfuture_48hrs = (int) (rawElapsedSeconds * 100 / future_48hrs);
+                                            cfuture_72hrs = (int) (rawElapsedSeconds * 100 / future_72hrs);
+                                            cfuture_1week = (int) (rawElapsedSeconds * 100 / future_1week);
+                                            cfuture_2weeks = (int) (rawElapsedSeconds * 100 / future_2weeks);
+                                            cfuture_3weeks = (int) (rawElapsedSeconds * 100 / future_3weeks);
+                                            cfuture_1month = (int) (rawElapsedSeconds * 100 / future_1month);
+                                            cfuture_3months = (int) (rawElapsedSeconds * 100 / future_3months);
+                                            cfuture_6months = (int) (rawElapsedSeconds * 100 / future_6months);
 
 
                                             String status_20mins = prefs.getString("status_20mins", "0");
@@ -388,6 +383,11 @@ public class fourthFragment extends Fragment {
                                                 editor.putString("status_1year", "1");
                                                 editor.apply();
                                             }
+                                            if (rawElapsedSeconds > future_1year) {
+                                                progress_arc.setFinishedStrokeColor(getResources().getColor(R.color.main_red));
+                                                progress_arc.setProgress(100);
+                                                progress_arc.setBottomText(elapsedDays + " days");
+                                            }
 
                                             if (status_20mins.equals("1")) {
                                                 icon_20mins.setImageResource(R.drawable.fourth_fragment_check);
@@ -397,6 +397,9 @@ public class fourthFragment extends Fragment {
                                             }
                                             if (status_24hrs.equals("1")) {
                                                 icon_24hrs.setImageResource(R.drawable.fourth_fragment_check);
+                                            }
+                                            if (status_48hrs.equals("1")) {
+                                                icon_48hrs.setImageResource(R.drawable.fourth_fragment_check);
                                             }
                                             if (status_72hrs.equals("1")) {
                                                 icon_72hrs.setImageResource(R.drawable.fourth_fragment_check);
@@ -458,12 +461,7 @@ public class fourthFragment extends Fragment {
         dialog_20mins.setCanceledOnTouchOutside(false);
 
         Button button = dialog_20mins.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_20mins.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_20mins.dismiss());
         dialog_20mins.show();
     }
 
@@ -474,12 +472,7 @@ public class fourthFragment extends Fragment {
         dialog_8hrs.setCanceledOnTouchOutside(false);
 
         Button button = dialog_8hrs.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_8hrs.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_8hrs.dismiss());
         dialog_8hrs.show();
     }
 
@@ -490,12 +483,7 @@ public class fourthFragment extends Fragment {
         dialog_24hrs.setCanceledOnTouchOutside(false);
 
         Button button = dialog_24hrs.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_24hrs.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_24hrs.dismiss());
         dialog_24hrs.show();
     }
 
@@ -506,12 +494,7 @@ public class fourthFragment extends Fragment {
         dialog_48hrs.setCanceledOnTouchOutside(false);
 
         Button button = dialog_48hrs.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_48hrs.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_48hrs.dismiss());
         dialog_48hrs.show();
     }
 
@@ -522,12 +505,7 @@ public class fourthFragment extends Fragment {
         dialog_72hrs.setCanceledOnTouchOutside(false);
 
         Button button = dialog_72hrs.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_72hrs.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_72hrs.dismiss());
         dialog_72hrs.show();
     }
 
@@ -538,12 +516,7 @@ public class fourthFragment extends Fragment {
         dialog_1week.setCanceledOnTouchOutside(false);
 
         Button button = dialog_1week.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_1week.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_1week.dismiss());
         dialog_1week.show();
     }
 
@@ -554,12 +527,7 @@ public class fourthFragment extends Fragment {
         dialog_2weeks.setCanceledOnTouchOutside(false);
 
         Button button = dialog_2weeks.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_2weeks.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_2weeks.dismiss());
         dialog_2weeks.show();
     }
 
@@ -570,12 +538,7 @@ public class fourthFragment extends Fragment {
         dialog_3weeks.setCanceledOnTouchOutside(false);
 
         Button button = dialog_3weeks.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_3weeks.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_3weeks.dismiss());
         dialog_3weeks.show();
     }
 
@@ -586,12 +549,7 @@ public class fourthFragment extends Fragment {
         dialog_1month.setCanceledOnTouchOutside(false);
 
         Button button = dialog_1month.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_1month.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_1month.dismiss());
         dialog_1month.show();
     }
 
@@ -602,12 +560,7 @@ public class fourthFragment extends Fragment {
         dialog_3months.setCanceledOnTouchOutside(false);
 
         Button button = dialog_3months.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_3months.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_3months.dismiss());
         dialog_3months.show();
     }
 
@@ -618,12 +571,7 @@ public class fourthFragment extends Fragment {
         dialog_6months.setCanceledOnTouchOutside(false);
 
         Button button = dialog_6months.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_6months.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_6months.dismiss());
         dialog_6months.show();
     }
 
@@ -634,12 +582,7 @@ public class fourthFragment extends Fragment {
         dialog_1year.setCanceledOnTouchOutside(false);
 
         Button button = dialog_1year.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog_1year.dismiss();
-            }
-        });
+        button.setOnClickListener(view -> dialog_1year.dismiss());
         dialog_1year.show();
     }
 

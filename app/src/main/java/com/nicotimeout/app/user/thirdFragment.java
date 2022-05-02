@@ -1,7 +1,10 @@
 package com.nicotimeout.app.user;
 
 import android.app.Dialog;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -95,14 +99,28 @@ public class thirdFragment extends Fragment {
     Cursor cursor;
 
     DatabaseHelper databaseHelper;
-    Dialog dialog;
+    Dialog ac_blastoff;
+    Dialog ac_thumbsup;
+    Dialog ac_richman;
+    Dialog ac_focused;
+    Dialog ac_30daysofsuccess;
+    Dialog ac_recoverymedal;
+    Dialog ac_recoverychampion;
+    Dialog ac_sturdyasashield;
+    Dialog ac_standtall;
+
+    public static final String PREF_LOGIN_COUNTER = "loginCounter";
+    public static final String PREF_ACHIEVEMENTS_COUNTER = "achievementsCounter";
+
+    //achievement variables
+
+    double ms_amount;
+    double ca_amount;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         View view = inflater.inflate(R.layout.fragment_third, container, false);
-
-        dialog = new Dialog(getActivity());
 
         cigarettesAvoided = view.findViewById(R.id.cigarettesAvoided);
         moneySaved = view.findViewById(R.id.moneySaved);
@@ -152,7 +170,6 @@ public class thirdFragment extends Fragment {
                                     databaseHelper = new DatabaseHelper(getActivity());
 
                                 }
-                                // DatabaseHelper databaseHelper = new DatabaseHelper(thirdFragment.this);
                                 cursor = databaseHelper.getData();
                                 if (cursor.getCount() == 0) {
                                     Toast.makeText(getActivity(), "Database is Empty", Toast.LENGTH_SHORT).show();
@@ -195,10 +212,10 @@ public class thirdFragment extends Fragment {
                                             //roundedProgress_data_cigarettesAvoided = Math.round(data_cigarettesAvoided);
                                             if (isAdded()) {
                                                 String ca_number = String.valueOf(data_cigarettesAvoided);
-                                                double ca_amount = Double.parseDouble(ca_number);
+                                                ca_amount = Double.parseDouble(ca_number);
                                                 DecimalFormat ca_formatter = new DecimalFormat("#,###");
                                                 String ca_formatted = ca_formatter.format(ca_amount);
-                                                cigarettesAvoided.setText(String.valueOf(data_cigarettesAvoided));
+                                                cigarettesAvoided.setText(ca_formatted);
                                             }
 
                                             /*moneySaved*/
@@ -206,7 +223,7 @@ public class thirdFragment extends Fragment {
                                             data_moneySaved = rawElapsedMinutes * progress_moneySaved;
                                             if (isAdded()) {
                                                 String ms_number = String.valueOf(data_moneySaved);
-                                                double ms_amount = Double.parseDouble(ms_number);
+                                                ms_amount = Double.parseDouble(ms_number);
                                                 DecimalFormat ms_formatter = new DecimalFormat("₱#,###.##");
                                                 String ms_formatted = ms_formatter.format(ms_amount);
                                                 moneySaved.setText(ms_formatted);
@@ -251,7 +268,7 @@ public class thirdFragment extends Fragment {
                                                 double cs_amount = Double.parseDouble(cs_number);
                                                 DecimalFormat cs_formatter = new DecimalFormat("#,###");
                                                 String cs_formatted = cs_formatter.format(cs_amount);
-                                                cigarettesSmoked.setText(String.valueOf(cs_formatted));
+                                                cigarettesSmoked.setText(cs_formatted);
                                             }
 
                                             /*moneyWasted*/
@@ -264,11 +281,56 @@ public class thirdFragment extends Fragment {
                                                 moneyWasted.setText(mw_formatted);
                                             }
 
-
                                             fragment_third_days.setText(String.valueOf(elapsedDays));
                                             fragment_third_hours.setText(String.valueOf(elapsedHours));
                                             fragment_third_mins.setText(String.valueOf(elapsedMinutes));
                                             fragment_third_secs.setText(String.valueOf(elapsedSeconds));
+
+                                            //sharedpreferences achievements
+                                            SharedPreferences prefs_achievements = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0);
+                                            SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
+
+                                            long pref_thumbsup = prefs_achievements.getLong("pref_thumbsup", 0);
+                                            if (ms_amount >= 500 && pref_thumbsup == 0) {
+                                                ac_thumbsup();
+                                                achievements_editor.putLong("pref_thumbsup", 1);
+                                                achievements_editor.apply();
+                                            }
+
+                                            long pref_richman = prefs_achievements.getLong("pref_richman", 0);
+                                            if (ms_amount >= 1000 && pref_richman == 0) {
+                                                ac_richman();
+                                                achievements_editor.putLong("pref_richman", 1);
+                                                achievements_editor.apply();
+                                            }
+
+                                            long pref_recoverymedal = prefs_achievements.getLong("pref_recoverymedal", 0);
+                                            if (progress_lifeRegained_days >= 1 && pref_recoverymedal == 0) {
+                                                ac_recoverymedal();
+                                                achievements_editor.putLong("pref_recoverymedal", 1);
+                                                achievements_editor.apply();
+                                            }
+
+                                            long pref_recoverychampion = prefs_achievements.getLong("pref_recoverychampion", 0);
+                                            if (progress_lifeRegained_days >= 7 && pref_recoverychampion == 0) {
+                                                ac_recoverychampion();
+                                                achievements_editor.putLong("pref_recoverychampion", 1);
+                                                achievements_editor.apply();
+                                            }
+
+                                            long pref_sturdyasashield = prefs_achievements.getLong("pref_sturdyasashield", 0);
+                                            if (ca_amount >= 100 && pref_sturdyasashield == 0) {
+                                                ac_sturdyasashield();
+                                                achievements_editor.putLong("pref_sturdyasashield", 1);
+                                                achievements_editor.apply();
+                                            }
+
+                                            long pref_standtall = prefs_achievements.getLong("pref_standtall", 0);
+                                            if (ca_amount >= 1000 && pref_standtall == 0) {
+                                                ac_standtall();
+                                                achievements_editor.putLong("pref_standtall", 1);
+                                                achievements_editor.apply();
+                                            }
 
                                         } catch (Exception e) {
                                             Log.e("YOUR_APP_LOG_TAG", "I got an error", e);
@@ -283,13 +345,53 @@ public class thirdFragment extends Fragment {
                 } catch (InterruptedException e) {
                     Log.e("YOUR_APP_LOG_TAG", "I got an error", e);
                 } finally {
-                    if (cursor!=null){
-                        cursor.close();}
+                    if (cursor != null) {
+                        cursor.close();
+                    }
                 }
             }
         };
 
         thread.start();
+
+        ac_blastoff = new Dialog(getActivity());
+        ac_thumbsup = new Dialog(getActivity());
+        ac_richman = new Dialog(getActivity());
+        ac_focused = new Dialog(getActivity());
+        ac_30daysofsuccess = new Dialog(getActivity());
+        ac_recoverymedal = new Dialog(getActivity());
+        ac_recoverychampion = new Dialog(getActivity());
+        ac_sturdyasashield = new Dialog(getActivity());
+        ac_standtall = new Dialog(getActivity());
+
+        //sharedpreferences counter
+        SharedPreferences prefs_counter = getActivity().getSharedPreferences(PREF_LOGIN_COUNTER, 0);
+        long counter = prefs_counter.getLong("counter", 0);
+
+        //sharedpreferences achievements
+        SharedPreferences prefs_achievements = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0);
+        SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
+
+        long pref_blastoff = prefs_achievements.getLong("pref_blastoff", 0);
+        if (counter == 1 && pref_blastoff == 0) {
+            ac_blastoff();
+            achievements_editor.putLong("pref_blastoff", 1);
+            achievements_editor.apply();
+        }
+
+        long pref_focused = prefs_achievements.getLong("pref_focused", 0);
+        if (counter >= 3 && pref_focused == 0) {
+            ac_focused();
+            achievements_editor.putLong("pref_focused", 1);
+            achievements_editor.apply();
+        }
+
+        long pref_30daysofsuccess = prefs_achievements.getLong("pref_30daysofsuccess", 0);
+        if (counter >= 30 && pref_30daysofsuccess == 0) {
+            ac_30daysofsuccess();
+            achievements_editor.putLong("pref_30daysofsuccess", 1);
+            achievements_editor.apply();
+        }
 
         Window window = getActivity().getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -298,6 +400,115 @@ public class thirdFragment extends Fragment {
         return view;
 
     }
+
+    private void ac_blastoff() {
+        ac_blastoff.setContentView(R.layout.ac_blastoff);
+        ac_blastoff.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ac_blastoff.setCancelable(false);
+        ac_blastoff.setCanceledOnTouchOutside(false);
+
+
+        Button button = ac_blastoff.findViewById(R.id.button);
+        button.setOnClickListener(view -> ac_blastoff.dismiss());
+        ac_blastoff.show();
+    }
+
+    private void ac_thumbsup() {
+        ac_thumbsup.setContentView(R.layout.ac_thumbsup);
+        ac_thumbsup.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ac_thumbsup.setCancelable(false);
+        ac_thumbsup.setCanceledOnTouchOutside(false);
+
+
+        Button button = ac_thumbsup.findViewById(R.id.button);
+        button.setOnClickListener(view -> ac_thumbsup.dismiss());
+        ac_thumbsup.show();
+    }
+
+    private void ac_richman() {
+        ac_richman.setContentView(R.layout.ac_richman);
+        ac_richman.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ac_richman.setCancelable(false);
+        ac_richman.setCanceledOnTouchOutside(false);
+
+
+        Button button = ac_richman.findViewById(R.id.button);
+        button.setOnClickListener(view -> ac_richman.dismiss());
+        ac_richman.show();
+    }
+
+    private void ac_focused() {
+        ac_focused.setContentView(R.layout.ac_focused);
+        ac_focused.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ac_focused.setCancelable(false);
+        ac_focused.setCanceledOnTouchOutside(false);
+
+
+        Button button = ac_focused.findViewById(R.id.button);
+        button.setOnClickListener(view -> ac_focused.dismiss());
+        ac_focused.show();
+    }
+
+    private void ac_30daysofsuccess() {
+        ac_30daysofsuccess.setContentView(R.layout.ac_30daysofsuccess);
+        ac_30daysofsuccess.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ac_30daysofsuccess.setCancelable(false);
+        ac_30daysofsuccess.setCanceledOnTouchOutside(false);
+
+
+        Button button = ac_30daysofsuccess.findViewById(R.id.button);
+        button.setOnClickListener(view -> ac_30daysofsuccess.dismiss());
+        ac_30daysofsuccess.show();
+    }
+
+    private void ac_recoverymedal() {
+        ac_recoverymedal.setContentView(R.layout.ac_recoverymedal);
+        ac_recoverymedal.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ac_recoverymedal.setCancelable(false);
+        ac_recoverymedal.setCanceledOnTouchOutside(false);
+
+
+        Button button = ac_recoverymedal.findViewById(R.id.button);
+        button.setOnClickListener(view -> ac_recoverymedal.dismiss());
+        ac_recoverymedal.show();
+    }
+
+    private void ac_recoverychampion() {
+        ac_recoverychampion.setContentView(R.layout.ac_recoverychampion);
+        ac_recoverychampion.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ac_recoverychampion.setCancelable(false);
+        ac_recoverychampion.setCanceledOnTouchOutside(false);
+
+
+        Button button = ac_recoverychampion.findViewById(R.id.button);
+        button.setOnClickListener(view -> ac_recoverychampion.dismiss());
+        ac_recoverychampion.show();
+    }
+
+    private void ac_sturdyasashield() {
+        ac_sturdyasashield.setContentView(R.layout.ac_sturdyasashield);
+        ac_sturdyasashield.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ac_sturdyasashield.setCancelable(false);
+        ac_sturdyasashield.setCanceledOnTouchOutside(false);
+
+
+        Button button = ac_sturdyasashield.findViewById(R.id.button);
+        button.setOnClickListener(view -> ac_sturdyasashield.dismiss());
+        ac_sturdyasashield.show();
+    }
+
+    private void ac_standtall() {
+        ac_standtall.setContentView(R.layout.ac_standtall);
+        ac_standtall.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ac_standtall.setCancelable(false);
+        ac_standtall.setCanceledOnTouchOutside(false);
+
+
+        Button button = ac_standtall.findViewById(R.id.button);
+        button.setOnClickListener(view -> ac_standtall.dismiss());
+        ac_standtall.show();
+    }
+
 
     @Override
     public void onDestroy() {

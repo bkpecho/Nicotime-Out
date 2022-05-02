@@ -31,8 +31,8 @@
     <string name="questions_cig_price_piece">Cigarette Price per Piece</string>
     <string name="questions_years_smoking">Total Years as a Smoker</string>
     <string name="questions_sticks"><i>Ex. 20 sticks per day</i></string>
-    <string name="questions_price"><i>Ex. ₱5.00 per piece</i></string>
-    <string name="questions_years"><i>Ex. 8 years (estimated)</i></string>
+    <string name="questions_price"><i>Ex. ₱8.00 per piece</i></string>
+    <string name="questions_years"><i>Ex. 5 years (estimated)</i></string>
     <string name="questions_done">START MY JOURNEY</string>
 
     <!--fragment 3-->
@@ -93,23 +93,32 @@
         <item>Achievement 4</item>
     </string-array>
 
-    <string name="ac_1">Blast Off!</string>
-    <string name="ac_2">Rich Man</string>
-    <string name="ac_3">Knowledge is Power</string>
-    <string name="ac_4">30 Days of Success!</string>
-    <string name="ac_5">Focused</string>
-    <string name="ac_6">Stand Tall</string>
-    <string name="ac_7">Achievement 7</string>
-    <string name="ac_8">Achievement 8</string>
+    //achievements
+    <string name="ac_blastoff">Blast Off!</string>
+    <string name="ac_thumbsup">Thumbs Up to Savings</string>
+    <string name="ac_richman">Rich Man</string>
+    <string name="ac_knowledgeispower">Knowledge is Power</string>
+    <string name="ac_inquisitivemind">Inquisitive Mind</string>
+    <string name="ac_30days">30 Days of Success!</string>
+    <string name="ac_focused">Focused</string>
+    <string name="ac_standtall">Stand Tall</string>                 //100 cigarettes
+    <string name="ac_100cigarettesavoided">Sturdy as a Shield</string>
+    <string name="ac_liferegained_1day">Recovery Medal</string>
+    <string name="ac_liferegained_1week">Recovery Champion</string>
+    <string name="ac_explorer">Born to Explore</string>
 
-    <string name="ac_1_desc">Reach the First Milestone</string>
-    <string name="ac_2_desc">Save a total of 500</string>
-    <string name="ac_3_desc">Watched all educational videos</string>
-    <string name="ac_4_desc">Achievement 4</string>
-    <string name="ac_5_desc">Achievement 5</string>
-    <string name="ac_6_desc">Achievement 6</string>
-    <string name="ac_7_desc">Achievement 7</string>
-    <string name="ac_8_desc">Achievement 8</string>
+    <string name="ac_blastoff_desc">Your journey starts here, Champ!</string>
+    <string name="ac_thumbsup_desc">Save a Total of ₱500.00</string>
+    <string name="ac_richman_desc">Save a Total of ₱1000.00</string>
+    <string name="ac_knowledgeispower_desc">Watch Your First Infographic Video</string>
+    <string name="ac_inquisitivemind_desc">Watch All the Infographic Videos</string>
+    <string name="ac_30days_desc">Login for a Total of 30 Days</string>
+    <string name="ac_focused_desc">Login for a Total of 3 Days</string>
+    <string name="ac_standtall_desc">1000 Total Cigarettes Avoided</string>
+    <string name="ac_100cigarettesavoided_desc">100 Total Cigarettes Avoided</string>
+    <string name="ac_liferegained_1day_desc">1 Day Total Life Regained</string>
+    <string name="ac_liferegained_1week_desc">1 Week Total Life Regained</string>
+    <string name="ac_explorer_desc">Explore the Rehabilitation Center Tab</string>
 
     <!--timeline-->
     <string name="quitsmokingtimelineimage">QuitSmokingTimelineImage</string>
