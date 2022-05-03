@@ -10,18 +10,17 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.database.DatabaseHelper;
@@ -123,6 +122,9 @@ public class thirdFragment extends Fragment {
     double ms_amount;
     double ca_amount;
 
+    final Handler handler = new Handler();
+    final int delay = 1000;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
@@ -162,6 +164,14 @@ public class thirdFragment extends Fragment {
         minutesInMilli = secondsInMilli * 60;
         hoursInMilli = minutesInMilli * 60;
         daysInMilli = hoursInMilli * 24;
+
+        //sharedpreferences counter
+        SharedPreferences prefs_counter = getActivity().getSharedPreferences(PREF_LOGIN_COUNTER, 0);
+        long counter = prefs_counter.getLong("counter", 0);
+
+        //sharedpreferences achievements
+        SharedPreferences prefs_achievements = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0);
+        SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
 
         Thread thread = new Thread() {
 
@@ -298,10 +308,6 @@ public class thirdFragment extends Fragment {
                                             fragment_third_mins.setText(String.valueOf(elapsedMinutes));
                                             fragment_third_secs.setText(String.valueOf(elapsedSeconds));
 
-                                            //sharedpreferences achievements
-                                            SharedPreferences prefs_achievements = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0);
-                                            SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
-
                                             long pref_thumbsup = prefs_achievements.getLong("pref_thumbsup", 0);
                                             if (ms_amount >= 500 && pref_thumbsup == 0) {
                                                 ac_thumbsup();
@@ -376,15 +382,6 @@ public class thirdFragment extends Fragment {
         ac_sturdyasashield = new Dialog(getActivity());
         ac_standtall = new Dialog(getActivity());
         reset_dialog = new Dialog(getActivity());
-
-
-        //sharedpreferences counter
-        SharedPreferences prefs_counter = getActivity().getSharedPreferences(PREF_LOGIN_COUNTER, 0);
-        long counter = prefs_counter.getLong("counter", 0);
-
-        //sharedpreferences achievements
-        SharedPreferences prefs_achievements = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0);
-        SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
 
         long pref_blastoff = prefs_achievements.getLong("pref_blastoff", 0);
         if (pref_blastoff == 0) {
