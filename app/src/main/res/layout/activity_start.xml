@@ -38,13 +38,14 @@
 
 
                 <ImageView
-                    android:layout_margin="8dp"
                     android:layout_width="250dp"
                     android:layout_height="36dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
                     android:src="@drawable/nicotimeout_final"
                     tools:ignore="ContentDescription" />
 
-                 <TextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
@@ -52,7 +53,7 @@
                     android:text="Breath Healthily, Live Happily"
                     android:textAlignment="center"
                     android:textColor="@color/main_blue"
-                    android:textSize="11sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
         </FrameLayout>
     </androidx.cardview.widget.CardView>
@@ -78,34 +79,34 @@
             app:cardCornerRadius="14dp"
             app:cardElevation="2dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/main_blue"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@color/main_blue"
-                    android:orientation="horizontal">
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:background="@color/white"
+                    android:padding="24dp"
+                    android:src="@drawable/ac_badeffects" />
 
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="2"
-                        android:background="@color/white"
-                        android:padding="24dp"
-                        android:src="@drawable/ac_badeffects" />
-
-                    <TextView
-                        android:id="@+id/test"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="3"
-                        android:fontFamily="@font/bold"
-                        android:gravity="center_horizontal"
-                        android:text="Bad Effects of Cigarette Smoking"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/test"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/medium"
+                    android:gravity="center_horizontal"
+                    android:text="Bad Effects of Cigarette Smoking"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -119,34 +120,34 @@
             app:cardCornerRadius="14dp"
             app:cardElevation="2dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/main_blue"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@color/main_blue"
-                    android:orientation="horizontal">
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:background="@color/white"
+                    android:padding="24dp"
+                    android:src="@drawable/ac_guide" />
 
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="2"
-                        android:background="@color/white"
-                        android:padding="24dp"
-                        android:src="@drawable/ac_guide" />
-
-                    <TextView
-                        android:id="@+id/test2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="3"
-                        android:fontFamily="@font/bold"
-                        android:gravity="center_horizontal"
-                        android:text="Quit Smoking Guide"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/test2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/medium"
+                    android:gravity="center_horizontal"
+                    android:text="Quit Smoking Guide"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -160,34 +161,34 @@
             app:cardCornerRadius="14dp"
             app:cardElevation="2dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/main_blue"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@color/main_blue"
-                    android:orientation="horizontal">
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:background="@color/white"
+                    android:padding="24dp"
+                    android:src="@drawable/ac_progresstracker" />
 
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="2"
-                        android:background="@color/white"
-                        android:padding="24dp"
-                        android:src="@drawable/ac_progresstracker" />
-
-                    <TextView
-                        android:id="@+id/test3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="3"
-                        android:fontFamily="@font/bold"
-                        android:gravity="center_horizontal"
-                        android:text="My Journey"
-                        android:textColor="@color/white"
-                        android:textSize="14sp" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/test3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_weight="3"
+                    android:fontFamily="@font/medium"
+                    android:gravity="center_horizontal"
+                    android:text="My Journey"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 </LinearLayout>

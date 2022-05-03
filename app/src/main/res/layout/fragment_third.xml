@@ -52,7 +52,7 @@
                         android:fontFamily="@font/bold"
                         android:text="Non-smoker since"
                         android:textColor="@color/main_blue"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -325,7 +325,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/medium"
                                 android:gravity="center"
-                                android:text="0D"
+                                android:text="0d"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
 
@@ -336,7 +336,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/medium"
                                 android:gravity="center"
-                                android:text="0H"
+                                android:text="0h"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
 
@@ -347,7 +347,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/medium"
                                 android:gravity="center"
-                                android:text="0M"
+                                android:text="0m"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
                         </LinearLayout>
@@ -509,7 +509,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/medium"
                                 android:gravity="center"
-                                android:text="0D"
+                                android:text="0d"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
 
@@ -520,7 +520,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/medium"
                                 android:gravity="center"
-                                android:text="0H"
+                                android:text="0h"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
 
@@ -531,7 +531,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/medium"
                                 android:gravity="center"
-                                android:text="0M"
+                                android:text="0m"
                                 android:textColor="@color/main_red"
                                 android:textSize="11sp" />
                         </LinearLayout>

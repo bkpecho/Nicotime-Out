@@ -36,8 +36,6 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
     ImageView fragment_fourth_imageview;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

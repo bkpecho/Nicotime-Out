@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/bold"
                 android:padding="8dp"
-                android:text="Reset Progress"
+                android:text="Progress Reset"
                 android:textColor="@color/main_red"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"

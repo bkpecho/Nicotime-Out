@@ -118,6 +118,19 @@ something, and that this thing, at whatever cost, must be attained.”</item>
         <item>“The greatest mistake you can make in life is to continually be afraid you will make one.”</item>
         <item>“Turn your face to the sun and the shadows fall behind you.”</item>
         <item>“You must do the things you think you cannot do.”</item>
+        <item>“The best idea and the best expression of it amount to nothing without action to back them up.”</item>
+        <item>“Recovery is hard. Regret is harder.”</item>
+        <item>“One small step is worth more than a thousand steps planned.”</item>
+        <item>“Great acts are made up of small deeds.”</item>
+        <item>“Courage isn’t having the strength to go on – it is going on when you don’t have strength.”</item>
+        <item>“Take time to deliberate; but when the time for action arrives, stop thinking and go in.”</item>
+        <item>“A man would do nothing if he waited until he could do it so well that no one could find fault.”</item>
+        <item>“He conquers who endures.”</item>
+        <item>“People become attached to their burdens sometimes more than the burdens are attached to them.”</item>
+        <item>“Experience is not what happens to you, it is what you do with what happens to you.”</item>
+        <item>“My life has been full of terrible misfortunes most of which never happened.”</item>
+        <item>“Even in the midst of devastation, something within us always points the way to freedom.”</item>
+
     </string-array>
 
     <string-array name="authors">
@@ -176,8 +189,25 @@ something, and that this thing, at whatever cost, must be attained.”</item>
         <item>Elbert Hubbard</item>
         <item>Charlotte Whitton</item>
         <item>Eleanor Roosevelt</item>
+        <item>Unknown</item>
+        <item>Brittany Burgunder</item>
+        <item>Unknown</item>
+        <item>Lao Tzu</item>
+        <item>Napoléon Bonaparte</item>
+        <item>Napoléon Bonaparte</item>
+        <item>John Henry Newman</item>
+        <item>Persius</item>
+        <item>George Bernard Shaw</item>
+        <item>Aldous Huxley</item>
+        <item>Michel de Montaigne</item>
+        <item>Sharon Salzberg</item>
+        <item></item>
+
     </string-array>
 
+    <string name="fifth_fragment_intro_1">Wishing for recovery isn’t enough. No matter how good your intentions are, they amount to nothing if you fail to take the necessary steps to make them happen. Take a great step by accepting help from an <b>addiction treatment program.</b></string>
+    <string name="fifth_fragment_intro_2">Even at your lowest point of discouragement, you can still find the strength to overcome substance abuse as long as you take actionable steps to achieve this goal.</string>
+    <string name="fifth_fragment_intro_3">You have to trust that full recovery is possible for you. With the right mindset, you can overcome the worst of addiction.</string>
 
     //achievements
     <string name="ac_blastoff">Blast Off!</string>
@@ -188,6 +218,7 @@ something, and that this thing, at whatever cost, must be attained.”</item>
     <string name="ac_30days">30 Days of Success!</string>
     <string name="ac_focused">Focused</string>
     <string name="ac_standtall">Stand Tall</string>
+
     //100 cigarettes
     <string name="ac_100cigarettesavoided">Sturdy as a Shield</string>
     <string name="ac_liferegained_1day">Recovery Medal</string>
@@ -235,5 +266,6 @@ something, and that this thing, at whatever cost, must be attained.”</item>
     <string name="timeline_desc_6months">You are now better in handling stressful events without feeling like you need to smoke. You may also notice you’re coughing up much less mucus and phlegm.</string>
     <string name="timeline_desc_3months">Within one to three months of quitting, your blood circulation will improve considerably. Women may also begin to experience improvements in fertility.</string>
     <string name="timeline_desc_1month">You can experience a sense of heightened overall energy, decreased smoking-related symptoms, and fibers in the lungs that help keep the lungs healthy are growing back.</string>
+    <string name="rehab_link">https://www.ddb.gov.ph/legal-services/treatment-and-rehabilitation/46-sidebar/65-doh-accredited-rehabilitation-centers#r10-2</string>
 
 </resources>

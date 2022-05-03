@@ -11,31 +11,45 @@
         android:theme="@style/Theme.NicotimeOut">
         <activity
             android:name=".user.fifthFragment.fifthFragment_popup"
-            android:parentActivityName=".user.fifthFragment.fifthFragment" />
+            android:parentActivityName=".user.fifthFragment.fifthFragment"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
 
 
         <activity
             android:name=".userStart.StartActivity_first_popup"
-            android:parentActivityName=".userStart.StartActivity_first" />
+            android:parentActivityName=".userStart.StartActivity_first"/>
 
 
         <activity
             android:name=".userStart.StartActivity_first"
-            android:parentActivityName=".userStart.StartActivity" />
+            android:parentActivityName=".userStart.StartActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".common.QuestionActivity"></activity>
+        <activity android:name=".common.QuestionActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".user.UserProgress"
-            android:parentActivityName=".userStart.StartActivity" />
+            android:parentActivityName=".userStart.StartActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
 
-        <activity android:name=".userStart.StartActivity" />
+        <activity android:name=".userStart.StartActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
 
 
-        <activity android:name=".common.MainActivity" />
+        <activity android:name=".common.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
 
 
-        <activity android:name=".common.SplashScreen">
+        <activity android:name=".common.SplashScreen"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

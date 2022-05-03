@@ -14,16 +14,20 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.database.DatabaseHelper;
+import com.nicotimeout.app.user.fifthFragment.fifthFragment;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -114,6 +118,7 @@ public class thirdFragment extends Fragment {
 
     public static final String PREF_LOGIN_COUNTER = "loginCounter";
     public static final String PREF_ACHIEVEMENTS_COUNTER = "achievementsCounter";
+    public static final String FOURTH_PREFS_NAME = "MyPrefsFile";
 
     ImageButton imageButton;
 
@@ -122,17 +127,12 @@ public class thirdFragment extends Fragment {
     double ms_amount;
     double ca_amount;
 
-    final Handler handler = new Handler();
-    final int delay = 1000;
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         View view = inflater.inflate(R.layout.fragment_third, container, false);
-
         imageButton = view.findViewById(R.id.threedots);
         imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View view) {
                 reset_dialog();
             }
@@ -191,7 +191,7 @@ public class thirdFragment extends Fragment {
                                 localTime = date.format(currentLocalTime);
 
                                 if (databaseHelper == null) {
-                                    databaseHelper = new DatabaseHelper(getActivity());
+                                    databaseHelper = DatabaseHelper.getInstance(getActivity());
                                 }
                                 cursor = databaseHelper.getData();
                                 if (cursor.getCount() == 0) {
@@ -427,6 +427,14 @@ public class thirdFragment extends Fragment {
         button_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor = getActivity().getSharedPreferences(FOURTH_PREFS_NAME, 0).edit();
+                SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
+                achievements_editor.putLong("pref_blastoff", 1);
+                achievements_editor.putLong("pref_explorer", 1);
+                editor.clear();
+                achievements_editor.clear();
+                editor.apply();
+                achievements_editor.apply();
                 databaseHelper = new DatabaseHelper(getActivity());
                 databaseHelper.deleteAll();
                 reset_dialog.dismiss();
@@ -544,7 +552,6 @@ public class thirdFragment extends Fragment {
         button.setOnClickListener(view -> ac_standtall.dismiss());
         ac_standtall.show();
     }
-
 
     @Override
     public void onDestroy() {

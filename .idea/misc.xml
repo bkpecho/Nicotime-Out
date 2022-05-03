@@ -14,6 +14,7 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/shape_circle.xml" value="0.324" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/splash_gradient.xml" value="0.2335" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/drawable/third_fragment_threedots.xml" value="0.2205" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout-v26/fragment_fifth.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/ac_30daysofsuccess.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/ac_blastoff.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/ac_explorer.xml" value="0.36666666666666664" />
@@ -30,11 +31,11 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/ac_thumbsup.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/activity_question.xml" value="0.33" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/activity_start.xml" value="0.33" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/activity_start_first.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/activity_start.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/activity_start_first.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/activity_start_first_popup.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/dialog_1month.xml" value="0.33" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/dialog_1week.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/dialog_1week.xml" value="0.67" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/dialog_1year.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/dialog_1year_2nd.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/dialog_20mins.xml" value="0.3625" />
@@ -46,24 +47,26 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/dialog_6months.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/dialog_72hrs.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/dialog_8hrs.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_fifth.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_fifth.xml" value="0.25" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_fifth_adapter.xml" value="0.23802083333333332" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_fifth_popup.xml" value="0.23802083333333332" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_first.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_fifth_popup.xml" value="0.5" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_first.xml" value="0.48703703703703705" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_fourth.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/fragment_third.xml" value="0.31179775280898875" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/item_container_onboarding.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/login_dialog.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/my_row.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/poupup_menu.xml" value="0.1" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/reset_dialog.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/splash_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/user_progress.xml" value="0.33" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/layout/win_layout_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/menu/bottom_menu.xml" value="0.3537037037037037" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Nicotime-Out/app/src/main/res/menu/popup_menu.xml" value="0.32314814814814813" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
