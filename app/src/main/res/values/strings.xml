@@ -1,23 +1,15 @@
 <resources>
 
     <string name="app_name">Nicotime-Out!</string>
-    <string name="logo_name">NICOTIME-OUT!</string>
 
     <!--    titles-->
-    <string name="intro1_title">WELCOME!</string>
-    <string name="intro2_title">Quit Smoking with the Nicotime-Out! App</string>
-    <string name="intro3_title">Cross the Smoke-Free Finish Line</string>
 
     <!--descriptions-->
-    <string name="intro1_descriptions">You are about to start the <b>most fruitful</b> journey of your life</string>
 
     <!--buttons-->
-    <string name="get_started">I WANT TO BE FREE!</string>
-    <string name="next_btn">Next</string>
 
     <!--bot_menu_title-->
     <string name="bot_menu_title1">Rewards</string>
-    <string name="bot_menu_title2">Learn</string>
     <string name="bot_menu_title3">Progress</string>
     <string name="bot_menu_title4">Timeline</string>
     <string name="bot_menu_title5">Rehab+</string>
@@ -25,8 +17,6 @@
 
     <!--questions activity-->
     <string name="questions_header">Starting with the Basics</string>
-    <string name="questions_when">When did you quit?</string>
-    <string name="questions_select">SELECT DATE</string>
     <string name="questions_cig_smok_day">Cigarettes Smoked per Day</string>
     <string name="questions_cig_price_piece">Cigarette Price per Piece</string>
     <string name="questions_years_smoking">Total Years as a Smoker</string>
@@ -36,25 +26,17 @@
     <string name="questions_done">START MY JOURNEY</string>
 
     <!--fragment 3-->
-    <string name="frag_third_day_number">Day 1</string>
-    <string name="SmokeFree">Smoke Free</string>
-    <string name="total_SmokeFree">00:00:00</string>
     <string name="MoneySaved">Money Saved</string>
     <string name="total_MoneySaved">₱00.00</string>
     <string name="total_MoneyLost">₱00.00</string>
-    <string name="total_LifeRegained">00:00:00</string>
     <string name="LifeRegained">Life Regained</string>
     <string name="total_CigarettesAvoided">0</string>
     <string name="CigarettesAvoided">Cigarettes Avoided</string>
-    <string name="Flag">Flag</string>
     <string name="PesoCurrency">Peso Currency</string>
     <string name="Clock">Clock</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="third_CigarettesSmoked">Cigarettes Smoked</string>
     <string name="third_MoneyWasted">Money Wasted</string>
     <string name="third_LifeLost">Life Lost</string>
-    <string name="PesoSign">₱</string>
-    <string name="moneyWasted">%1$s%2$d</string>
 
     <string name="lifeRegained_days">%1$sd</string>
     <string name="lifeRegained_hours">%1$sh</string>
@@ -79,19 +61,123 @@
         <item>What is Cigarette Addiction?</item>
     </string-array>
 
-    <string-array name="achievement_title">
-        <item>Blast Off!</item>
-        <item>Rich Man</item>
-        <item>Knowledge is Power</item>
-        <item>Achievement 4</item>
+    <string-array name="quotes">
+        <item>“Believe you can, and you’re halfway there.”</item>
+        <item>“I avoid looking forward or backward, and try to keep looking upward.”</item>
+        <item>“I hated every minute of training, but I said, ‘Don’t quit. Suffer now and live the rest of your life as a champion.”</item>
+        <item>“Our greatest glory is not in never failing, but in rising up every time we fail.”</item>
+        <item>“Every worthy act is difficult. Ascent is always difficult. Descent is easy and often slippery.”</item>
+        <item>“It is by going down into the abyss that we recover the treasures of life. Where you stumble, there lies your treasure.”</item>
+        <item>“The great thing in this world is not so much where you stand, as what direction you are moving.”</item>
+        <item>“I’ve been absolutely terrified every moment of my life – and I’ve never let it keep me from doing a single thing I wanted to do.”</item>
+        <item>“If you accept the expectations of others, especially negative ones, then you never will change the outcome.”</item>
+        <item>“People often say that motivation doesn’t last. Neither does bathing. That’s why we recommend it daily.”</item>
+        <item>“Success is the sum of small efforts, repeated day in and day out.”</item>
+        <item>“Tomorrow is the most important thing in life; it comes to us at midnight very clean. It’s perfect when it arrives, and it puts itself in our hands. It hopes we’ve learned something from yesterday.”</item>
+        <item>“If you can quit for a day, you can quit for a lifetime.”</item>
+        <item>“Fall seven times, stand up eight.”</item>
+        <item>“Either you run the day, or the day runs you.”</item>
+        <item>“Every strike brings me closer to the next home run.”</item>
+        <item>“Life is like riding a bicycle. To keep your balance, you must keep moving.”</item>
+        <item>“When you rise in the morning, think of what a privilege it is to be alive, to think, to enjoy, to love …” </item>
+        <item>“Though no one can go back and make a brand new start, anyone can start from now and make a brand new ending.”</item>
+        <item>“Everyone has inside of him a piece of good news. The good news is that you don’t know how great you can be! How much you can love! What you can accomplish! And what your potential is!”</item>
+        <item>“What progress, you ask, have I made? I have begun to be a friend to myself.”</item>
+        <item>“Find the seed at the bottom of your heart and bring forth a flower.”</item>
+        <item>“What makes the desert beautiful is that somewhere it hides a well.”</item>
+        <item>“All the suffering, stress, and addiction comes from not realizing you already are what you are looking for.”</item>
+        <item>“People spend a lifetime searching for happiness; looking for peace. They chase idle dreams, addictions, religions, even other people, hoping to fill the emptiness that plagues them. The irony is the only place they ever needed to search was within.”</item>
+        <item>“The most common way people give up their power is by thinking they don’t have any.”</item>
+        <item>“Be yourself; everyone else is already taken.”</item>
+        <item>“It always seems impossible until it’s done.”</item>
+        <item>“In the midst of winter, I found there was, within me, an invincible summer. And that makes me happy. For it says that no matter how hard the world pushes against me, within me, there’s something stronger — something better, pushing right back.”</item>
+        <item>“Character cannot be developed in ease and quiet. Only through experience of trial and suffering can the soul be strengthened, ambition inspired, and success achieved.”</item>
+        <item>“We may think there is willpower involved, but more likely … change is due to want power. Wanting the new addiction more than the old one. Wanting the new me in preference to the person I am now.”</item>
+        <item>“Man never made any material as resilient as the human spirit.”</item>
+        <item>“You can come out of the furnace of trouble two ways: if you let it consume you, you come out a cinder; but there is a kind of metal which refuses to be consumed, and comes out a star.”</item>
+        <item>“I have learned over the years that when one’s mind is made up, this diminishes fear.”</item>
+        <item>“Hardships often prepare ordinary people for an extraordinary destiny.”</item>
+        <item>“Sometimes we motivate ourselves by thinking of what we want to become. Sometimes we motivate ourselves by thinking about who we don’t ever want to be again.”</item>
+        <item>“When we meet real tragedy in life, we can react in two ways – either by losing hope and falling into self-destructive habits, or by using the challenge to find our inner strength. Thanks to the teachings of Buddha, I have been able to take this second way.”</item>
+        <item>“Cause sometimes you just feel tired. Feel weak, and when you feel weak, you feel like you wanna just give up. But you gotta search within you. You gotta find that inner strength. And just pull it out of you, and get that motivation to not give up, and not be a quitter, no matter how bad you wanna just fall flat on your face.”</item>
+        <item>“Life is not easy for any of us. But what of that? We must have perseverance and, above all, confidence in ourselves. We must believe that we are gifted for
+something, and that this thing, at whatever cost, must be attained.”</item>
+        <item>“Life has many ways of testing a person’s will, either by having nothing happen at all or by having everything happen all at once.”</item>
+        <item>“Today you are You, that is truer than true. There is no one alive who is Youer than You.”</item>
+        <item>“Nothing is impossible; the word itself says, ‘I’m possible!”</item>
+        <item>“What lies behind us and what lies before us are tiny matters compared to what lies within us.”</item>
+        <item>“I can’t change the direction of the wind, but I can adjust my sails to always reach my destination.”</item>
+        <item>“I dwell in possibility.”</item>
+        <item>“Don’t let the past steal your present.”</item>
+        <item>“Addiction begins with the hope that something “out there” can instantly fill up the emptiness inside.”</item>
+        <item>“Hope is a good thing, maybe even the best of things, and good things never die.”</item>
+        <item>“The only journey is the one within.”</item>
+        <item>“Every experience in your life is being orchestrated to teach you something you need to know to move forward.”</item>
+        <item>“Not feeling is no replacement for reality. Your problems today are still your problems tomorrow.”</item>
+        <item>“What is an addiction, really? It is a sign, a signal, a symptom of distress. It is a language that tells us about a plight that must be understood.”</item>
+        <item>“The greatest mistake you can make in life is to continually be afraid you will make one.”</item>
+        <item>“Turn your face to the sun and the shadows fall behind you.”</item>
+        <item>“You must do the things you think you cannot do.”</item>
     </string-array>
 
-    <string-array name="achievement_description">
-        <item>Reach the First Milestone</item>
-        <item>Save a total of 500</item>
-        <item>Watch all multimedia presentations</item>
-        <item>Achievement 4</item>
+    <string-array name="authors">
+        <item>Theodore Roosevelt</item>
+        <item>Charlotte Brontë</item>
+        <item>Muhammad Ali</item>
+        <item>Ralph Waldo Emerson</item>
+        <item>Mahatma Gandhi</item>
+        <item>Joseph Campbell</item>
+        <item>Oliver Wendell Holmes</item>
+        <item>Georgia O’Keeffe</item>
+        <item>Michael Jordan</item>
+        <item>Zig Ziglar</item>
+        <item>Robert Collier</item>
+        <item>John Wayne</item>
+        <item>Benjamin Alire Sáenz</item>
+        <item>Japanese proverb</item>
+        <item>Jim Rohn</item>
+        <item>Babe Ruth</item>
+        <item>Albert Einstein</item>
+        <item>Marcus Aurelius</item>
+        <item>Carl Bard</item>
+        <item>Anne Frank</item>
+        <item>Hecato</item>
+        <item>Shigenori Kameoka</item>
+        <item>Antoine de Saint-Exupery</item>
+        <item>Jon Kabat-Zinn</item>
+        <item>Ramona L. Anderson</item>
+        <item>Alice Walker</item>
+        <item>Oscar Wild</item>
+        <item>Nelson Mandela</item>
+        <item>Albert Camus</item>
+        <item>Helen Keller</item>
+        <item>George Sheehan</item>
+        <item>Bernard Williams</item>
+        <item>Jean Church</item>
+        <item>Rosa Parks</item>
+        <item>C.S. Lewis</item>
+        <item>Shane Niemeyer</item>
+        <item>Dalai Lama</item>
+        <item>Eminem</item>
+        <item>Marie Curie</item>
+        <item>Paulo Coelho</item>
+        <item>Dr. Seuss</item>
+        <item>Audrey Hepburn</item>
+        <item>Ralph Waldo Emerson</item>
+        <item>Jimmy Dean</item>
+        <item>Emily Dickinson</item>
+        <item>Terri Guillemets</item>
+        <item>Jean Kilbourne</item>
+        <item>Stephen King</item>
+        <item>Rainer Maria Rilke</item>
+        <item>Brian Tracy</item>
+        <item>Larry Michael Dredla</item>
+        <item>Alice Miller</item>
+        <item>Elbert Hubbard</item>
+        <item>Charlotte Whitton</item>
+        <item>Eleanor Roosevelt</item>
     </string-array>
+
 
     //achievements
     <string name="ac_blastoff">Blast Off!</string>
@@ -101,7 +187,8 @@
     <string name="ac_inquisitivemind">Inquisitive Mind</string>
     <string name="ac_30days">30 Days of Success!</string>
     <string name="ac_focused">Focused</string>
-    <string name="ac_standtall">Stand Tall</string>                 //100 cigarettes
+    <string name="ac_standtall">Stand Tall</string>
+    //100 cigarettes
     <string name="ac_100cigarettesavoided">Sturdy as a Shield</string>
     <string name="ac_liferegained_1day">Recovery Medal</string>
     <string name="ac_liferegained_1week">Recovery Champion</string>
@@ -121,7 +208,6 @@
     <string name="ac_explorer_desc">Explore the Rehabilitation Center Tab</string>
 
     <!--timeline-->
-    <string name="quitsmokingtimelineimage">QuitSmokingTimelineImage</string>
     <string name="quit_smoking_timeline">Quit Smoking Timeline</string>
     <string name="timeline_20minutes">20 minutes after your last cigarette</string>
     <string name="timeline_8hours">8 hours after your last cigarette</string>

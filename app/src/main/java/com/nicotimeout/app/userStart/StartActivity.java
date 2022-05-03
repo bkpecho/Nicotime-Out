@@ -7,7 +7,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +21,9 @@ import com.nicotimeout.app.common.QuestionActivity;
 
 import org.joda.time.DateTime;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class StartActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String PREF_LOGIN_COMPARE = "loginCompare";
     public static final String PREF_LOGIN_COUNTER = "loginCounter";
@@ -29,9 +31,12 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
     Animation animShake = null;
     Animation animShake_2secs = null;
+
     Dialog login_dialog;
 
     ImageView fragment_fourth_imageview;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,36 +102,32 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         TextView text_bottom = login_dialog.findViewById(R.id.textView_author);
         Button button = login_dialog.findViewById(R.id.button);
 
+        int idx = new Random().nextInt(getResources().getStringArray(R.array.quotes).length-1);
+
+        String quotes = getResources().getStringArray(R.array.quotes)[idx];
+        String authors = getResources().getStringArray(R.array.authors)[idx];
         imageView.startAnimation(animShake);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        imageView.setOnClickListener(view -> {
 
-                imageView.clearAnimation();
-                imageView.setImageResource(R.drawable.login_gift_open);
+            imageView.clearAnimation();
+            imageView.setImageResource(R.drawable.login_gift_open);
 
-                text_top.setText("Quote of the Day");
-                text_middle.setText("'Our quote today is! Etc. blah blah blah'");
-                text_bottom.setText("Author");
+            text_top.setText("Quote of the Day");
+            text_middle.setText(quotes);
+            text_bottom.setText(authors);
 
-                text_bottom.setVisibility(View.GONE);
-                text_middle.setVisibility(View.VISIBLE);
-                text_bottom.setVisibility(View.VISIBLE);
+            text_bottom.setVisibility(View.GONE);
+            text_middle.setVisibility(View.VISIBLE);
+            text_bottom.setVisibility(View.VISIBLE);
 
-                button.setVisibility(View.VISIBLE);
+            button.setVisibility(View.VISIBLE);
 
-            }
         });
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login_dialog.dismiss();
-            }
-        });
-
+        button.setOnClickListener(view -> login_dialog.dismiss());
         login_dialog.show();
     }
+
 
     @Override
     public void onBackPressed() {
