@@ -57,7 +57,7 @@
                 android:padding="8dp"
                 android:text="We're glad to see you continue your journey!"
                 android:textColor="@color/main_blue"
-                android:textSize="11sp"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView_title" />

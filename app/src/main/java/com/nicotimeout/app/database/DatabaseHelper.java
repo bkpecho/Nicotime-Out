@@ -74,33 +74,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.rawQuery(queryString, null,null);
     }
 
-
-    public String getQuitDate() {
-        // List<UserModel> returnList = new ArrayList<>();
-        String queryString = " Select * FROM " + USER_TABLE;
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(queryString, null); // rawQuery returns a Cursor.
-        if (cursor.moveToFirst()) {
-            do {
-                /*  int user_id = cursor.getInt(0);*/
-                String quit_date = cursor.getString(1);
-             /*   int cig_per_day = cursor.getInt(2);
-                int cig_price = cursor.getInt(3);
-                int cig_years = cursor.getInt(4);*/
-
-                //UserModel userModel = new UserModel(user_id, quit_date, cig_per_day, cig_price, cig_years);
-                return quit_date;
-            } while (cursor.moveToNext());
-
-        } else {
-            //If nothing in the database, do not add anything to the list.
-
-        }
-        cursor.close();
-        db.close();
-        return getQuitDate();
-    }
-
     public void deleteAll()
     {
         SQLiteDatabase db = this.getWritableDatabase();

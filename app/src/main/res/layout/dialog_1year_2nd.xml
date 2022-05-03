@@ -32,7 +32,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ac_unlocked" />
+                app:srcCompat="@drawable/ac_finish" />
 
 
             <TextView
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/italic"
                 android:padding="8dp"
-                android:text="Congratulations on your incredible success! I always knew you could do it, and I'm incredibly proud of you!"
+                android:text="Congratulations on your incredible success! We always knew you could do it, and we're very proud of you!"
                 android:textColor="@color/main_blue"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -103,7 +103,6 @@ public class fourthFragment extends Fragment {
     long different;
     long rawDifferent;
 
-    public static final String FOURTH_PREFS_NAME = "MyPrefsFile";
     Dialog dialog_20mins;
     Dialog dialog_8hrs;
     Dialog dialog_24hrs;
@@ -117,6 +116,8 @@ public class fourthFragment extends Fragment {
     Dialog dialog_6months;
     Dialog dialog_1year;
     Dialog dialog_1year_2nd;
+
+    public static final String FOURTH_PREFS_NAME = "MyPrefsFile";
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -177,10 +178,9 @@ public class fourthFragment extends Fragment {
                                 localTime = date.format(currentLocalTime);
 
                                 if (databaseHelper == null) {
-                                    databaseHelper = new DatabaseHelper(getActivity());
+                                    databaseHelper = DatabaseHelper.getInstance(getActivity());
 
                                 }
-                                quit_date = databaseHelper.getQuitDate();
 
                                 cursor = databaseHelper.getData();
                                 if (cursor.getCount() == 0) {
@@ -188,6 +188,8 @@ public class fourthFragment extends Fragment {
                                 } else {
                                     while (cursor.moveToNext()) {
                                         try {
+                                            quit_date = cursor.getString(1);
+
                                             simpleDateFormat = new SimpleDateFormat(
                                                     "dd/M/yyyy hh:mm:ss", Locale.getDefault());
                                             startDate = simpleDateFormat.parse(quit_date);

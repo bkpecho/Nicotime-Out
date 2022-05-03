@@ -111,6 +111,10 @@ public class firstFragment extends Fragment {
             cv_explorer.setVisibility(View.VISIBLE);
         }
 
+        if (counter == 12) {
+            cv_explorer.setVisibility(View.GONE);
+        }
+
         LinearLayout linearLayout = view.findViewById(R.id.linearLayout);
         int childCount = linearLayout.getChildCount();
         int count = 0;

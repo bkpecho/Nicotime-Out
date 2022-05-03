@@ -1,35 +1,39 @@
 package com.nicotimeout.app.user.fifthFragment;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.nicotimeout.app.R;
-
-import java.util.ArrayList;
 
 
 public class fifthFragment extends Fragment {
 
     public static final String PREF_ACHIEVEMENTS_COUNTER = "achievementsCounter";
-
-    RecyclerView recyclerView;
-    ArrayList images, name;
-
+    Animation flicker = null;
+    CardView cv_openLink;
+    ImageView fragment_fifth_imageview;
+    LinearLayout fifthFragment_linearheader;
+    LinearLayout fifthFragment_linearbody;
     Dialog ac_explorer;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,16 +46,54 @@ public class fifthFragment extends Fragment {
         SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
         long pref_explorer = prefs_achievements.getLong("pref_explorer", 0);
 
+//        fifth_fragment_intro_1 = view.findViewById(R.id.fifth_fragment_intro_1);
+//        fifth_fragment_intro_1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getParentFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
+//                        new fifthFragment()).commit();
+//            }
+//        });
+
+        cv_openLink = view.findViewById(R.id.cv_openLink);
+        flicker = AnimationUtils.loadAnimation(getActivity(), R.anim.flicker);
+        fragment_fifth_imageview = view.findViewById(R.id.fragment_fifth_imageview);
+        fifthFragment_linearheader = view.findViewById(R.id.fifthFragment_linearheader);
+        fifthFragment_linearbody = view.findViewById(R.id.fifthFragment_linearbody);
         ac_explorer = new Dialog(getActivity());
 
         if (pref_explorer == 0) {
+            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    1.0f
+            );
+            fifthFragment_linearheader.setLayoutParams(param);
+            fragment_fifth_imageview.setAnimation(flicker);
+        }
+        if (pref_explorer == 2) {
             ac_explorer();
-            achievements_editor.putLong("pref_explorer", 1);
-            achievements_editor.apply();
         }
 
+        fifthFragment_linearheader.setOnClickListener(view1 -> {
+            if (pref_explorer == 0) {
+                achievements_editor.putLong("pref_explorer", 2);
+                achievements_editor.apply();
+                getParentFragmentManager().beginTransaction().replace(
+                        R.id.fragmentContainerView, new fifthFragment()).commit();
+            }
+        });
 
-        recyclerView = view.findViewById(R.id.fifthFragment_recyclerView);
+        cv_openLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse(getString(R.string.rehab_link));
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
+       /* recyclerView = view.findViewById(R.id.fifthFragment_recyclerView);
         images = new ArrayList();
         name = new ArrayList();
 
@@ -62,7 +104,7 @@ public class fifthFragment extends Fragment {
         fifthFragment_adapter helperAdapter = new fifthFragment_adapter(getContext(), images, name);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(helperAdapter);
+        recyclerView.setAdapter(helperAdapter);*/
 
         Window window = getActivity().getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -79,7 +121,12 @@ public class fifthFragment extends Fragment {
 
 
         Button button = ac_explorer.findViewById(R.id.button);
-        button.setOnClickListener(view -> ac_explorer.dismiss());
+        button.setOnClickListener(view -> {
+            SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
+            achievements_editor.putLong("pref_explorer", 1);
+            achievements_editor.apply();
+            ac_explorer.dismiss();
+        });
         ac_explorer.show();
     }
 
