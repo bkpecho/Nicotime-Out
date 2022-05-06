@@ -20,8 +20,13 @@
         <item name="fontFamily">@font/medium</item>
     </style>
 
+    <style name="ToolbarColoredBackArrow" parent="Theme.AppCompat">
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="BottomNavigationView">

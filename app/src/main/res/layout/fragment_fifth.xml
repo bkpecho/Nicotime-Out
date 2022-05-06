@@ -105,7 +105,7 @@
                     android:layout_margin="4dp"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/medium"
-                    android:text="Updated List of Rehab Canters"
+                    android:text="Updated List of Rehab Centers"
                     android:textColor="@color/main_red"
                     android:textSize="14sp" />
 

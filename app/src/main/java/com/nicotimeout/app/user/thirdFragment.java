@@ -424,23 +424,20 @@ public class thirdFragment extends Fragment {
         button_no.setOnClickListener(view -> reset_dialog.dismiss());
 
         Button button_yes = reset_dialog.findViewById(R.id.button_yes);
-        button_yes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = getActivity().getSharedPreferences(FOURTH_PREFS_NAME, 0).edit();
-                SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
-                achievements_editor.putLong("pref_blastoff", 1);
-                achievements_editor.putLong("pref_explorer", 1);
-                editor.clear();
-                achievements_editor.clear();
-                editor.apply();
-                achievements_editor.apply();
-                databaseHelper = new DatabaseHelper(getActivity());
-                databaseHelper.deleteAll();
-                reset_dialog.dismiss();
-                getActivity().getSupportFragmentManager().beginTransaction().remove(thirdFragment.this).commit();
-                getActivity().onBackPressed();
-            }
+        button_yes.setOnClickListener(view -> {
+            SharedPreferences.Editor editor = getActivity().getSharedPreferences(FOURTH_PREFS_NAME, 0).edit();
+            SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
+            achievements_editor.putLong("pref_blastoff", 1);
+            achievements_editor.putLong("pref_explorer", 1);
+            editor.clear();
+            achievements_editor.clear();
+            editor.apply();
+            achievements_editor.apply();
+            databaseHelper = new DatabaseHelper(getActivity());
+            databaseHelper.deleteAll();
+            reset_dialog.dismiss();
+            getActivity().getSupportFragmentManager().beginTransaction().remove(thirdFragment.this).commit();
+            getActivity().onBackPressed();
         });
         reset_dialog.show();
     }

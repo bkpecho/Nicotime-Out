@@ -7,23 +7,36 @@
     android:orientation="vertical"
     tools:context=".userStart.StartActivity_popup">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/main_blue"
+        android:elevation="2dp"
+        android:theme="@style/ToolbarColoredBackArrow"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:popupTheme="@style/Theme.AppCompat"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleTextColor="@color/white" />
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:background="@color/white">
 
         <ImageView
             android:id="@+id/imageView"
+            android:scaleType="fitXY"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
         <ImageView
             android:id="@+id/playButton"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_gravity="center"
-            android:src="@drawable/play"/>
+            android:src="@drawable/play" />
     </FrameLayout>
 
     <ScrollView

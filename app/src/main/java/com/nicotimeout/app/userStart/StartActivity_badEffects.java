@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.nicotimeout.app.R;
 
@@ -19,6 +23,11 @@ public class StartActivity_badEffects extends AppCompatActivity {
     String vid_smoking;
     String vid_effects;
     String vid_addiction;
+    String img_cigarette;
+    String img_smoking;
+    String img_effects;
+    String img_addiction;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +51,11 @@ public class StartActivity_badEffects extends AppCompatActivity {
         vid_effects = "android.resource://" + getPackageName() + "/" + R.raw.vid_effects;
         vid_addiction = "android.resource://" + getPackageName() + "/" + R.raw.vid_addiction;
 
+        img_cigarette = "android.resource://" + getPackageName() + "/" + R.drawable.vid_cigarette;
+        img_smoking = "android.resource://" + getPackageName() + "/" + R.drawable.vid_smoking;
+        img_effects = "android.resource://" + getPackageName() + "/" + R.drawable.vid_effects;
+        img_addiction = "android.resource://" + getPackageName() + "/" + R.drawable.vid_addiction;
+
         cv1.setOnClickListener(view -> {
             Intent myIntent = new Intent(StartActivity_badEffects.this, StartActivity_popup.class);
             myIntent.putExtra("title", rv_subTitle[0]);
@@ -51,6 +65,7 @@ public class StartActivity_badEffects extends AppCompatActivity {
             myIntent.putExtra("body4", rv_body4[0]);
             myIntent.putExtra("ac_checker", "0");
             myIntent.putExtra("video", vid_cigarette);
+            myIntent.putExtra("image",img_cigarette);
             StartActivity_badEffects.this.startActivity(myIntent);
         });
         cv2.setOnClickListener(view -> {
@@ -62,6 +77,7 @@ public class StartActivity_badEffects extends AppCompatActivity {
             myIntent.putExtra("body4", rv_body4[1]);
             myIntent.putExtra("ac_checker", "1");
             myIntent.putExtra("video", vid_smoking);
+            myIntent.putExtra("image",img_smoking);
             StartActivity_badEffects.this.startActivity(myIntent);
         });
         cv3.setOnClickListener(view -> {
@@ -73,6 +89,7 @@ public class StartActivity_badEffects extends AppCompatActivity {
             myIntent.putExtra("body4", rv_body4[2]);
             myIntent.putExtra("ac_checker", "2");
             myIntent.putExtra("video", vid_effects);
+            myIntent.putExtra("image",img_effects);
             StartActivity_badEffects.this.startActivity(myIntent);
         });
         cv4.setOnClickListener(view -> {
@@ -84,6 +101,7 @@ public class StartActivity_badEffects extends AppCompatActivity {
             myIntent.putExtra("body4", rv_body4[3]);
             myIntent.putExtra("ac_checker", "3");
             myIntent.putExtra("video", vid_addiction);
+            myIntent.putExtra("image",img_addiction);
             StartActivity_badEffects.this.startActivity(myIntent);
         });
     }

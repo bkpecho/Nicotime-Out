@@ -38,13 +38,14 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     Dialog login_dialog;
 
     ImageView fragment_fourth_imageview;
-
+    int[] imageView = new int[]{R.drawable.vid_cigarette, R.drawable.vid_smoking, R.drawable.vid_effects, R.drawable.vid_addiction, R.drawable.vid_guide};
     String[] rv_subTitle;
     String[] rv_body1;
     String[] rv_body2;
     String[] rv_body3;
     String[] rv_body4;
     String vid_guide;
+    String img_guide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,6 +158,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
             case R.id.activity_start_cardview2:
                 Intent myIntent = new Intent(this, StartActivity_popup.class);
                 vid_guide = "android.resource://" + getPackageName() + "/" + R.raw.vid_guide;
+                img_guide = "android.resource://" + getPackageName() + "/" + R.drawable.vid_guide;
                 myIntent.putExtra("title", rv_subTitle[4]);
                 myIntent.putExtra("body1", rv_body1[4]);
                 myIntent.putExtra("body2", rv_body2[4]);
@@ -164,6 +166,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 myIntent.putExtra("body4", rv_body4[4]);
                 myIntent.putExtra("ac_checker", "4");
                 myIntent.putExtra("video", vid_guide);
+                myIntent.putExtra("image", img_guide);
                 startActivity(myIntent);
                 break;
             case R.id.activity_start_cardview3:
