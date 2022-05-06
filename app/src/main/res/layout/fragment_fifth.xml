@@ -57,7 +57,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_gravity="center"
                     android:layout_weight="2"
                     android:orientation="vertical">
@@ -72,7 +72,6 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/fifth_fragment_intro_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
@@ -82,7 +81,6 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/fifth_fragment_intro_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
@@ -92,7 +90,6 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/fifth_fragment_intro_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"

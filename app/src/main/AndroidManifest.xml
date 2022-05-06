@@ -9,45 +9,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NicotimeOut">
-        <activity
-            android:name=".user.fifthFragment.fifthFragment_popup"
-            android:parentActivityName=".user.fifthFragment.fifthFragment"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-
 
         <activity
-            android:name=".userStart.StartActivity_first_popup"
-            android:parentActivityName=".userStart.StartActivity_first"/>
-
-
-        <activity
-            android:name=".userStart.StartActivity_first"
-            android:parentActivityName=".userStart.StartActivity"
+            android:name=".common.QuestionActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".common.QuestionActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".user.UserProgress"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".userStart.StartActivity_popup_fullscreen"
+            android:exported="false"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.Fullscreen"
+            android:parentActivityName=".userStart.StartActivity_popup"/>
+        <activity
+            android:name=".userStart.StartActivity_popup"
+            android:configChanges="orientation"
             android:parentActivityName=".userStart.StartActivity"
-            android:configChanges="orientation"
             android:screenOrientation="portrait"/>
-
-        <activity android:name=".userStart.StartActivity"
+        <activity
+            android:name=".userStart.StartActivity_badEffects"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-
-
-        <activity android:name=".common.MainActivity"
+            android:parentActivityName=".userStart.StartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".userStart.StartActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-
-
-        <activity android:name=".common.SplashScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.SplashScreen"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>

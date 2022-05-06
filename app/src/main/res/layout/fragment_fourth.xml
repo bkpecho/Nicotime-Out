@@ -20,6 +20,7 @@
             android:id="@+id/progress_arc"
             android:layout_width="130dp"
             android:layout_height="130dp"
+            custom:arc_angle="280"
             custom:arc_bottom_text="20 mins"
             custom:arc_bottom_text_size="12sp"
             custom:arc_finished_color="@color/main_blue"
@@ -32,10 +33,9 @@
             custom:arc_unfinished_color="@color/main_red" />
 
         <TextView
-            android:layout_margin="8dp"
-            android:id="@+id/fragment_fourth_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:fontFamily="@font/bold"
             android:text="@string/quit_smoking_timeline"
             android:textAlignment="center"
@@ -61,6 +61,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -113,6 +114,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -169,6 +171,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -225,6 +228,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -281,6 +285,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -347,6 +352,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -403,6 +409,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -459,6 +466,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -512,6 +520,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -568,6 +577,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -624,6 +634,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
@@ -681,6 +692,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"

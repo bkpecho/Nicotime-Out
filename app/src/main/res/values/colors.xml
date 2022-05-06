@@ -20,7 +20,6 @@
     <color name="fc_green">#30110d</color>
 
     <!--main colors-->
-    <color name="main_outline">#464a51</color>
 
     <color name="main_bg">#F0F8FF</color>
 
@@ -42,15 +41,12 @@
     <color name="dead_blue">#a3daff</color>
     <color name="light_blue">#1ec0ff</color>
     <color name="main_blue">#299cfc</color>
-    <color name="dark_blue">#103e65</color>
 
     <color name="dead_yellow">#ede574</color>
-    <color name="light_yellow">#f9d423</color>
     <color name="main_yellow">#f9b53d</color>
 
     <color name="dead_red">#ff8b7b</color>
     <color name="light_red">#ff6464</color>
     <color name="main_red">#db3056</color>
 
-    <color name="transparent">#80000000</color>
 </resources>
