@@ -84,13 +84,10 @@ public class fifthFragment extends Fragment {
             }
         });
 
-        cv_openLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Uri uri = Uri.parse(getString(R.string.rehab_link));
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
+        cv_openLink.setOnClickListener(view12 -> {
+            Uri uri = Uri.parse(getString(R.string.rehab_link));
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         });
 
        /* recyclerView = view.findViewById(R.id.fifthFragment_recyclerView);

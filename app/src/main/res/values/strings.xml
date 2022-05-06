@@ -47,20 +47,6 @@
     <string name="lifeLost_minutes">%1$sm</string>
 
 
-    <string-array name="video_title">
-        <item>Cigarette</item>
-        <item>Cigarette Smoking</item>
-        <item>Health Effects</item>
-        <item>Addiction</item>
-    </string-array>
-
-    <string-array name="video_description">
-        <item>What is Cigarette?</item>
-        <item>What is Cigarette Smoking?</item>
-        <item>Effects of Cigarette Smoking in our Body</item>
-        <item>What is Cigarette Addiction?</item>
-    </string-array>
-
     <string-array name="quotes">
         <item>“Believe you can, and you’re halfway there.”</item>
         <item>“I avoid looking forward or backward, and try to keep looking upward.”</item>
@@ -99,7 +85,7 @@
         <item>“Hardships often prepare ordinary people for an extraordinary destiny.”</item>
         <item>“Sometimes we motivate ourselves by thinking of what we want to become. Sometimes we motivate ourselves by thinking about who we don’t ever want to be again.”</item>
         <item>“When we meet real tragedy in life, we can react in two ways – either by losing hope and falling into self-destructive habits, or by using the challenge to find our inner strength. Thanks to the teachings of Buddha, I have been able to take this second way.”</item>
-        <item>“Cause sometimes you just feel tired. Feel weak, and when you feel weak, you feel like you wanna just give up. But you gotta search within you. You gotta find that inner strength. And just pull it out of you, and get that motivation to not give up, and not be a quitter, no matter how bad you wanna just fall flat on your face.”</item>
+        <item>“Cause sometimes you just feel tired. Feel weak, and when you feel weak, you feel like you want to just give up. But you gotta search within you. You gotta find that inner strength. And just pull it out of you, and get that motivation to not give up, and not be a quitter, no matter how bad you want to just fall flat on your face.”</item>
         <item>“Life is not easy for any of us. But what of that? We must have perseverance and, above all, confidence in ourselves. We must believe that we are gifted for
 something, and that this thing, at whatever cost, must be attained.”</item>
         <item>“Life has many ways of testing a person’s will, either by having nothing happen at all or by having everything happen all at once.”</item>
@@ -201,7 +187,6 @@ something, and that this thing, at whatever cost, must be attained.”</item>
         <item>Aldous Huxley</item>
         <item>Michel de Montaigne</item>
         <item>Sharon Salzberg</item>
-        <item></item>
 
     </string-array>
 
@@ -228,8 +213,8 @@ something, and that this thing, at whatever cost, must be attained.”</item>
     <string name="ac_blastoff_desc">Your journey starts here, Champ!</string>
     <string name="ac_thumbsup_desc">Save a Total of ₱500.00</string>
     <string name="ac_richman_desc">Save a Total of ₱1000.00</string>
-    <string name="ac_knowledgeispower_desc">Watch Your First Infographic Video</string>
-    <string name="ac_inquisitivemind_desc">Watch All the Infographic Videos</string>
+    <string name="ac_knowledgeispower_desc">Complete Watching Your First Infographic Video</string>
+    <string name="ac_inquisitivemind_desc">Complete Watching All the Infographic Videos</string>
     <string name="ac_30days_desc">Login for a Total of 30 Days</string>
     <string name="ac_focused_desc">Login for a Total of 3 Days</string>
     <string name="ac_standtall_desc">1000 Total Cigarettes Avoided</string>
@@ -266,6 +251,85 @@ something, and that this thing, at whatever cost, must be attained.”</item>
     <string name="timeline_desc_6months">You are now better in handling stressful events without feeling like you need to smoke. You may also notice you’re coughing up much less mucus and phlegm.</string>
     <string name="timeline_desc_3months">Within one to three months of quitting, your blood circulation will improve considerably. Women may also begin to experience improvements in fertility.</string>
     <string name="timeline_desc_1month">You can experience a sense of heightened overall energy, decreased smoking-related symptoms, and fibers in the lungs that help keep the lungs healthy are growing back.</string>
+
+
     <string name="rehab_link">https://www.ddb.gov.ph/legal-services/treatment-and-rehabilitation/46-sidebar/65-doh-accredited-rehabilitation-centers#r10-2</string>
+
+
+    <string-array name="rv_title">
+        <item>Cigarette</item>
+        <item>Cigarette Smoking</item>
+        <item>Health Effects</item>
+        <item>Addiction</item>
+    </string-array>
+
+    <string-array name="rv_subTitle">
+        <item>What is Cigarette?</item>
+        <item>What is Cigarette Smoking?</item>
+        <item>Effects of Cigarette Smoking in Our Body</item>
+        <item>What is Cigarette Addiction?</item>
+        <item>Quit Smoking Guide</item>
+    </string-array>
+
+    <string-array name="rv_body1">
+        <item>A cigarette is described as a thinly wrapped roll of processed tobacco leaves and leaf stems. When on end is lit, the smoke is inhaled orally through cigarette filter or cigarette butt. It emits more than 7,000 chemicals and approximately 600 carcinogens, which are harmful and can cause cancer.</item>
+
+
+        <item>We’ve all heard how horrible smoking is for health and how hazardous and poisonous it is. Warnings are commonly included in the cigarette pack. Still, cigarette smoking has been a global concern with regard to smoke-related illnesses and mortality.</item>
+
+
+        <item>Dealing with the uncontrollable habit of cigarette smoking is known dangerous; smokers are exposed to approximately 7,000 toxins identified in which 69 of them can cause cancer and at least 250 can harm health. Stopping smoking, which reduces one’s life by 11 minutes, is likely the single most essential step smokers can make to improve their health.</item>
+
+
+        <item>Nicotine, a substance contained in tobacco plants, is what makes cigarettes addicting. The addiction is both physical and mental, in that frequent users develop a craving for the substance, and users actively seek nicotine’s effects.</item>
+
+        <item>Cigarette smoking addiction is a physical and psychological habit. Nicotine withdrawal symptoms and cravings might occur when you stop using it. The “feel good impact on the brain” can be used to cope with melancholy, anxiety, and boredom. When the body experiences nicotine withdrawal, the individual is likely to feel a variety of physical symptoms, including cigarette cravings, irritation, annoyance, anxiety, and so on.</item>
+    </string-array>
+
+    <string-array name="rv_body2">
+        <item>Such as Benzene, which are present in insecticides and gasoline; Formaldehyde, a chemical used to preserve human corpses; and Vinyl Chloride, which is used to produce plastics. This even contains hazardous heavy metals and toxins that are dangerous when absorbed and can lead to serious harm.</item>
+
+
+        <item>Cigarette smoke contains carcinogenic substances that could affect yet almost every organ in the body. Toxic chemicals enter the lungs within the first puff, reaching brain, which releases a neurotransmitter called dopamine, going to heart, and other organs.</item>
+
+
+        <item>The chemicals in cigarettes have an effect on smokers’ looks, generating yellow-brown stains on their fingers, tongue, and teeth, as well as increasing chance of tooth loss and bad breath, and making their skin wrinkled. Cigarette smoking is linked to cancer, heart disease, lung disease, diabetes, chronic obstructive pulmonary disease, emphysema and chronic bronchitis. It can increase the risk of tuberculosis, eye diseases, and weakened immune system.</item>
+
+
+        <item>The addiction is behavioral, causing people to grow reliant on the activities associated with tobacco use. They acquire habituated to smoking after meals or when they are under stress.</item>
+
+        <item>To successfully stop, the person must address both the addiction and the habits that go along with it Nicotine Replacement Therapy (NRT) may be a smoker’s first option since it might help with tough withdrawal symptoms and cravings. NRT is available in five different forms; patch, gum, nasal spray, inhalers, and lozenges. When deciding on the finest NRT, the user must consider and talk with a healthcare expert to determine which approach will be most beneficial. NRT’s must be taken for a short length of time, and using them for a long time can lead to nicotine dependency.</item>
+    </string-array>
+
+    <string-array name="rv_body3">
+        <item>Such as; Arsenic, a rat poisoning compound, and Cadmium, commonly found in batteries; Carbon monoxide, a gas produced by automobile exhaust; hydrogen cyanide, a poison used to execute people in gas chambers; and Nicotine, a toxin found in insecticides and the addictive element in cigarettes.</item>
+
+
+        <item>Secondhand smoke, on the other hand, is define smoke inhaled without intent. Secondhand smoke is inhaled through side stream or mainstream smoke. Tobacco products such as cigarettes, emit side stream smoke when they were burned.</item>
+
+
+        <item>It can also impair a woman’s reproductive system, making it harder to conceive, as well as the pregnancy and fetal development. In males, it can increase the risk of erectile dysfunction and lower the quality of sperm, reducing fertility.</item>
+
+
+        <item>When a person’s body is exposed to nicotine, the person feels a “kick”, which is generated by nicotine activating the adrenal glands, causing the production of adrenaline and dopamine, which provides temporary pleasure and motivation in the brain.</item>
+
+        <item>The Cold Turkey approach is the alternative option. This strategy involves quitting smoking completely without the use of medicine or nicotine replacement therapy. The most essential method to deal with negative sensations is to nurture oneself by eating healthy meals, and drinking enough water.  With the correct help and quitting strategy, any smoker may be free from addiction.</item>
+    </string-array>
+
+    <string-array name="rv_body4">
+        <item>These hazardous compounds pass through our bloodstream, heart, brain, and other organs is the primary reason why cigarette smoking is linked to certain diseases. </item>
+
+
+        <item>A smoker in the vicinity exhales mainstream smoke. Nonsmokers are affected to both sources, because they release toxic chemicals into the air.</item>
+
+
+        <item>Such issues could also cause by secondhand smoking in adults. Children who are exposed to secondhand smoke are at risk of respiratory infection symptoms, middle ear diseases, severe asthma, and slowed lung growth. These harmful effects could lead to life-threatening conditions and early death.</item>
+
+
+        <item>When people use heroin or cocaine, the same thing happens. You need more nicotine to feel good the more you smoke. Attempting to quit causes painful emotional and physical effects.</item>
+
+        <item>It’s also crucial to realize that no one can force a friend or loved one to quit smoking; they must take their own decision. If they do decide to stop, provide support, encouragement, and attempt to make the process less stressful.</item>
+    </string-array>
+
 
 </resources>

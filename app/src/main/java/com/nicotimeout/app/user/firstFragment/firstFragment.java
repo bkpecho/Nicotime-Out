@@ -39,6 +39,8 @@ public class firstFragment extends Fragment {
     CardView cv_sturdyasashield;
     CardView cv_standtall;
     CardView cv_explorer;
+    CardView cv_knowledgeispower;
+    CardView cv_inquisitivemind;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
@@ -54,6 +56,8 @@ public class firstFragment extends Fragment {
         cv_sturdyasashield = view.findViewById(R.id.cv_sturdyasashield);
         cv_standtall = view.findViewById(R.id.cv_standtall);
         cv_explorer = view.findViewById(R.id.cv_explorer);
+        cv_knowledgeispower = view.findViewById(R.id.cv_knowledgeispower);
+        cv_inquisitivemind = view.findViewById(R.id.cv_inquisitivemind);
 
 
         //shared preferences counter
@@ -73,6 +77,7 @@ public class firstFragment extends Fragment {
         long pref_sturdyasashield = prefs_achievements.getLong("pref_sturdyasashield", 0);
         long pref_standtall = prefs_achievements.getLong("pref_standtall", 0);
         long pref_explorer = prefs_achievements.getLong("pref_explorer", 0);
+        long pref_watch = prefs_achievements.getLong("pref_watch", 0);
 
 
         if (pref_thumbsup == 1) {
@@ -109,6 +114,14 @@ public class firstFragment extends Fragment {
 
         if (pref_explorer == 1) {
             cv_explorer.setVisibility(View.VISIBLE);
+        }
+
+        if (pref_watch >= 1) {
+            cv_knowledgeispower.setVisibility(View.VISIBLE);
+        }
+
+        if (pref_watch == 5) {
+            cv_inquisitivemind.setVisibility(View.VISIBLE);
         }
 
         if (counter == 12) {
