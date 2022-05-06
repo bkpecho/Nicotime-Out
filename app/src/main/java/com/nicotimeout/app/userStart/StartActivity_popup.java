@@ -4,23 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.nicotimeout.app.R;
 
 public class StartActivity_popup extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_popup);
 
-
         Intent intent = getIntent();
+        ImageView imageView = findViewById(R.id.imageView);
+        String image = intent.getStringExtra("image");
         String title = intent.getStringExtra("title");
         String body1 = intent.getStringExtra("body1");
         String body2 = intent.getStringExtra("body2");
@@ -33,11 +38,15 @@ public class StartActivity_popup extends AppCompatActivity {
         TextView textView3 = findViewById(R.id.body2);
         TextView textView4 = findViewById(R.id.body3);
         TextView textView5 = findViewById(R.id.body4);
-        ImageView imageView = findViewById(R.id.imageView);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         Glide
                 .with(this)
-                .load(video)
+                .load(image)
                 .into(imageView);
 
         imageView.setOnClickListener(view -> {

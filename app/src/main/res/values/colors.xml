@@ -6,7 +6,7 @@
     <color name="teal_700">#FF018786</color>
 
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#ffffffff</color>
 
     <!--final na to-->
  <!--   <color name="fc_green">#4d7776</color>
@@ -40,7 +40,7 @@
 
     <color name="dead_blue">#a3daff</color>
     <color name="light_blue">#1ec0ff</color>
-    <color name="main_blue">#299cfc</color>
+   <color name="main_blue">#299cfc</color>
 
     <color name="dead_yellow">#ede574</color>
     <color name="main_yellow">#f9b53d</color>

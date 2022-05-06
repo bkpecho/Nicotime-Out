@@ -184,7 +184,6 @@ public class fourthFragment extends Fragment {
 
                                 cursor = databaseHelper.getData();
                                 if (cursor.getCount() == 0) {
-                                    Toast.makeText(getActivity(), "Database is Empty", Toast.LENGTH_SHORT).show();
                                 } else {
                                     while (cursor.moveToNext()) {
                                         try {

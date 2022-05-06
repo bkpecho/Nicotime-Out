@@ -62,118 +62,105 @@ public class StartActivity_popup_fullscreen extends AppCompatActivity {
             long pref_vid4 = prefs_achievements.getLong("pref_vid4", 0);
 
             if (pref_watch == 0) {
-                if (ac_checker.equals("0")) {
-                    if (pref_vid0 == 0) {
-                        achievements_editor.putLong("pref_vid0", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("0") && pref_vid0 == 0) {
+                    achievements_editor.putLong("pref_vid0", 1);
+                    achievements_editor.apply();
                 }
 
-                if (ac_checker.equals("1")) {
-                    if (pref_vid1 == 0) {
-                        achievements_editor.putLong("pref_vid1", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("1") && pref_vid1 == 0) {
+                    achievements_editor.putLong("pref_vid0", 1);
+                    achievements_editor.apply();
                 }
 
-                if (ac_checker.equals("2")) {
-                    if (pref_vid2 == 0) {
-                        achievements_editor.putLong("pref_vid2", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("2") && pref_vid2 == 0) {
+                    achievements_editor.putLong("pref_vid2", 1);
+                    achievements_editor.apply();
                 }
 
-                if (ac_checker.equals("3")) {
-                    if (pref_vid3 == 0) {
-                        achievements_editor.putLong("pref_vid3", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("3") && pref_vid3 == 0) {
+                    achievements_editor.putLong("pref_vid3", 1);
+                    achievements_editor.apply();
+
                 }
-                if (ac_checker.equals("4")) {
-                    if (pref_vid4 == 0) {
-                        achievements_editor.putLong("pref_vid4", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("4") && pref_vid4 == 0) {
+                    achievements_editor.putLong("pref_vid4", 1);
+                    achievements_editor.apply();
+
                 }
                 ac_knowledgeispower();
             }
             if (pref_watch == 4) {
-                if (ac_checker.equals("0")) {
-                    if (pref_vid0 == 0) {
-                        achievements_editor.putLong("pref_vid0", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("0") && pref_vid0 == 0) {
+                    achievements_editor.putLong("pref_vid0", 1);
+                    achievements_editor.apply();
                 }
 
-                if (ac_checker.equals("1")) {
-                    if (pref_vid1 == 0) {
-                        achievements_editor.putLong("pref_vid1", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("1") && pref_vid1 == 0) {
+                    achievements_editor.putLong("pref_vid0", 1);
+                    achievements_editor.apply();
                 }
 
-                if (ac_checker.equals("2")) {
-                    if (pref_vid2 == 0) {
-                        achievements_editor.putLong("pref_vid2", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("2") && pref_vid2 == 0) {
+                    achievements_editor.putLong("pref_vid2", 1);
+                    achievements_editor.apply();
                 }
 
-                if (ac_checker.equals("3")) {
-                    if (pref_vid3 == 0) {
-                        achievements_editor.putLong("pref_vid3", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("3") && pref_vid3 == 0) {
+                    achievements_editor.putLong("pref_vid3", 1);
+                    achievements_editor.apply();
+
                 }
-                if (ac_checker.equals("4")) {
-                    if (pref_vid4 == 0) {
-                        achievements_editor.putLong("pref_vid4", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("4") && pref_vid4 == 0) {
+                    achievements_editor.putLong("pref_vid4", 1);
+                    achievements_editor.apply();
                 }
                 ac_inquisitivemind();
             }
             if (pref_watch >= 1 && pref_watch <= 3) {
-                if (ac_checker.equals("0")) {
-                    if (pref_vid0 == 0) {
-                        achievements_editor.putLong("pref_vid0", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("0") && pref_vid0 == 0) {
+                    achievements_editor.putLong("pref_vid0", 1);
+                    long i = pref_watch + 1;
+                    achievements_editor.putLong("pref_watch", i);
+                    achievements_editor.apply();
                 }
 
-                if (ac_checker.equals("1")) {
-                    if (pref_vid1 == 0) {
-                        achievements_editor.putLong("pref_vid1", 1);
-                        achievements_editor.apply();
-                    }
+
+                if (ac_checker.equals("1") && pref_vid1 == 0) {
+                    achievements_editor.putLong("pref_vid1", 1);
+                    long i = pref_watch + 1;
+                    achievements_editor.putLong("pref_watch", i);
+                    achievements_editor.apply();
                 }
 
-                if (ac_checker.equals("2")) {
-                    if (pref_vid2 == 0) {
-                        achievements_editor.putLong("pref_vid2", 1);
-                        achievements_editor.apply();
-                    }
+
+                if (ac_checker.equals("2") && pref_vid2 == 0) {
+                    achievements_editor.putLong("pref_vid2", 1);
+                    long i = pref_watch + 1;
+                    achievements_editor.putLong("pref_watch", i);
+                    achievements_editor.apply();
                 }
 
-                if (ac_checker.equals("3")) {
-                    if (pref_vid3 == 0) {
-                        achievements_editor.putLong("pref_vid3", 1);
-                        achievements_editor.apply();
-                    }
+
+                if (ac_checker.equals("3") && pref_vid3 == 0) {
+                    achievements_editor.putLong("pref_vid3", 1);
+                    long i = pref_watch + 1;
+                    achievements_editor.putLong("pref_watch", i);
+                    achievements_editor.apply();
+
                 }
-                if (ac_checker.equals("4")) {
-                    if (pref_vid4 == 0) {
-                        achievements_editor.putLong("pref_vid4", 1);
-                        achievements_editor.apply();
-                    }
+                if (ac_checker.equals("4") && pref_vid4 == 0) {
+                    achievements_editor.putLong("pref_vid4", 1);
+                    long i = pref_watch + 1;
+                    achievements_editor.putLong("pref_watch", i);
+                    achievements_editor.apply();
+
                 }
-                long i = pref_watch + 1;
-                achievements_editor.putLong("pref_watch", i);
-                achievements_editor.apply();
                 onBackPressed();
             }
+            if (pref_watch == 5) {
 
-
+                onBackPressed();
+            }
         });
     }
 
