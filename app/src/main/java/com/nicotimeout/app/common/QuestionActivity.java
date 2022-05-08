@@ -1,10 +1,12 @@
 package com.nicotimeout.app.common;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -26,6 +28,8 @@ public class QuestionActivity extends AppCompatActivity {
 
     //references to button and other controls
     Button question_button;
+
+    Dialog empty_dialog;
 
     EditText edit_questions_cig_smok_day,
             edit_questions_cig_price_piece,
@@ -50,6 +54,8 @@ public class QuestionActivity extends AppCompatActivity {
 
         question_button = findViewById(R.id.question_button);
 
+        empty_dialog = new Dialog(this);
+
         edit_questions_cig_smok_day = findViewById(R.id.edit_questions_cig_smok_day);
         edit_questions_cig_price_piece = findViewById(R.id.edit_questions_cig_price_piece);
         edit_questions_years_smoking = findViewById(R.id.edit_questions_years_smoking);
@@ -63,12 +69,7 @@ public class QuestionActivity extends AppCompatActivity {
 
             if (editTxt1.isEmpty() || editTxt2.isEmpty() || editTxt3.isEmpty()) {
 
-                AlertDialog alertDialog = new AlertDialog.Builder(QuestionActivity.this).create();
-                alertDialog.setTitle("Alert");
-                alertDialog.setMessage("Some fields are empty");
-                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                        (dialog, which) -> dialog.dismiss());
-                alertDialog.show();
+                empty_dialog();
 
             } else {
                 UserModel userModel = null;
@@ -99,5 +100,17 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void empty_dialog() {
+        empty_dialog.setContentView(R.layout.empty_dialog);
+        empty_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        empty_dialog.setCancelable(false);
+        empty_dialog.setCanceledOnTouchOutside(false);
+
+
+        Button button = empty_dialog.findViewById(R.id.button_no);
+        button.setOnClickListener(view -> empty_dialog.dismiss());
+        empty_dialog.show();
     }
 }
