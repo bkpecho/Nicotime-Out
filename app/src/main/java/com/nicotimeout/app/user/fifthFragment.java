@@ -1,4 +1,4 @@
-package com.nicotimeout.app.user.fifthFragment;
+package com.nicotimeout.app.user;
 
 import android.app.Dialog;
 import android.content.Intent;
