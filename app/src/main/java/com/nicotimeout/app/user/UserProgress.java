@@ -5,18 +5,12 @@ import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Window;
-import android.view.WindowManager;
 
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nicotimeout.app.R;
-import com.nicotimeout.app.user.fifthFragment.fifthFragment;
-import com.nicotimeout.app.user.firstFragment.firstFragment;
-import com.nicotimeout.app.user.fourthFragment.fourthFragment;
 import com.nicotimeout.app.userStart.StartActivity;
 
 public class UserProgress extends AppCompatActivity {

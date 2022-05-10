@@ -1,4 +1,4 @@
-package com.nicotimeout.app.user.firstFragment;
+package com.nicotimeout.app.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;

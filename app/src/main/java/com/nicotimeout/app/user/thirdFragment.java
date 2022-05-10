@@ -10,24 +10,18 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.database.DatabaseHelper;
-import com.nicotimeout.app.user.fifthFragment.fifthFragment;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
