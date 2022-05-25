@@ -1,14 +1,10 @@
 package com.nicotimeout.app.userStart;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.widget.TextView;
 
 import com.nicotimeout.app.R;
 

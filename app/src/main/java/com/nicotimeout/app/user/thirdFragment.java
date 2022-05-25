@@ -6,10 +6,6 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +15,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.database.DatabaseHelper;
@@ -126,11 +125,7 @@ public class thirdFragment extends Fragment {
         ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         View view = inflater.inflate(R.layout.fragment_third, container, false);
         imageButton = view.findViewById(R.id.threedots);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                reset_dialog();
-            }
-        });
+        imageButton.setOnClickListener(view1 -> reset_dialog());
 
         cigarettesAvoided = view.findViewById(R.id.cigarettesAvoided);
         moneySaved = view.findViewById(R.id.moneySaved);

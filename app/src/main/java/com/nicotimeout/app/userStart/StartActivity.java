@@ -1,8 +1,5 @@
 package com.nicotimeout.app.userStart;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +12,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.common.QuestionActivity;
@@ -38,7 +38,6 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     Dialog login_dialog;
 
     ImageView fragment_fourth_imageview;
-    int[] imageView = new int[]{R.drawable.vid_cigarette, R.drawable.vid_smoking, R.drawable.vid_effects, R.drawable.vid_addiction, R.drawable.vid_guide};
     String[] rv_subTitle;
     String[] rv_body1;
     String[] rv_body2;
@@ -57,7 +56,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         login_dialog = new Dialog(this);
 
-        fragment_fourth_imageview = (ImageView) findViewById(R.id.fragment_fourth_imageview);
+        fragment_fourth_imageview = findViewById(R.id.fragment_fourth_imageview);
         fragment_fourth_imageview.setOnClickListener(view ->
                 fragment_fourth_imageview.startAnimation(animShake_2secs));
 

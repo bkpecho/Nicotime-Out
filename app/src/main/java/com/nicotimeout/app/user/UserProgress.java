@@ -1,13 +1,12 @@
 package com.nicotimeout.app.user;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nicotimeout.app.R;
