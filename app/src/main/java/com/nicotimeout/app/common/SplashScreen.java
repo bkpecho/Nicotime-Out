@@ -1,7 +1,5 @@
 package com.nicotimeout.app.common;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,11 +8,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.nicotimeout.app.R;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private static int SPLASH_TIMER = 3000;
+    private static final int SPLASH_TIMER = 3000;
 
     //variable
     ImageView backgroundImage;
@@ -36,15 +36,12 @@ public class SplashScreen extends AppCompatActivity {
         //set anim on elements
         backgroundImage.setAnimation(sideAnim);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        new Handler().postDelayed(() -> {
 
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                finish();
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
 
-            }
         },SPLASH_TIMER);
     }
 }
