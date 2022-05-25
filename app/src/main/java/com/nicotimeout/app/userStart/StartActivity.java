@@ -23,6 +23,11 @@ import org.joda.time.DateTime;
 
 import java.util.Random;
 
+import co.mobiwise.materialintro.shape.Focus;
+import co.mobiwise.materialintro.shape.FocusGravity;
+import co.mobiwise.materialintro.shape.ShapeType;
+import co.mobiwise.materialintro.view.MaterialIntroView;
+
 public class StartActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String PREF_LOGIN_COMPARE = "loginCompare";
     public static final String PREF_LOGIN_COUNTER = "loginCounter";
@@ -38,6 +43,10 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     Dialog login_dialog;
 
     ImageView fragment_fourth_imageview;
+    ImageView nicotimeout;
+
+    Long pref_login_dialog;
+
     String[] rv_subTitle;
     String[] rv_body1;
     String[] rv_body2;
@@ -56,6 +65,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         login_dialog = new Dialog(this);
 
+        nicotimeout = findViewById(R.id.nicotimeout);
         fragment_fourth_imageview = findViewById(R.id.fragment_fourth_imageview);
         fragment_fourth_imageview.setOnClickListener(view ->
                 fragment_fourth_imageview.startAnimation(animShake_2secs));
@@ -95,12 +105,13 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         SharedPreferences prefs_achievements = getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0);
         SharedPreferences.Editor achievements_editor = getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
 
-        long pref_login_dialog = prefs_achievements.getLong("pref_login_dialog", 0);
+        pref_login_dialog = prefs_achievements.getLong("pref_login_dialog", 0);
         if (pref_login_dialog != today) {
             achievements_editor.putLong("pref_login_dialog", today);
             achievements_editor.apply();
             login_dialog();
         }
+
     }
 
     private void login_dialog() {
@@ -108,7 +119,6 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         login_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         login_dialog.setCancelable(false);
         login_dialog.setCanceledOnTouchOutside(false);
-
 
         ImageView imageView = login_dialog.findViewById(R.id.imageView);
         TextView text_top = login_dialog.findViewById(R.id.textView_title);
@@ -138,7 +148,67 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         });
 
-        button.setOnClickListener(view -> login_dialog.dismiss());
+        button.setOnClickListener(view -> {
+            login_dialog.dismiss();
+            if (pref_login_dialog == 0) {
+                new MaterialIntroView.Builder(this)
+                        .enableDotAnimation(true)
+                        .enableIcon(false)
+                        .setFocusGravity(FocusGravity.CENTER)
+                        .setFocusType(Focus.ALL)
+                        .enableFadeAnimation(true)
+                        .performClick(false)
+                        .setInfoText("Hello there! This is your dashboard.")
+                        .setInfoTextSize(14)
+                        .setTextColor(getResources().getColor(R.color.main_blue))
+                        .setShape(ShapeType.CIRCLE)
+                        .setTarget(nicotimeout)
+                        .setUsageId("0")
+                        .setListener(materialIntroViewId -> new MaterialIntroView.Builder(StartActivity.this)
+                                .enableDotAnimation(true)
+                                .enableIcon(false)
+                                .setFocusGravity(FocusGravity.CENTER)
+                                .setFocusType(Focus.ALL)
+                                .enableFadeAnimation(true)
+                                .performClick(false)
+                                .setInfoText("Learn more about the Bad Effects of Cigarette Smoking")
+                                .setInfoTextSize(14)
+                                .setTextColor(getResources().getColor(R.color.main_blue))
+                                .setShape(ShapeType.RECTANGLE)
+                                .setTarget(cv1)
+                                .setUsageId("1")
+                                .setListener(materialIntroViewId1 -> new MaterialIntroView.Builder(StartActivity.this)
+                                        .enableDotAnimation(true)
+                                        .enableIcon(false)
+                                        .setFocusGravity(FocusGravity.CENTER)
+                                        .setFocusType(Focus.ALL)
+                                        .enableFadeAnimation(true)
+                                        .performClick(false)
+                                        .setInfoText("Discover multiple ways to help you quit.")
+                                        .setInfoTextSize(14)
+                                        .setTextColor(getResources().getColor(R.color.main_blue))
+                                        .setShape(ShapeType.RECTANGLE)
+                                        .setTarget(cv2)
+                                        .setUsageId("2")
+                                        .setListener(materialIntroViewId11 -> new MaterialIntroView.Builder(StartActivity.this)
+                                                .enableDotAnimation(true)
+                                                .enableIcon(false)
+                                                .setFocusGravity(FocusGravity.CENTER)
+                                                .setFocusType(Focus.ALL)
+                                                .enableFadeAnimation(true)
+                                                .performClick(false)
+                                                .setInfoText("Click here to Start Tracking Your Progress.")
+                                                .setInfoTextSize(14)
+                                                .setTextColor(getResources().getColor(R.color.main_blue))
+                                                .setShape(ShapeType.RECTANGLE)
+                                                .setTarget(cv3)
+                                                .setUsageId("3")
+                                                .show())
+                                        .show())
+                                .show())
+                        .show();
+            }
+        });
         login_dialog.show();
     }
 

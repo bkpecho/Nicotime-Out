@@ -38,6 +38,7 @@
 
 
                 <ImageView
+                    android:id="@+id/nicotimeout"
                     android:layout_width="250dp"
                     android:layout_height="36dp"
                     android:layout_marginTop="8dp"

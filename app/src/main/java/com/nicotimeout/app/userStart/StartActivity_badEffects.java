@@ -61,7 +61,7 @@ public class StartActivity_badEffects extends AppCompatActivity {
             myIntent.putExtra("body4", rv_body4[0]);
             myIntent.putExtra("ac_checker", "0");
             myIntent.putExtra("video", vid_cigarette);
-            myIntent.putExtra("image",img_cigarette);
+            myIntent.putExtra("image", img_cigarette);
             StartActivity_badEffects.this.startActivity(myIntent);
         });
         cv2.setOnClickListener(view -> {
@@ -73,7 +73,7 @@ public class StartActivity_badEffects extends AppCompatActivity {
             myIntent.putExtra("body4", rv_body4[1]);
             myIntent.putExtra("ac_checker", "1");
             myIntent.putExtra("video", vid_smoking);
-            myIntent.putExtra("image",img_smoking);
+            myIntent.putExtra("image", img_smoking);
             StartActivity_badEffects.this.startActivity(myIntent);
         });
         cv3.setOnClickListener(view -> {
@@ -85,7 +85,7 @@ public class StartActivity_badEffects extends AppCompatActivity {
             myIntent.putExtra("body4", rv_body4[2]);
             myIntent.putExtra("ac_checker", "2");
             myIntent.putExtra("video", vid_effects);
-            myIntent.putExtra("image",img_effects);
+            myIntent.putExtra("image", img_effects);
             StartActivity_badEffects.this.startActivity(myIntent);
         });
         cv4.setOnClickListener(view -> {
@@ -97,7 +97,7 @@ public class StartActivity_badEffects extends AppCompatActivity {
             myIntent.putExtra("body4", rv_body4[3]);
             myIntent.putExtra("ac_checker", "3");
             myIntent.putExtra("video", vid_addiction);
-            myIntent.putExtra("image",img_addiction);
+            myIntent.putExtra("image", img_addiction);
             StartActivity_badEffects.this.startActivity(myIntent);
         });
     }
