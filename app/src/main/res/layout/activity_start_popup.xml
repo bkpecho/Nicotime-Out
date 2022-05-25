@@ -70,7 +70,7 @@
                 android:fontFamily="@font/regular"
                 android:text="Sample"
                 android:textColor="@color/main_blue"
-                android:textSize="12sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/body2"
@@ -81,7 +81,7 @@
                 android:fontFamily="@font/regular"
                 android:text="Sample"
                 android:textColor="@color/main_blue"
-                android:textSize="12sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/body3"
@@ -92,7 +92,7 @@
                 android:fontFamily="@font/regular"
                 android:text="Sample"
                 android:textColor="@color/main_blue"
-                android:textSize="12sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/body4"
@@ -103,7 +103,7 @@
                 android:fontFamily="@font/regular"
                 android:text="Sample"
                 android:textColor="@color/main_blue"
-                android:textSize="12sp" />
+                android:textSize="14sp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
