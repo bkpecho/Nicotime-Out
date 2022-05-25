@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
             if (onboardingViewPager.getCurrentItem() + 1 < onboardingAdapter.getItemCount()) {
                 onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
             } else {
+                buttonOnboardingAction.setOnClickListener(view -> {
+                });
                 startActivity(new Intent(getApplicationContext(), StartActivity.class));
                 finish();
             }

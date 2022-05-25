@@ -31,7 +31,7 @@ public class SplashScreen extends AppCompatActivity {
         backgroundImage = findViewById(R.id.background_image);
 
         //animations
-        sideAnim = AnimationUtils.loadAnimation(this,R.anim.side_anim);
+        sideAnim = AnimationUtils.loadAnimation(this, R.anim.side_anim);
 
         //set anim on elements
         backgroundImage.setAnimation(sideAnim);
@@ -42,6 +42,6 @@ public class SplashScreen extends AppCompatActivity {
             startActivity(intent);
             finish();
 
-        },SPLASH_TIMER);
+        }, SPLASH_TIMER);
     }
 }

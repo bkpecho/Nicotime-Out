@@ -13,7 +13,9 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +31,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
+
+import co.mobiwise.materialintro.shape.Focus;
+import co.mobiwise.materialintro.shape.FocusGravity;
+import co.mobiwise.materialintro.shape.ShapeType;
+import co.mobiwise.materialintro.view.MaterialIntroView;
 
 
 public class thirdFragment extends Fragment {
@@ -114,7 +121,9 @@ public class thirdFragment extends Fragment {
     public static final String FOURTH_PREFS_NAME = "MyPrefsFile";
 
     ImageButton imageButton;
-
+    LinearLayout nonsmokersince;
+    GridLayout grid1;
+    GridLayout grid2;
     //achievement variables
 
     double ms_amount;
@@ -126,6 +135,10 @@ public class thirdFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_third, container, false);
         imageButton = view.findViewById(R.id.threedots);
         imageButton.setOnClickListener(view1 -> reset_dialog());
+
+        nonsmokersince = view.findViewById(R.id.nonsmokersince);
+        grid1 = view.findViewById(R.id.grid1);
+        grid2 = view.findViewById(R.id.grid2);
 
         cigarettesAvoided = view.findViewById(R.id.cigarettesAvoided);
         moneySaved = view.findViewById(R.id.moneySaved);
@@ -397,7 +410,6 @@ public class thirdFragment extends Fragment {
         Window window = getActivity().getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(0xFF299cfc);
-
         return view;
 
     }
@@ -437,10 +449,60 @@ public class thirdFragment extends Fragment {
         ac_blastoff.setCancelable(false);
         ac_blastoff.setCanceledOnTouchOutside(false);
 
-
         Button button = ac_blastoff.findViewById(R.id.button);
-        button.setOnClickListener(view -> ac_blastoff.dismiss());
+        button.setOnClickListener(view -> {
+            ac_blastoff.dismiss();
+            new MaterialIntroView.Builder(getActivity())
+                    .enableDotAnimation(true)
+                    .enableIcon(false)
+                    .setFocusGravity(FocusGravity.CENTER)
+                    .setFocusType(Focus.ALL)
+                    .enableFadeAnimation(true)
+                    .performClick(false)
+                    .setIdempotent(true)
+                    .setInfoText("Keep track of your progress.")
+                    .setInfoTextSize(14)
+                    .setTextColor(getResources().getColor(R.color.main_blue))
+                    .setShape(ShapeType.RECTANGLE)
+                    .setTarget(nonsmokersince)
+                    .setUsageId("nonsmokersince")
+                    .setListener(materialIntroViewId -> new MaterialIntroView.Builder(getActivity())
+                            .enableDotAnimation(true)
+                            .enableIcon(false)
+                            .setFocusGravity(FocusGravity.CENTER)
+                            .setFocusType(Focus.ALL)
+                            .enableFadeAnimation(true)
+                            .performClick(false)
+                            .setIdempotent(true)
+                            .setInfoText("Reap the rewards of Quitting Smoking.")
+                            .setInfoTextSize(14)
+                            .setTextColor(getResources().getColor(R.color.main_blue))
+                            .setShape(ShapeType.RECTANGLE)
+                            .setTarget(grid1)
+                            .setUsageId("grid1")
+                            .setListener(materialIntroViewId1 -> new MaterialIntroView.Builder(getActivity())
+                                    .enableDotAnimation(true)
+                                    .enableIcon(false)
+                                    .setFocusGravity(FocusGravity.CENTER)
+                                    .setFocusType(Focus.ALL)
+                                    .enableFadeAnimation(true)
+                                    .performClick(false)
+                                    .setIdempotent(true)
+                                    .setInfoText("These are some of the damages caused by your smoking.")
+                                    .setInfoTextSize(14)
+                                    .setTextColor(getResources().getColor(R.color.main_red))
+                                    .setShape(ShapeType.RECTANGLE)
+                                    .setTarget(grid2)
+                                    .setUsageId("grid2")
+                                    .show())
+                            .show())
+                    .show();
+        });
         ac_blastoff.show();
+    }
+
+    private void introView() {
+
     }
 
     private void ac_thumbsup() {
