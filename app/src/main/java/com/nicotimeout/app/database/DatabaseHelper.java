@@ -6,13 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
-import com.nicotimeout.app.user.thirdFragment;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static DatabaseHelper mInstance = null;
 
@@ -28,7 +21,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             mInstance = new DatabaseHelper(ctx.getApplicationContext());
         }
         return mInstance;
-        // super(ctx, "user.db", null, 1);
 
     }
 
@@ -59,12 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_CIG_YEARS, userModel.getCig_years());
 
         long insert = db.insert(USER_TABLE, null, cv);
-        if (insert == -1) {
-            return false;
-
-        } else {
-            return true;
-        }
+        return insert != -1;
 
     }
 
@@ -77,9 +64,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void deleteAll()
     {
         SQLiteDatabase db = this.getWritableDatabase();
-       // db.delete(USER_TABLE,null,null);
         db.execSQL("delete from "+ USER_TABLE);
-       // db.execSQL("TRUNCATE table" + USER_TABLE);
         db.close();
     }
 

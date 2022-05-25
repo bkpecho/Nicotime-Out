@@ -7,11 +7,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +17,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 import com.nicotimeout.app.R;
 
@@ -45,15 +44,6 @@ public class fifthFragment extends Fragment {
         SharedPreferences prefs_achievements = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0);
         SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
         long pref_explorer = prefs_achievements.getLong("pref_explorer", 0);
-
-//        fifth_fragment_intro_1 = view.findViewById(R.id.fifth_fragment_intro_1);
-//        fifth_fragment_intro_1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getParentFragmentManager().beginTransaction().replace(R.id.fragmentContainerView,
-//                        new fifthFragment()).commit();
-//            }
-//        });
 
         cv_openLink = view.findViewById(R.id.cv_openLink);
         flicker = AnimationUtils.loadAnimation(getActivity(), R.anim.flicker);
@@ -89,20 +79,6 @@ public class fifthFragment extends Fragment {
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
         });
-
-       /* recyclerView = view.findViewById(R.id.fifthFragment_recyclerView);
-        images = new ArrayList();
-        name = new ArrayList();
-
-        for (int i = 0; i < fifthFragment_data.data_title.length; i++) {
-            images.add(fifthFragment_data.data_images);
-            name.add(fifthFragment_data.data_title);
-        }
-        fifthFragment_adapter helperAdapter = new fifthFragment_adapter(getContext(), images, name);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(helperAdapter);*/
-
         Window window = getActivity().getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(0xFF299cfc);
