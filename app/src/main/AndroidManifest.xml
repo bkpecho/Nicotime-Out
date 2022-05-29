@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NicotimeOut"
         tools:replace="android:allowBackup">
-
+        <activity
+            android:name=".userStart.NotificationOpen"
+            android:exported="false" />
         <activity
             android:name=".common.QuestionActivity"
             android:configChanges="orientation"

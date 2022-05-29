@@ -6,7 +6,11 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.InputType;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -26,7 +30,6 @@ import java.util.TimeZone;
 
 public class QuestionActivity extends AppCompatActivity {
 
-    //references to button and other controls
     Button question_button;
 
     Dialog empty_dialog;
@@ -42,6 +45,10 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
+        edit_questions_cig_smok_day = findViewById(R.id.edit_questions_cig_smok_day);
+        edit_questions_cig_price_piece = findViewById(R.id.edit_questions_cig_price_piece);
+        edit_questions_years_smoking = findViewById(R.id.edit_questions_years_smoking);
+
         if (databaseHelper == null) {
             databaseHelper = new DatabaseHelper(QuestionActivity.this);
         }
@@ -56,18 +63,16 @@ public class QuestionActivity extends AppCompatActivity {
 
         empty_dialog = new Dialog(this);
 
-        edit_questions_cig_smok_day = findViewById(R.id.edit_questions_cig_smok_day);
-        edit_questions_cig_price_piece = findViewById(R.id.edit_questions_cig_price_piece);
-        edit_questions_years_smoking = findViewById(R.id.edit_questions_years_smoking);
-
-
         question_button.setOnClickListener(view -> {
 
             String editTxt1 = edit_questions_cig_smok_day.getText().toString();
             String editTxt2 = edit_questions_cig_price_piece.getText().toString();
             String editTxt3 = edit_questions_years_smoking.getText().toString();
 
-            if (editTxt1.isEmpty() || editTxt2.isEmpty() || editTxt3.isEmpty()) {
+            if (editTxt1.isEmpty() || editTxt2.isEmpty() || editTxt3.isEmpty()
+                    || Integer.parseInt(editTxt1) == 0
+                    || Integer.parseInt(editTxt2) == 0
+                    || Integer.parseInt(editTxt3) == 0) {
 
                 empty_dialog();
 
@@ -96,8 +101,12 @@ public class QuestionActivity extends AppCompatActivity {
                 }
                 DatabaseHelper databaseHelper = new DatabaseHelper(QuestionActivity.this);
                 databaseHelper.addOne(userModel);
-
             }
+            question_button.setEnabled(false);
+            final Handler handler = new Handler();
+            handler.postDelayed(() -> {
+                question_button.setEnabled(true);
+            }, 3000);
         });
 
     }
