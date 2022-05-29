@@ -21,7 +21,7 @@
     <string name="questions_cig_price_piece">Cigarette Price per Piece</string>
     <string name="questions_years_smoking">Total Years as a Smoker</string>
     <string name="questions_sticks"><i>Ex. 20 sticks per day</i></string>
-    <string name="questions_price"><i>Ex. ₱8.00 per piece</i></string>
+    <string name="questions_price"><i>Ex. ₱8 per piece</i></string>
     <string name="questions_years"><i>Ex. 5 years (estimated)</i></string>
     <string name="questions_done">START MY JOURNEY</string>
 

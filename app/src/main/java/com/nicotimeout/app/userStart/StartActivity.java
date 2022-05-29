@@ -1,10 +1,13 @@
 package com.nicotimeout.app.userStart;
 
 import android.app.Dialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -15,6 +18,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.common.QuestionActivity;
@@ -46,6 +51,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     ImageView nicotimeout;
 
     Long pref_login_dialog;
+    long counter;
 
     String[] rv_subTitle;
     String[] rv_body1;
@@ -59,6 +65,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        notificationChannel();
 
         animShake = AnimationUtils.loadAnimation(this, R.anim.wobble);
         animShake_2secs = AnimationUtils.loadAnimation(this, R.anim.wobble_2secs);
@@ -67,8 +74,10 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         nicotimeout = findViewById(R.id.nicotimeout);
         fragment_fourth_imageview = findViewById(R.id.fragment_fourth_imageview);
-        fragment_fourth_imageview.setOnClickListener(view ->
-                fragment_fourth_imageview.startAnimation(animShake_2secs));
+        fragment_fourth_imageview.setOnClickListener(view -> {
+            fragment_fourth_imageview.startAnimation(animShake_2secs);
+            startActivityNotification();
+        });
 
         cv1 = findViewById(R.id.activity_start_cardview1);
         cv2 = findViewById(R.id.activity_start_cardview2);
@@ -86,7 +95,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         SharedPreferences prefs = getSharedPreferences(PREF_LOGIN_COUNTER, 0);
         SharedPreferences.Editor counter_editor = getSharedPreferences(PREF_LOGIN_COUNTER, 0).edit();
-        long counter = prefs.getLong("counter", 0);
+        counter = prefs.getLong("counter", 0);
 
         SharedPreferences settings = getSharedPreferences(PREF_LOGIN_COMPARE, 0);
         SharedPreferences.Editor compare_editor = getSharedPreferences(PREF_LOGIN_COMPARE, 0).edit();
@@ -111,7 +120,44 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
             achievements_editor.apply();
             login_dialog();
         }
+    }
 
+    private void notificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Nicotime-Out!";
+            String description = "Channel for Nicotime-Out!";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel("CHANNEL_ID", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    private void startActivityNotification() {
+        String days = String.valueOf(counter);
+        String contentTitle = "Nicotime-Out!";
+        String contentText1 = "Hello Champ! Thank you for using Nicotime-Out! We wish you the best luck with your quitting journey :)";
+        String contentText2 = "Hey Champ! This is your day " + days + " of using the Nicotime-Out! Keep on going :)";
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
+                .setSmallIcon(R.drawable.idea)
+                .setContentTitle(contentTitle)
+                .setPriority(NotificationCompat.PRIORITY_MAX);
+
+        if (pref_login_dialog == 0) {
+            builder.setContentText(contentText1);
+            builder.setStyle(new NotificationCompat.BigTextStyle()
+                    .bigText(contentText1));
+        } else {
+            builder.setContentText(contentText2);
+            builder.setStyle(new NotificationCompat.BigTextStyle()
+                    .bigText(contentText2));
+        }
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        notificationManager.notify(0, builder.build());
     }
 
     private void login_dialog() {
@@ -149,10 +195,8 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         });
 
         button.setOnClickListener(view -> {
-            login_dialog.dismiss();
             if (pref_login_dialog == 0) {
                 new MaterialIntroView.Builder(this)
-                        .enableDotAnimation(true)
                         .enableIcon(false)
                         .setFocusGravity(FocusGravity.CENTER)
                         .setFocusType(Focus.ALL)
@@ -164,50 +208,56 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                         .setShape(ShapeType.CIRCLE)
                         .setTarget(nicotimeout)
                         .setUsageId("0")
-                        .setListener(materialIntroViewId -> new MaterialIntroView.Builder(StartActivity.this)
-                                .enableDotAnimation(true)
-                                .enableIcon(false)
-                                .setFocusGravity(FocusGravity.CENTER)
-                                .setFocusType(Focus.ALL)
-                                .enableFadeAnimation(true)
-                                .performClick(false)
-                                .setInfoText("Learn more about the Bad Effects of Cigarette Smoking")
-                                .setInfoTextSize(14)
-                                .setTextColor(getResources().getColor(R.color.main_blue))
-                                .setShape(ShapeType.RECTANGLE)
-                                .setTarget(cv1)
-                                .setUsageId("1")
-                                .setListener(materialIntroViewId1 -> new MaterialIntroView.Builder(StartActivity.this)
-                                        .enableDotAnimation(true)
-                                        .enableIcon(false)
-                                        .setFocusGravity(FocusGravity.CENTER)
-                                        .setFocusType(Focus.ALL)
-                                        .enableFadeAnimation(true)
-                                        .performClick(false)
-                                        .setInfoText("Discover multiple ways to help you quit.")
-                                        .setInfoTextSize(14)
-                                        .setTextColor(getResources().getColor(R.color.main_blue))
-                                        .setShape(ShapeType.RECTANGLE)
-                                        .setTarget(cv2)
-                                        .setUsageId("2")
-                                        .setListener(materialIntroViewId11 -> new MaterialIntroView.Builder(StartActivity.this)
-                                                .enableDotAnimation(true)
+                        .setListener(materialIntroViewId -> {
+                            new MaterialIntroView.Builder(StartActivity.this)
+                                    .enableIcon(false)
+                                    .setFocusGravity(FocusGravity.CENTER)
+                                    .setFocusType(Focus.ALL)
+                                    .enableFadeAnimation(true)
+                                    .performClick(false)
+                                    .setInfoText("Learn more about the Bad Effects of Cigarette Smoking")
+                                    .setInfoTextSize(14)
+                                    .setTextColor(getResources().getColor(R.color.main_blue))
+                                    .setShape(ShapeType.RECTANGLE)
+                                    .setTarget(cv1)
+                                    .setUsageId("1")
+                                    .setListener(materialIntroViewId1 -> {
+                                        new MaterialIntroView.Builder(StartActivity.this)
                                                 .enableIcon(false)
                                                 .setFocusGravity(FocusGravity.CENTER)
                                                 .setFocusType(Focus.ALL)
                                                 .enableFadeAnimation(true)
                                                 .performClick(false)
-                                                .setInfoText("Click here to Start Tracking Your Progress.")
+                                                .setInfoText("Discover multiple ways to help you quit.")
                                                 .setInfoTextSize(14)
                                                 .setTextColor(getResources().getColor(R.color.main_blue))
                                                 .setShape(ShapeType.RECTANGLE)
-                                                .setTarget(cv3)
-                                                .setUsageId("3")
-                                                .show())
-                                        .show())
-                                .show())
+                                                .setTarget(cv2)
+                                                .setUsageId("2")
+                                                .setListener(materialIntroViewId2 -> {
+                                                    new MaterialIntroView.Builder(StartActivity.this)
+                                                            .enableIcon(false)
+                                                            .setFocusGravity(FocusGravity.CENTER)
+                                                            .setFocusType(Focus.ALL)
+                                                            .enableFadeAnimation(true)
+                                                            .performClick(false)
+                                                            .setInfoText("Click here to Start Tracking Your Progress.")
+                                                            .setInfoTextSize(14)
+                                                            .setTextColor(getResources().getColor(R.color.main_blue))
+                                                            .setShape(ShapeType.RECTANGLE)
+                                                            .setTarget(cv3)
+                                                            .setUsageId("3")
+                                                            .show();
+                                                })
+
+                                                .show();
+                                    })
+                                    .show();
+                        })
                         .show();
             }
+            login_dialog.dismiss();
+            startActivityNotification();
         });
         login_dialog.show();
     }
@@ -244,4 +294,4 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 break;
         }
     }
-}
+};

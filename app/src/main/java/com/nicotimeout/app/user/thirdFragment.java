@@ -453,7 +453,6 @@ public class thirdFragment extends Fragment {
         button.setOnClickListener(view -> {
             ac_blastoff.dismiss();
             new MaterialIntroView.Builder(getActivity())
-                    .enableDotAnimation(true)
                     .enableIcon(false)
                     .setFocusGravity(FocusGravity.CENTER)
                     .setFocusType(Focus.ALL)
@@ -467,7 +466,6 @@ public class thirdFragment extends Fragment {
                     .setTarget(nonsmokersince)
                     .setUsageId("nonsmokersince")
                     .setListener(materialIntroViewId -> new MaterialIntroView.Builder(getActivity())
-                            .enableDotAnimation(true)
                             .enableIcon(false)
                             .setFocusGravity(FocusGravity.CENTER)
                             .setFocusType(Focus.ALL)
@@ -481,7 +479,6 @@ public class thirdFragment extends Fragment {
                             .setTarget(grid1)
                             .setUsageId("grid1")
                             .setListener(materialIntroViewId1 -> new MaterialIntroView.Builder(getActivity())
-                                    .enableDotAnimation(true)
                                     .enableIcon(false)
                                     .setFocusGravity(FocusGravity.CENTER)
                                     .setFocusType(Focus.ALL)
@@ -499,10 +496,6 @@ public class thirdFragment extends Fragment {
                     .show();
         });
         ac_blastoff.show();
-    }
-
-    private void introView() {
-
     }
 
     private void ac_thumbsup() {
