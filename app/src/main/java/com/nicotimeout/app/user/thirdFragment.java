@@ -1,10 +1,13 @@
 package com.nicotimeout.app.user;
 
 import android.app.Dialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,10 +22,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.database.DatabaseHelper;
+import com.nicotimeout.app.userStart.StartActivity;
 
 import java.text.DateFormat;
 import java.text.DecimalFormat;
@@ -92,6 +98,9 @@ public class thirdFragment extends Fragment {
 
     long different;
     long rawDifferent;
+
+    long reset;
+    long counter;
 
     String quit_date;
     String cig_per_day;
@@ -169,11 +178,17 @@ public class thirdFragment extends Fragment {
 
         //sharedpreferences counter
         SharedPreferences prefs_counter = getActivity().getSharedPreferences(PREF_LOGIN_COUNTER, 0);
-        long counter = prefs_counter.getLong("counter", 0);
+        SharedPreferences.Editor prefs_editor = getActivity().getSharedPreferences(PREF_LOGIN_COUNTER, 0).edit();
+
+        counter = prefs_counter.getLong("counter", 0);
+        reset = prefs_counter.getLong("reset", 0);
 
         //sharedpreferences achievements
         SharedPreferences prefs_achievements = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0);
         SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
+
+
+
 
         Thread thread = new Thread() {
 
@@ -410,6 +425,9 @@ public class thirdFragment extends Fragment {
         Window window = getActivity().getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(0xFF299cfc);
+
+        notificationChannel();
+
         return view;
 
     }
@@ -426,21 +444,67 @@ public class thirdFragment extends Fragment {
 
         Button button_yes = reset_dialog.findViewById(R.id.button_yes);
         button_yes.setOnClickListener(view -> {
+            //reset editor
+            SharedPreferences prefs_counter = getActivity().getSharedPreferences(PREF_LOGIN_COUNTER, 0);
+            SharedPreferences.Editor prefs_editor = getActivity().getSharedPreferences(PREF_LOGIN_COUNTER, 0).edit();
+            reset = prefs_counter.getLong("reset", 0);
+            long addReset = reset + 1;
+
             SharedPreferences.Editor editor = getActivity().getSharedPreferences(FOURTH_PREFS_NAME, 0).edit();
-            SharedPreferences.Editor achievements_editor = getActivity().getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
-            achievements_editor.putLong("pref_blastoff", 1);
-            achievements_editor.putLong("pref_explorer", 1);
+
+
+            prefs_editor.putLong("reset", addReset);
             editor.clear();
-            achievements_editor.clear();
+
+            prefs_editor.apply();
             editor.apply();
-            achievements_editor.apply();
+
             databaseHelper = new DatabaseHelper(getActivity());
             databaseHelper.deleteAll();
             reset_dialog.dismiss();
             getActivity().getSupportFragmentManager().beginTransaction().remove(thirdFragment.this).commit();
             getActivity().onBackPressed();
+
+            resetNotification();
         });
         reset_dialog.show();
+    }
+    private void notificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Nicotime-Out!";
+            String description = "Channel for Nicotime-Out!";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel("CHANNEL_ID", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getActivity().getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+    private void resetNotification() {
+        String contentTitle1 = "I Slipped Up, Now What?";
+        String contentTitle2 = "Don’t Give Up!";
+        String contentText1 = "Most slip-ups occur within the first week of trying to quit smoking. Just because you take a puff or two of a cigarette or slide into a full-blown relapse doesn't mean that you can’t begin again. The important thing to remember is that you’re still in control and can move forward in your efforts to quit smoking.";
+        String contentText2 = "Most people try several times before succeeding. If you have relapsed, treat this incident as something to learn from, and an experience that you can use later on.";
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(), "CHANNEL_ID")
+                .setSmallIcon(R.drawable.idea)
+                .setPriority(NotificationCompat.PRIORITY_MAX);
+
+        if (reset == 0) {
+            builder.setContentTitle(contentTitle1);
+            builder.setContentText(contentText1);
+            builder.setStyle(new NotificationCompat.BigTextStyle()
+                    .bigText(contentText1));
+        } else {
+            builder.setContentTitle(contentTitle2);
+            builder.setContentText(contentText2);
+            builder.setStyle(new NotificationCompat.BigTextStyle()
+                    .bigText(contentText2));
+        }
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getActivity());
+        notificationManager.notify(1, builder.build());
     }
 
     private void ac_blastoff() {
