@@ -13,8 +13,10 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -23,6 +25,8 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.nicotimeout.app.R;
 import com.nicotimeout.app.common.QuestionActivity;
+import com.nicotimeout.app.database.DatabaseHelper;
+import com.nicotimeout.app.user.thirdFragment;
 
 import org.joda.time.DateTime;
 
@@ -46,12 +50,18 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     CardView cv3;
 
     Dialog login_dialog;
+    Dialog about_dialog;
+
 
     ImageView fragment_fourth_imageview;
     ImageView nicotimeout;
+    ImageButton imageButton;
 
-    Long pref_login_dialog;
     long counter;
+    long lastSaveTime;
+    long pref_login_dialog;
+    long reset;
+    int today;
 
     String[] rv_subTitle;
     String[] rv_body1;
@@ -71,14 +81,13 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         animShake_2secs = AnimationUtils.loadAnimation(this, R.anim.wobble_2secs);
 
         login_dialog = new Dialog(this);
+        about_dialog = new Dialog(this);
 
         nicotimeout = findViewById(R.id.nicotimeout);
         fragment_fourth_imageview = findViewById(R.id.fragment_fourth_imageview);
         fragment_fourth_imageview.setOnClickListener(view -> {
             fragment_fourth_imageview.startAnimation(animShake_2secs);
-            startActivityNotification();
         });
-
         cv1 = findViewById(R.id.activity_start_cardview1);
         cv2 = findViewById(R.id.activity_start_cardview2);
         cv3 = findViewById(R.id.activity_start_cardview3);
@@ -86,6 +95,14 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         cv1.setOnClickListener(this);
         cv2.setOnClickListener(this);
         cv3.setOnClickListener(this);
+
+        imageButton = findViewById(R.id.about_us);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                about_dialog();
+            }
+        });
 
         rv_subTitle = getResources().getStringArray(R.array.rv_subTitle);
         rv_body1 = getResources().getStringArray(R.array.rv_body1);
@@ -96,11 +113,12 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         SharedPreferences prefs = getSharedPreferences(PREF_LOGIN_COUNTER, 0);
         SharedPreferences.Editor counter_editor = getSharedPreferences(PREF_LOGIN_COUNTER, 0).edit();
         counter = prefs.getLong("counter", 0);
+        reset = prefs.getLong("reset", 0);
 
         SharedPreferences settings = getSharedPreferences(PREF_LOGIN_COMPARE, 0);
         SharedPreferences.Editor compare_editor = getSharedPreferences(PREF_LOGIN_COMPARE, 0).edit();
-        long lastSaveTime = settings.getLong("last_save", 0);
-        int today = DateTime.now().getDayOfYear();
+        lastSaveTime = settings.getLong("last_save", 0);
+        today = DateTime.now().getDayOfYear();
 
         if (lastSaveTime != today) {
             compare_editor.putLong("last_save", today);
@@ -109,11 +127,10 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
             compare_editor.apply();
             counter_editor.apply();
-        }
 
+        }
         SharedPreferences prefs_achievements = getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0);
         SharedPreferences.Editor achievements_editor = getSharedPreferences(PREF_ACHIEVEMENTS_COUNTER, 0).edit();
-
         pref_login_dialog = prefs_achievements.getLong("pref_login_dialog", 0);
         if (pref_login_dialog != today) {
             achievements_editor.putLong("pref_login_dialog", today);
@@ -121,6 +138,22 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
             login_dialog();
         }
     }
+
+    private void about_dialog() {
+        about_dialog.setContentView(R.layout.about_dialog);
+        about_dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        about_dialog.setCancelable(false);
+        about_dialog.setCanceledOnTouchOutside(false);
+        Button button = about_dialog.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                about_dialog.dismiss();
+            }
+        });
+        about_dialog.show();
+    }
+
 
     private void notificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -136,17 +169,17 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void startActivityNotification() {
-        String days = String.valueOf(counter);
+        String days = String.valueOf(counter + 1);
         String contentTitle = "Nicotime-Out!";
         String contentText1 = "Hello Champ! Thank you for using Nicotime-Out! We wish you the best luck with your quitting journey :)";
-        String contentText2 = "Hey Champ! This is your day " + days + " of using the Nicotime-Out! Keep on going :)";
+        String contentText2 = "Hey Champ! This is your day " + days + " of using the Nicotime-Out app! Keep on going :)";
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
                 .setSmallIcon(R.drawable.idea)
                 .setContentTitle(contentTitle)
                 .setPriority(NotificationCompat.PRIORITY_MAX);
 
-        if (pref_login_dialog == 0) {
+        if (counter == 0) {
             builder.setContentText(contentText1);
             builder.setStyle(new NotificationCompat.BigTextStyle()
                     .bigText(contentText1));
@@ -158,6 +191,32 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         notificationManager.notify(0, builder.build());
+    }
+
+    private void resetNotification() {
+        String contentTitle1 = "I Slipped Up, Now What?";
+        String contentTitle2 = "Don’t Give Up!";
+        String contentText1 = "Most slip-ups occur within the first week of trying to quit smoking. Just because you take a puff or two of a cigarette or slide into a full-blown relapse doesn't mean that you can’t begin again. The important thing to remember is that you’re still in control and can move forward in your efforts to quit smoking.";
+        String contentText2 = "Most people try several times before succeeding. If you have relapsed, treat this incident as something to learn from, and an experience that you can use later on.";
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
+                .setSmallIcon(R.drawable.idea)
+                .setPriority(NotificationCompat.PRIORITY_MAX);
+
+        if (reset == 1) {
+            builder.setContentTitle(contentTitle1);
+            builder.setContentText(contentText1);
+            builder.setStyle(new NotificationCompat.BigTextStyle()
+                    .bigText(contentText1));
+        } else {
+            builder.setContentTitle(contentTitle2);
+            builder.setContentText(contentText2);
+            builder.setStyle(new NotificationCompat.BigTextStyle()
+                    .bigText(contentText2));
+        }
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        notificationManager.notify(1, builder.build());
     }
 
     private void login_dialog() {
@@ -195,7 +254,7 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         });
 
         button.setOnClickListener(view -> {
-            if (pref_login_dialog == 0) {
+            if (counter == 0) {
                 new MaterialIntroView.Builder(this)
                         .enableIcon(false)
                         .setFocusGravity(FocusGravity.CENTER)
