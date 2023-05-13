@@ -34,8 +34,6 @@ git clone https://github.com/bkpecho/Nicotime-Out.git
 
 3. Build and run the application on your desired device or emulator.
 
-For more detailed instructions, please refer to the [Installation Guide](https://github.com/bkpecho/Nicotime-Out/blob/main/InstallationGuide.md).
-
 ## Thesis Members
 
 This thesis project was a collaborative effort by the following members:
